@@ -46,6 +46,17 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias ip='ip --color=auto'
+
+# Colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Brew
+path+=('/home/linuxbrew/.linuxbrew/bin')
+export PATH
+
+# Source external scripts
+source ~/Scripts/.bash_greeter.sh
 
 # Autostarts
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.omp.json)"
