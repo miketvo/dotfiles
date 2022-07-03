@@ -241,9 +241,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -lA'
-alias la='ls -a'
-alias lla='ls -la'
+alias ll='ls -lF'
+alias la='ls -aCF'
+alias laa='ls -ACF'
+alias lla='ls -laF'
+alias llaa='ls -lAF'
 alias l='ls -CF'
 
 # more aliases
