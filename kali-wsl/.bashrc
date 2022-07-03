@@ -154,3 +154,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Source external scripts
+source ~/Scripts/startups.sh
+source ~/Scripts/greeter.sh

@@ -48,11 +48,11 @@
           "foreground": "#668DCC",
           "properties": {
             "folder_icon": "\uf115",
-            "folder_separator_icon": "\\",
+            "folder_separator_icon": "/",
             "style": "full"
           },
           "style": "plain",
-          "template": " {{ .Path }} ",
+          "template": " [{{ .Path }}] ",
           "type": "path"
         },
         {
