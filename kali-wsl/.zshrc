@@ -255,6 +255,7 @@ alias nv='nvim'
 
 # win-kex alias
 alias kex='kex --esm --sound'
+alias kkex='kex kill'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
