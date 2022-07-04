@@ -156,5 +156,4 @@ if ! shopt -oq posix; then
 fi
 
 # Source external scripts
-source ~/Scripts/startups.sh
 source ~/Scripts/greeter.sh
