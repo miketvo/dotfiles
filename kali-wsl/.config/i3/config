@@ -5,8 +5,40 @@
 # Default values and constants #
 ################################
 
+# gaps
 set $default_gaps_inner 12
-set $default_gaps_outer 0
+set $default_gaps_outer 12
+
+# borders
+set $borders_width 4
+
+# colors - defaults
+set $color_bg #23262b
+set $color_fg #ebebeb
+
+# colors - normal
+set $color_black #15171a
+set $color_red #993131
+set $color_green #40996e
+set $color_yellow #99632c
+set $color_blue #3d6299
+set $color_magneta #99506a
+set $color_cyan #568a99
+set $color_white #c9c9c9
+
+# colors - bright
+set $color_bblack #2c2f36
+set $color_bred #e64545
+set $color_bgreen #7acca6
+set $color_byellow #ff9228
+set $color_bblue #81a2be
+set $color_bmagneta #cc6a8e
+set $color_bcyan #8fbecc
+set $color_bwhite #ffffff
+
+# extra colors
+set $color_grey #555555
+set $bar_opacity dd
 
 
 #####################
@@ -19,6 +51,10 @@ exec --no-startup-id pulseaudio -D
 # Wallpaper
 exec --no-startup-id ~/.fehbg Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# X Compositor
+exec --no-startup-id picom
+
+exec --no-startup-id sh ~/Scripts/startups.sh
 
 ###########################
 # Behavior configurations #
@@ -42,12 +78,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 bindsym $mod+Escape kill
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start program launcher (rofi)
+bindsym $mod+p exec rofi -show run -opacity 85 -font "SF Mono 11" -sidebar-mode
 
 # change focus
 bindsym $modalt+h focus left
@@ -100,28 +132,29 @@ bindsym $modalt+a focus parent
 bindsym $modalt+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 一
-bindsym $mod+2 workspace 二
-bindsym $mod+3 workspace 三
-bindsym $mod+4 workspace 四
-bindsym $mod+5 workspace 五
-bindsym $mod+6 workspace 六
-bindsym $mod+7 workspace 七
-bindsym $mod+8 workspace 八
-bindsym $mod+9 workspace 九
-bindsym $mod+0 workspace 十
+# the prefix '[n]:' with n as a number is needed so that i3bar knows to order workspaces correctly
+bindsym $mod+1 workspace 1:一
+bindsym $mod+2 workspace 2:二
+bindsym $mod+3 workspace 3:三
+bindsym $mod+4 workspace 4:四
+bindsym $mod+5 workspace 5:五
+bindsym $mod+6 workspace 6:六
+bindsym $mod+7 workspace 7:七
+bindsym $mod+8 workspace 8:八
+bindsym $mod+9 workspace 9:九
+bindsym $mod+0 workspace 10:十
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 一
-bindsym $mod+Shift+2 move container to workspace 二
-bindsym $mod+Shift+3 move container to workspace 三
-bindsym $mod+Shift+4 move container to workspace 四
-bindsym $mod+Shift+5 move container to workspace 五
-bindsym $mod+Shift+6 move container to workspace 六
-bindsym $mod+Shift+7 move container to workspace 七
-bindsym $mod+Shift+8 move container to workspace 八
-bindsym $mod+Shift+9 move container to workspace 九
-bindsym $mod+Shift+0 move container to workspace 十
+bindsym $mod+Shift+1 move container to workspace 1:一
+bindsym $mod+Shift+2 move container to workspace 2:二
+bindsym $mod+Shift+3 move container to workspace 3:三
+bindsym $mod+Shift+4 move container to workspace 4:四
+bindsym $mod+Shift+5 move container to workspace 5:五
+bindsym $mod+Shift+6 move container to workspace 6:六
+bindsym $mod+Shift+7 move container to workspace 7:七
+bindsym $mod+Shift+8 move container to workspace 8:八
+bindsym $mod+Shift+9 move container to workspace 9:九
+bindsym $mod+Shift+0 move container to workspace 10:十
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -182,6 +215,20 @@ bindsym $modalt+g mode $mode_gaps
 # finds out, if available)
 bar {
 	position top
+	height 24
+	colors {
+		background $color_black$bar_opacity
+		statusline $color_fg
+
+        	focused_workspace	$color_fg $color_blue$bar_opacity
+        	active_workspace	$color_fg $color_blue$bar_opacity
+        	inactive_workspace	$color_grey $color_bg$bar_opacity
+        	urgent_workspace	$color_bwhite $color_red
+		binding_mode		$color_bred $color_bg
+	}
+	strip_workspace_numbers yes
+	
+	i3bar_command i3bar --transparency
         status_command i3status
 }
 
@@ -190,8 +237,18 @@ bar {
 # Cosmetic customizations #
 ###########################
 
+# Window colors
+# Window type			border			background		text			indicator
+client.focused			$color_bblack		$color_bblack		$color_bblue		$color_bblue
+client.focused_inactive		$color_black		$color_black		$color_blue		$color_blue
+client.unfocused		$color_black		$color_black		$color_blue		$color_blue
+client.urgent			$color_bred		$color_bred		$color_bwhite		$color_bred
+
 # Gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel $borders_width
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 smart_gaps on
+
+# Smart border
+hide_edge_borders smart_no_gaps
