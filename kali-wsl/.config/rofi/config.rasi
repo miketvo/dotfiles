@@ -1,0 +1,165 @@
+configuration {
+    modi: "window,run,filebrowser,keys";
+    show-icons: false;
+    terminal: "i3-sensible-terminal";
+    run-command: "{cmd}";
+    run-list-command: "";
+    run-shell-command: "{terminal} -e {cmd}";
+    window-command: "wmctrl -i -R {window}";
+    window-match-fields: "all";
+    disable-history: false;
+    ignored-prefixes: "";
+    sort: false;
+    sorting-method: "normal";
+    case-sensitive: false;
+    cycle: true;
+    sidebar-mode: true;
+    timeout {
+        action: "kb-cancel";
+	delay: 0;
+    }
+    filebrowser {
+        directories-first: true;
+	sorting-method: "name";
+    }
+}
+
+
+/**
+ * ROFI Color theme "Electrodes"
+ * User: miketvo
+ * Copyright: Mike Vo
+ */
+
+* {
+    background: #23262bee;
+    foreground: #ebebebee;
+
+    black:      #15171aee;
+    bblack:     #2c2f36ee;
+    red:        #993131ee;
+    bred:       #e64545ee;
+    green:      #40996eee;
+    bgreen:     #7acca6ee;
+    yellow:     #99632cee;
+    byellow:    #ff9228ee;
+    blue:       #3d6299ee;
+    bblue:      #81a2beee;
+    magenta:    #99506aee;
+    bmagenta:   #cc6a8eee;
+    cyan:       #568a99ee;
+    bcyan:      #8fbeccee;
+    white:      #c9c9c9ee;
+    bwhite:     #ffffffee;
+
+    grey:       #555555ee;
+
+    highlight:  bold #ffffffee;
+
+    regular-face: "SF Mono 11";
+    bold-face: "SF Mono Bold 11";
+}
+window {
+    font: @regular-face;
+    background-color: @black;
+    text-color: @foreground;
+    border: 0;
+    padding: 20% 30%;
+    fullscreen: true;
+}
+mainbox {
+    border: 0;
+    padding: 0;
+    min-width: 1200;
+    min-height: 600;
+}
+inputbar {
+    border: 0;
+    padding: 20;
+    children: [
+        prompt,
+	textbox-prompt-colon,
+	entry,
+	num-filtered-rows,
+	textbox-sep,
+	num-rows
+    ];
+}
+prompt {
+    font: @bold-face; 
+    text-color: @byellow;
+}
+textbox-prompt-colon {
+    font: @bold-face;
+    expand: false;
+    str: ": ";
+    margin: 0;
+    text-color: @byellow;
+}
+entry {
+    font: @bold-face;
+    placeholder-color: @grey;
+}
+textbox-sep, num-filtered-rows, num-rows {
+    text-color: @grey;
+    expand: false;
+    str: "/";
+}
+listview {
+    dynamic: false;
+    cycle: true;
+    columns: 1;
+    fixed-columnd: false;
+
+    border: 0;
+    spacing: 14;
+}
+
+scrollbar {
+    background-color: None;
+    handle-width: 4;
+    handle-color: @foreground;
+    padding: 4;
+}
+element {
+    border: 0;
+    padding: 3 6;
+}
+element.normal.normal,
+element.normal.active,
+element.alternate.normal,
+element.alternate.active {
+    background-color: transparent;
+    text-color: @foreground;
+}
+element.normal.urgent,
+element.alternate.urgent {
+    background-color: @yellow;
+    text-color: @bwhite;
+}
+element.selected.normal, element.selected.active {
+    background-color: @bblack;
+    text-color: @foreground;
+}
+element.selected.urgent {
+    background-color: @red;
+    text-color: @bwhite;
+}
+element-text {
+    highlight: @highlight;
+}
+mode-switcher {
+    font: @bold-face;
+    padding: 20;
+}
+button {
+    font: @bold-face;
+    background-color: None;
+    text-color: @foreground;
+    padding: 3 6;
+}
+button.selected,
+button.active {
+    background-color: @blue;
+    text-color: @foreground;
+}

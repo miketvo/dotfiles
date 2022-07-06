@@ -4,7 +4,7 @@
 include "/home/miketvo/.gtkrc-2.0.mine"
 gtk-theme-name="Kali-Dark"
 gtk-icon-theme-name="Flat-Remix-Blue-Dark"
-gtk-font-name="SF Mono 10"
+gtk-font-name="SF Mono Powerline 11"
 gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
@@ -16,3 +16,4 @@ gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
+gtk-xft-rgba="none"

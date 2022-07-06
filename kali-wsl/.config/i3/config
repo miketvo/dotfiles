@@ -1,6 +1,23 @@
 # i3 config file (v4)
 
 
+#####################
+# Startup processes #
+#####################
+
+# Start audio service
+exec --no-startup-id pulseaudio -D
+
+# Start X Compositor
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# Launch Polybar (wait 3 secs for other processes to start)
+exec --no-startup-id sleep 3; polybar
+
+# Others
+exec --no-startup-id sh ~/Scripts/Xstartups.sh
+
+
 ################################
 # Default values and constants #
 ################################
@@ -13,48 +30,33 @@ set $default_gaps_outer 12
 set $borders_width 4
 
 # colors - defaults
-set $color_bg #23262b
-set $color_fg #ebebeb
+set_from_resource $color_bg i3wm.background #000000
+set_from_resource $color_fg i3wm.foreground #ffffff
 
 # colors - normal
-set $color_black #15171a
-set $color_red #993131
-set $color_green #40996e
-set $color_yellow #99632c
-set $color_blue #3d6299
-set $color_magneta #99506a
-set $color_cyan #568a99
-set $color_white #c9c9c9
+set_from_resource $color_black i3wm.color0 #000000
+set_from_resource $color_red i3wm.color1 #ff0000
+set_from_resource $color_green i3wm.color2 #00ff00
+set_from_resource $color_yellow i3wm.color3 #ffff00
+set_from_resource $color_blue i3wm.color4 #0000ff
+set_from_resource $color_magneta i3wm.color5 #ff00ff
+set_from_resource $color_cyan i3wm.color6 #00ffff
+set_from_resource $color_white i3wm.color7 #ffffff
 
 # colors - bright
-set $color_bblack #2c2f36
-set $color_bred #e64545
-set $color_bgreen #7acca6
-set $color_byellow #ff9228
-set $color_bblue #81a2be
-set $color_bmagneta #cc6a8e
-set $color_bcyan #8fbecc
-set $color_bwhite #ffffff
+set_from_resource $color_bblack i3wm.color8 #000000
+set_from_resource $color_bred i3wm.color9 #ff0000
+set_from_resource $color_bgreen i3wm.color10 #00ff00
+set_from_resource $color_byellow i3wm.color11 #ffff00
+set_from_resource $color_bblue i3wm.color12 #0000ff
+set_from_resource $color_bmagneta i3wm.color13 #ff00ff
+set_from_resource $color_bcyan i3wm.color14 #00ffff
+set_from_resource $color_bwhite i3wm.color15 #ffffff
 
 # extra colors
 set $color_grey #555555
-set $bar_opacity dd
+set $bar_opacity ee
 
-
-#####################
-# Startup processes #
-#####################
-
-# Start audio service
-exec --no-startup-id pulseaudio -D
-
-# Wallpaper
-exec --no-startup-id ~/.fehbg Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
-# X Compositor
-exec --no-startup-id picom
-
-exec --no-startup-id sh ~/Scripts/startups.sh
 
 ###########################
 # Behavior configurations #
@@ -79,7 +81,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Escape kill
 
 # start program launcher (rofi)
-bindsym $mod+p exec rofi -show run -opacity 85 -font "SF Mono 11" -sidebar-mode
+bindsym $mod+p exec rofi -show run -window-format "Workspace {w}  {c} {t}"
+bindsym $mod+o exec rofi -show filebrowser -window-format "Workspace {w}  {c} {t}"
+bindsym $mod+k exec rofi -show keys -window-format "Workspace {w}  {c} {t}"
+bindsym $mod+Tab exec rofi -show window -window-format "Workspace {w}  {c} {t}"
 
 # change focus
 bindsym $modalt+h focus left
@@ -161,18 +166,19 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-set $mode_exit_i3 "Exit i3 and log out of your X session: [Y]es, [n]o"
-mode $mode_exit_i3 {
-	bindsym y exec --no-startup-id i3-msg exit
-	bindsym Y exec --no-startup-id i3-msg exit
-
-	# back to normal: n/N, Enter or Escape
-	bindsym n mode "default"
-	bindsym N mode "defaut"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-bindsym $mod+BackSpace mode $mode_exit_i3
+#set $mode_exit_i3 "Exit i3 and log out of your X session: [Y]es, [n]o"
+#mode $mode_exit_i3 {
+#	bindsym y exec --no-startup-id i3-msg exit
+#	bindsym Y exec --no-startup-id i3-msg exit
+#
+#	# back to normal: n/N, Enter or Escape
+#	bindsym n mode "default"
+#	bindsym N mode "defaut"
+#	bindsym Return mode "default"
+#	bindsym Escape mode "default"
+#}
+#bindsym $mod+BackSpace mode $mode_exit_i3
+bindsym $mod+BackSpace exec rofi -show powermenu -modi powermenu:$HOME/Scripts/rofi-power-menu 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -213,24 +219,23 @@ bindsym $modalt+g mode $mode_gaps
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	position top
-	height 24
-	colors {
-		background $color_black$bar_opacity
-		statusline $color_fg
-
-        	focused_workspace	$color_fg $color_blue$bar_opacity
-        	active_workspace	$color_fg $color_blue$bar_opacity
-        	inactive_workspace	$color_grey $color_bg$bar_opacity
-        	urgent_workspace	$color_bwhite $color_red
-		binding_mode		$color_bred $color_bg
-	}
-	strip_workspace_numbers yes
-	
-	i3bar_command i3bar --transparency
-        status_command i3status
-}
+#bar {
+#	position bottom
+#	height 24
+#	colors {
+#		background $color_black$bar_opacity
+#		statusline $color_fg
+#
+#       	focused_workspace	$color_fg $color_blue$bar_opacity
+#        	active_workspace	$color_fg $color_blue$bar_opacity
+#       	inactive_workspace	$color_grey $color_bg$bar_opacity
+#        	urgent_workspace	$color_bwhite $color_red
+#		binding_mode		$color_bred $color_bg
+#	}
+#	
+#	i3bar_command i3bar --transparency
+#       status_command i3status
+#}
 
 
 ###########################
