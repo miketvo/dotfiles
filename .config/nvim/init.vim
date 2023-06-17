@@ -22,6 +22,13 @@ let g:NERDTreeWinSize=40
 " Airline configurations
 " ==================================================================================
 let g:airline_theme='base16_eighties'
+let g:airline#extensions#nerdtree_statusline = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#fnamemod = ':p:.'
 " ==================================================================================
 
 
@@ -153,6 +160,9 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
+" Add `:Prettier` command to format current buffer with coc-prettier.
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
@@ -192,6 +202,7 @@ set shiftwidth=4
 set expandtab
 set number
 set mouse=a
+set nowrap
 " ==================================================================================
 
 
@@ -199,7 +210,7 @@ set mouse=a
 " ==================================================================================
 set fillchars+=vert:│
 hi VertSplit cterm=NONE
-hi VertSplit ctermfg=DarkGray
+hi VertSplit ctermfg=237
 hi LineNr ctermfg=DarkGray
 hi EndOfBuffer ctermfg=DarkGray ctermbg=NONE
 " ==================================================================================
