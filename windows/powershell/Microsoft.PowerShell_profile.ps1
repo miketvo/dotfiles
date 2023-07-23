@@ -1,5 +1,6 @@
 # Predictive IntelliSense (auto-suggestions)
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
 $options = Get-PSReadlineOption
 $options.InlinePredictionColor = 'DarkGray'
 Set-PSReadLineKeyHandler -Chord 'Shift+Spacebar' -Function AcceptNextSuggestionWord
