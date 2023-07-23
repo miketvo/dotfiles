@@ -344,6 +344,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # Source external scripts
 source ~/Scripts/greeter.sh
+source /home/miketvo/.config/broot/launcher/bash/br
 
 # Autostarts
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.omp.json)"
