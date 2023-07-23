@@ -325,7 +325,8 @@ alias drl='exa -al'
 # more aliases
 alias sudo='sudo '
 alias cls='clear'
-alias nv='nvim'
+alias nv='nvim '
+alias br='broot '
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
