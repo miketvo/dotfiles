@@ -1,0 +1,107 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "#96525c",
+          "foreground": "transparent",
+          "style": "diamond",
+          "leading_diamond": "\u250c\ue0b2",
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "background": "#96525c",
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "{{.FormattedMs }} ",
+          "type": "executiontime"
+        },
+        {
+          "background": "#d37c96",
+          "foreground": "transparent",
+          "invert_powerline": true,
+          "style": "diamond",
+          "template": " {{ .Name }} ",
+          "trailing_diamond": "\ue0b0",
+          "properties": {
+            "always_enabled": true
+          },
+          "type": "shell"
+        },
+        {
+          "foreground": "#76AB23",
+          "style": "plain",
+          "template": " # {{ .UserName }}@{{ .HostName }}",
+          "type": "session"
+        },
+        {
+          "foreground": "#80C8FF",
+          "properties": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": "/",
+            "style": "full"
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#E5C07B",
+          "style": "plain",
+          "template": "<#96525c>on</> <#ffffff>git:</>{{ .HEAD }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#96525c",
+          "style": "plain",
+          "template": "\u2514\u2500\u25b6 ",
+          "type": "text"
+        },
+        {
+          "foreground": "#FFFD76",
+          "style": "plain",
+          "template": "\uf0e7 ",
+          "type": "root"
+        },
+        {
+          "foreground": "#AC79BB",
+          "style": "plain",
+          "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
+          "foreground": "#CB4B16",
+          "style": "plain",
+          "template": "exit {{ .Meaning }} ",
+          "type": "exit"
+        },
+        {
+          "foreground": "#CC4B16",
+          "style": "plain",
+          "template": "$",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
