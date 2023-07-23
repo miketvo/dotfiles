@@ -5,6 +5,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline-themes'
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
 call plug#end()
 " ==================================================================================
 
@@ -208,6 +209,8 @@ set nowrap
 
 " Eye candy
 " ==================================================================================
+let g:airline_theme='onehalfdark'
+
 set fillchars+=vert:│
 hi VertSplit cterm=NONE
 hi VertSplit ctermfg=237
