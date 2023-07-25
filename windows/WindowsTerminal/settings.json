@@ -18,14 +18,6 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": "unbound",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+v"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -33,8 +25,17 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
         }
     ],
+    "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
