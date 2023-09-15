@@ -39,21 +39,42 @@
           "type": "shell"
         },
         {
-          "foreground": "#61D6D6",
-          "style": "plain",
-          "template": " # {{ .UserName }}@{{ .HostName }}",
+          "background": "#56B6C2",
+          "foreground": "transparent",
+          "style": "powerline",
+          "template": " # {{ .UserName }}@{{ .HostName }} ",
+          "powerline_symbol": "\ue0b0",
           "type": "session"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#5A6374",
+          "style": "plain",
+          "template": "\u251c\u2500[",
+          "type": "text"
         },
         {
           "foreground": "#61AFEF",
           "properties": {
-            "folder_icon": "\uf115",
-            "folder_separator_icon": "\\",
-            "style": "full"
+          "folder_icon": "\uf115",
+          "folder_separator_icon": "\\",
+          "style": "full"
           },
           "style": "plain",
           "template": " {{ .Path }} ",
           "type": "path"
+        },
+        {
+          "foreground": "#5A6374",
+          "style": "plain",
+          "template": "] ",
+          "type": "text"
         },
         {
           "foreground": "#E5C07B",
