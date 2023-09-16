@@ -27,7 +27,7 @@
             "type": "executiontime"
           },
           {
-            "background": "#d37c96",
+            "background": "#D37C96",
             "foreground": "transparent",
             "invert_powe96525Crline": true,
             "style": "diamond",
@@ -39,10 +39,11 @@
             "type": "shell"
           },
           {
-            "background": "#76AB23",
+            "background": "#BD0940",
             "foreground": "transparent",
             "style": "powerline",
-            "template": " # {{ .UserName }}@{{ .HostName }}",
+            "template": " # {{ .UserName }}@{{ .HostName }} ",
+            "powerline_symbol": "\ue0b0",
             "type": "session"
           }
         ],
@@ -59,7 +60,7 @@
             "type": "text"
           },
           {
-            "foreground": "#80C8FF",
+            "foreground": "#D37C96",
             "properties": {
               "folder_icon": "\uf115",
               "folder_separator_icon": "\\",
@@ -78,7 +79,7 @@
           {
             "foreground": "#E5C07B",
             "style": "plain",
-            "template": "<#5A6374>on</> <#FFFFFF>git:</>{{ .HEAD }} ",
+            "template": "<#96525C>on</> <#FFFFFF>git:</>{{ .HEAD }} ",
             "type": "git"
           }
         ],
@@ -125,4 +126,3 @@
     "final_space": true,
     "version": 2
   }
-  
