@@ -7,6 +7,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'vim-pandoc/vim-pandoc-syntax'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " ==================================================================================
 
@@ -202,6 +203,17 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#folding#mode = ['manual']
 let g:pandoc#folding#fdc = 0
+" ==================================================================================
+
+
+" VimDevIcons configurations
+" ==================================================================================
+set encoding=UTF-8
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
 " ==================================================================================
 
 
