@@ -5,6 +5,8 @@ call plug#begin()
     Plug 'vim-airline/vim-airline-themes'
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 " ==================================================================================
 
@@ -192,6 +194,14 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" ==================================================================================
+
+
+" vim-pandoc and vim-pandoc-syntax configuration
+" ==================================================================================
+let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#folding#mode = ['manual']
+let g:pandoc#folding#fdc = 0
 " ==================================================================================
 
 
