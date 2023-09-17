@@ -209,7 +209,6 @@ let g:pandoc#folding#fdc = 0
 
 " VimDevIcons configurations
 " ==================================================================================
-set encoding=UTF-8
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
@@ -220,6 +219,8 @@ let g:webdevicons_enable_airline_statusline = 1
 
 " Behavior customizations
 " ==================================================================================
+set encoding=UTF-8
+set nospell
 set noshowmode
 set tabstop=4
 set shiftwidth=4

@@ -1,2 +1,3 @@
 # dotfiles
-Mike's configurations
+
+Mike's configuration files
