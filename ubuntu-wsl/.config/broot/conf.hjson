@@ -31,7 +31,7 @@
 # following line and change it according to
 # https://docs.rs/chrono/0.4.11/chrono/format/strftime/index.html
 #
-# date_time_format: %Y/%m/%d %R
+date_time_format: %Y/%m/%d %R
 
 ###############################################################
 # uncomment to activate modal mode
@@ -39,7 +39,7 @@
 # (you really should read https://dystroy.org/broot/modal/
 # before as it may not suit everybody even among vim users)
 #
-# modal: true
+modal: true
 
 ###############################################################
 # Whether to mark the selected line with a triangle
@@ -79,7 +79,7 @@ show_selection_mark: true
 # (see https://dystroy.org/broot/icons for installation and
 # troubleshooting)
 #
-# icon_theme: vscode
+# icon_theme: "vscode"
 
 ###############################################################
 # Special paths
@@ -99,7 +99,7 @@ special_paths: {
 # If you want the escape key to quit broot when there's nothing
 # to cancel (for example when you just opened broot), uncomment
 # this parameter
-# 
+#
 # quit_on_last_cancel: true
 
 ###############################################################
@@ -162,7 +162,7 @@ content_search_max_file_size: 10MB
 # While it's possible to have all configuration in one file,
 # it's more convenient to split it in several ones.
 # Importing also allows to set a condition on the terminal's
-# color, which makes it possible to have a different skin 
+# color, which makes it possible to have a different skin
 # chosen when your terminal has a light background and when
 # it has a light one.
 imports: [
