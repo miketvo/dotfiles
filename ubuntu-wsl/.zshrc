@@ -327,6 +327,7 @@ alias sudo='sudo '
 alias cls='clear'
 alias nv='nvim '
 alias br='broot '
+alias brl='broot -sdp'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then

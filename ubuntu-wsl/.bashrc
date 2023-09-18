@@ -117,3 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+source /home/miketvo/.config/broot/launcher/bash/br
