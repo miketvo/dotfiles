@@ -58,7 +58,7 @@
             "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "JetBrainsMono NF",
+                "face": "JetBrainsMono Nerd Font",
                 "size": 10.5
             },
             "intenseTextStyle": "all",
@@ -125,6 +125,22 @@
                 "hidden": false,
                 "name": "Ubuntu 22.04.2 LTS",
                 "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "colorScheme": "gruvbox-material",
+                "commandline": "C:\\Program Files\\WindowsApps\\KaliLinux.54290C8133FEE_1.2023.3.0_x64__ey8k8hqnwqnmg\\kali.exe",
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font Propo"
+                },
+                "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
+                "hidden": false,
+                "icon": "C:\\Users\\vomin\\Pictures\\icons\\Kali-dragon-icon.svg.png",
+                "name": "Kali Linux",
+                "startingDirectory": null,
+                "tabTitle": "Kali Linux"
             },
             {
                 "colorScheme": "Tango Dark",
@@ -1034,6 +1050,29 @@
             "selectionBackground": "#38FF9C",
             "white": "#16FDA2",
             "yellow": "#FFF383"
+        },
+        {
+            "background": "#282828",
+            "black": "#665C54",
+            "blue": "#7DAEA3",
+            "brightBlack": "#928374",
+            "brightBlue": "#7DAEA3",
+            "brightCyan": "#89B482",
+            "brightGreen": "#A9B665",
+            "brightPurple": "#D3869B",
+            "brightRed": "#EA6962",
+            "brightWhite": "#DFBF8E",
+            "brightYellow": "#E3A84E",
+            "cursorColor": "#DFBF8E",
+            "cyan": "#89B482",
+            "foreground": "#DFBF8E",
+            "green": "#A9B665",
+            "name": "gruvbox-material",
+            "purple": "#D3869B",
+            "red": "#EA6962",
+            "selectionBackground": "#665C54",
+            "white": "#DFBF8E",
+            "yellow": "#E78A4E"
         },
         {
             "background": "#2E3440",
