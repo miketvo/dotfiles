@@ -112,7 +112,7 @@
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
                 "guid": "{7e5cab18-e2d0-4679-b179-9e432f3ab9e8}",
-                "icon": "C:\\Users\\vomin\\Pictures\\icons\\Git_icon.svg.png",
+                "icon": "https://git-scm.com/favicon.ico",
                 "name": "Git Bash",
                 "tabTitle": "Git Bash",
                 "useAcrylic": true
