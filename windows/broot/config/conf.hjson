@@ -178,12 +178,12 @@ imports: [
             dark
             unknown
         ]
-        file: adaptable.hjson
+        file: windows.hjson
     }
 
     # This skin is imported when your terminal is light
     {
         luma: light
-        file: adaptable.hjson
+        file: windows.hjson
     }
 ]
