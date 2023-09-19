@@ -77,9 +77,21 @@
           "type": "text"
         },
         {
-          "foreground": "#E5C07B",
           "style": "plain",
-          "template": "<#5A6374>on</> <#FFFFFF>git:</>{{ .HEAD }} ",
+          "foreground": "#E5C07B",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FB{{ end }}"
+          ],
+          "template": "<#5A6374>on</> <#FFFFFF>git:</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "branch_icon": "\ue0a0"
+          },
           "type": "git"
         }
       ],
