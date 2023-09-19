@@ -39,7 +39,7 @@
             "type": "shell"
           },
           {
-            "background": "#8ABEB7",
+            "background": "#AC79BB",
             "foreground": "transparent",
             "style": "powerline",
             "template": " # {{ .UserName }}@{{ .HostName }} ",
@@ -77,9 +77,15 @@
             "type": "text"
           },
           {
-            "foreground": "#E5C07B",
             "style": "plain",
-            "template": "<#96525C>on</> <#FFFFFF>git:</>{{ .HEAD }} ",
+            "foreground": "#96525C",
+            "template": "on <#FFFFFF>git:</><#E0DE48>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#FFFFFF>\u2190</> <#AC79BB>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#FFFFFF>\u2190</> <#B5D680>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#8ABEB7>\uf51e {{ .StashCount }}</>{{ end }}",
+            "properties": {
+              "branch_max_length": 25,
+              "fetch_status": true,
+              "fetch_stash_count": true,
+              "branch_icon": "\ue0a0"
+            },
             "type": "git"
           }
         ],
@@ -108,13 +114,13 @@
             "type": "python"
           },
           {
-            "foreground": "#CB4B16",
+            "foreground": "#BD0940",
             "style": "plain",
             "template": "exit {{ .Meaning }} ",
             "type": "exit"
           },
           {
-            "foreground": "#CC4B16",
+            "foreground": "#BD0940",
             "style": "plain",
             "template": "$",
             "type": "text"
