@@ -62,7 +62,7 @@
                 "size": 10.5
             },
             "intenseTextStyle": "all",
-            "opacity": 80,
+            "opacity": 85,
             "padding": "12",
             "useAcrylic": true,
             "useAtlasEngine": true
@@ -80,7 +80,6 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell",
-                "opacity": 80,
                 "useAcrylic": true
             },
             {
@@ -88,7 +87,6 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt",
-                "opacity": 80,
                 "useAcrylic": true
             },
             {
