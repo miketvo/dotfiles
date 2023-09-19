@@ -1,0 +1,105 @@
+###############################################################
+# A skin for a terminal with a dark background
+#
+# To create your own skin, copy this file, change the entries
+# and import your skin file from the main conf file (look
+# for "imports")
+#
+# Doc at https://dystroy.org/broot/skins/
+###############################################################
+
+###############################################################
+# Skin
+# If you want to change the colors of broot,
+# uncomment the following block and start messing
+# with the various values.
+# A skin entry value is made of two parts separated with a '/':
+# The first one is the skin for the active panel.
+# The second one, optional, is the skin for non active panels.
+# You may find explanations and other skins on
+#  https://dystroy.org/broot/skins
+###############################################################
+skin: {
+    default: gray(22) none / gray(20) none
+    tree: gray(8) None / gray(4) None
+    parent: gray(18) None / gray(13) None
+    file: gray(22) None / gray(15) None
+    directory: Blue None bold / Blue None
+    exe: Cyan None
+    link: Magenta None
+    pruning: gray(12) None Italic
+    perm__: gray(5) None
+    perm_r: Yellow None
+    perm_w: Red None
+    perm_x: Green None
+    owner: Yellow None
+    group: gray(10) None
+    count: Magenta gray(4)
+    dates: Cyan None
+    sparse: Yellow None
+    content_extract: Green None
+    content_match: Green None
+    device_id_major: Magenta None
+    device_id_sep: Magenta None
+    device_id_minor: Magenta None
+    git_branch: Yellow None
+    git_insertions: Green None
+    git_deletions: Red None
+    git_status_current: gray(5) None
+    git_status_modified: Blue None
+    git_status_new: Yellow None bold
+    git_status_ignored: gray(17) None
+    git_status_conflicted: Magenta None
+    git_status_other: Magenta None
+    selected_line: None gray(6) / None gray(4)
+    char_match: Green None
+    file_error: Red None
+    flag_label: gray(15) ansi(239)
+    flag_value: Yellow ansi(239) bold
+    input: White None / gray(15) None
+    status_error: gray(22) Red
+    status_job: Yellow gray(5)
+    status_normal: gray(20) gray(4) / Black Black
+    status_italic: Yellow gray(4) / Black Black
+    status_bold: Yellow gray(4) bold / Black Black
+    status_code: Yellow gray(4) / Black Black
+    status_ellipsis: gray(19) gray(1) / Black Black
+    purpose_normal: gray(20) Black
+    purpose_italic: Yellow Black
+    purpose_bold: Yellow Black bold
+    purpose_ellipsis: gray(20) Black
+    scrollbar_track: gray(7) None / gray(4) None
+    scrollbar_thumb: gray(22) None / gray(14) None
+    help_paragraph: gray(20) None
+    help_bold: Yellow None bold
+    help_italic: Yellow None
+    help_code: gray(21) gray(3)
+    help_headers: Yellow None
+    help_table_border: ansi(239) None
+    preview_title: gray(23) gray(2)  / gray(21) gray(2)
+    preview: gray(20) gray(1) / gray(18) gray(2)
+    preview_line_number: gray(12) gray(3)
+    preview_match: None Green
+    hex_null: gray(8) None
+    hex_ascii_graphic: gray(18) None
+    hex_ascii_whitespace: Cyan None
+    hex_ascii_other: Yellow None
+    hex_non_ascii: Red None
+    staging_area_title: gray(22) Black / gray(20) gray(3)
+    mode_command_mark: gray(5) Red bold
+}
+
+###############################################################
+# Syntax Theme
+#
+# If you want to choose the theme used for preview, uncomment
+# one of the following lines:
+#
+
+# syntax_theme: GitHub
+# syntax_theme: SolarizedDark
+# syntax_theme: SolarizedLight
+syntax_theme: MochaDark
+# syntax_theme: OceanDark
+# syntax_theme: OceanLight
+
