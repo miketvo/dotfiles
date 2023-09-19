@@ -78,8 +78,8 @@
         },
         {
           "style": "plain",
-          "foreground": "#E5C07B",
-          "template": "<#5A6374>on</> <#FFFFFF>git:</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "foreground": "#5A6374",
+          "template": "on <#FFFFFF>git:</><#E5C07B>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }} <#FFFFFF>\u2190</> {{ if .Working.Changed }}<#98C379>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#98C379>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<#C678DD>\uf51e {{ .StashCount }}</>{{ end }}",
           "properties": {
             "branch_max_length": 25,
             "fetch_status": true,
@@ -114,13 +114,13 @@
           "type": "python"
         },
         {
-          "foreground": "#CB4B16",
+          "foreground": "#E06C75",
           "style": "plain",
           "template": "exit {{ .Meaning }} ",
           "type": "exit"
         },
         {
-          "foreground": "#CC4B16",
+          "foreground": "#E06C75",
           "style": "plain",
           "template": "$",
           "type": "text"
