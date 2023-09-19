@@ -79,7 +79,7 @@
         {
           "style": "plain",
           "foreground": "#5A6374",
-          "template": "on <#FFFFFF>git:</><#E5C07B>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }} <#FFFFFF>\u2190</> {{ if .Working.Changed }}<#98C379>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#98C379>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<#C678DD>\uf51e {{ .StashCount }}</>{{ end }}",
+          "template": "on <#FFFFFF>git:</><#E5C07B>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#FFFFFF>\u2190</> <#98C379>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#FFFFFF>\u2190</> <#98C379>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#C678DD>\uf51e {{ .StashCount }}</>{{ end }}",
           "properties": {
             "branch_max_length": 25,
             "fetch_status": true,
