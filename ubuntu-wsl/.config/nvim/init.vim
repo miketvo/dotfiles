@@ -25,7 +25,6 @@ let NERDTreeShowHidden=1
 
 " Airline configurations
 " ==================================================================================
-let g:airline_theme='base16_eighties'
 let g:airline#extensions#nerdtree_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
