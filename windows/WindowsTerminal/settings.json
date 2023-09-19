@@ -58,7 +58,7 @@
             "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "JetBrainsMono Nerd Font",
+                "face": "JetBrainsMono Nerd Font Mono",
                 "size": 10.5
             },
             "intenseTextStyle": "all",
@@ -129,10 +129,6 @@
                 "commandline": "C:\\Program Files\\WindowsApps\\KaliLinux.54290C8133FEE_1.2023.3.0_x64__ey8k8hqnwqnmg\\kali.exe",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "font": 
-                {
-                    "face": "JetBrainsMono Nerd Font Propo"
-                },
                 "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
                 "hidden": false,
                 "icon": "C:\\Users\\vomin\\Pictures\\icons\\Kali-dragon-icon.svg.png",
