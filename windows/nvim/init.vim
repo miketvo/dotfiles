@@ -234,6 +234,7 @@ set nowrap
 " Eye candy
 " ==================================================================================
 let g:airline_theme='onehalfdark'
+let g:airline_powerline_fonts = 1
 
 set fillchars+=vert:│
 hi VertSplit cterm=NONE
