@@ -239,7 +239,7 @@ if has('termguicolors')
   lua require('colorizer').setup()
 endif
 colorscheme afterglow
-let g:airline_theme='afterglow'
+let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
 hi Normal guibg=NONE ctermbg=NONE
