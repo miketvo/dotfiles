@@ -62,12 +62,11 @@
           {
             "foreground": "#D37C96",
             "properties": {
-              "folder_icon": "\uf115",
-              "folder_separator_icon": "\\",
+              "folder_separator_icon": "/",
               "style": "full"
             },
             "style": "plain",
-            "template": " {{ .Path }} ",
+            "template": " <b>{{ .Path }}</b> ",
             "type": "path"
           },
           {
@@ -114,15 +113,18 @@
             "type": "python"
           },
           {
-            "foreground": "#BD0940",
-            "style": "plain",
-            "template": "exit {{ .Meaning }} ",
+            "background": "#BD0940",
+            "foreground": "transparent",
+            "style": "diamond",
+            "leading_diamond": "\ue0b2",
+            "trailing_diamond": "\ue0b0 ",
+            "template": " \uf071 {{ .Meaning }} ",
             "type": "exit"
           },
           {
             "foreground": "#BD0940",
             "style": "plain",
-            "template": "$",
+            "template": "<b>$</b>",
             "type": "text"
           }
         ],

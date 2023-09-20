@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'vim-pandoc/vim-pandoc-syntax'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 " ==================================================================================
 
@@ -232,6 +233,10 @@ set nowrap
 
 " Eye candy
 " ==================================================================================
+if has('termguicolors')
+  set termguicolors
+  lua require('colorizer').setup()
+endif
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
