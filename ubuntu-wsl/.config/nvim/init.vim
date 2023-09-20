@@ -6,7 +6,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'sheerun/vim-polyglot'
-    Plug 'danilo-augusto/vim-afterglow'
+    Plug 'luckydev/150colors'
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'vim-pandoc/vim-pandoc-syntax'
     Plug 'ryanoasis/vim-devicons'
@@ -238,7 +238,7 @@ if has('termguicolors')
   set termguicolors
   lua require('colorizer').setup()
 endif
-colorscheme afterglow
+colorscheme wombat256
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
