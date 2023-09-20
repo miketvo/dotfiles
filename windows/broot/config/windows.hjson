@@ -98,18 +98,3 @@ skin: {
     good_to_bad_8: Yellow
     good_to_bad_9: Red
 }
-
-###############################################################
-# Syntax Theme
-#
-# If you want to choose the theme used for preview, uncomment
-# one of the following lines:
-#
-
-# syntax_theme: GitHub
-# syntax_theme: SolarizedDark
-# syntax_theme: SolarizedLight
-# syntax_theme: MochaDark
-syntax_theme: OceanDark
-# syntax_theme: OceanLight
-
