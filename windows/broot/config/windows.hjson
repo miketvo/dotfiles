@@ -87,6 +87,16 @@ skin: {
     hex_non_ascii: Red None
     staging_area_title: gray(22) Black / gray(20) gray(3)
     mode_command_mark: gray(5) Red bold
+    good_to_bad_0: White
+    good_to_bad_1: White
+    good_to_bad_2: White
+    good_to_bad_3: White
+    good_to_bad_4: White
+    good_to_bad_5: White
+    good_to_bad_6: White
+    good_to_bad_7: White
+    good_to_bad_8: Yellow
+    good_to_bad_9: Red
 }
 
 ###############################################################
