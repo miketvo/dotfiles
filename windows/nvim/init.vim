@@ -238,12 +238,12 @@ if has('termguicolors')
   set termguicolors
   lua require('colorizer').setup()
 endif
+colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 let g:airline_powerline_fonts = 1
 
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi VertSplit guibg=NONE ctermbg=NONE
 set fillchars+=vert:│
-hi VertSplit cterm=NONE
-hi VertSplit ctermfg=237
-hi LineNr ctermfg=DarkGray
-hi EndOfBuffer ctermfg=DarkGray ctermbg=NONE
 " ==================================================================================
