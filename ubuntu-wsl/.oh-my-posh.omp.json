@@ -39,7 +39,7 @@
             "type": "shell"
           },
           {
-            "background": "#AC79BB",
+            "background": "#8ABEB7",
             "foreground": "transparent",
             "style": "powerline",
             "template": " # {{ .UserName }}@{{ .HostName }} ",
