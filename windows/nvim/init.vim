@@ -220,6 +220,8 @@ let g:webdevicons_enable_airline_statusline = 1
 
 " Behavior customizations
 " ==================================================================================
+let g:python3_host_prog='~/scoop/shims/python3'
+
 set encoding=UTF-8
 set nospell
 set noshowmode
