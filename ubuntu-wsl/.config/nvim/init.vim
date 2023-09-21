@@ -220,6 +220,20 @@ let g:webdevicons_enable_airline_statusline = 1
 
 " Behavior customizations
 " ==================================================================================
+let g:clipboard = {
+  \   'name': 'WslClipboard',
+  \   'copy': {
+  \      '+': 'clip.exe',
+  \      '*': 'clip.exe',
+  \    },
+  \   'paste': {
+  \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  \   },
+  \   'cache_enabled': 0,
+  \ }
+let g:python3_host_prog='/home/linuxbrew/.linuxbrew/bin/python3'
+
 set encoding=UTF-8
 set nospell
 set noshowmode
