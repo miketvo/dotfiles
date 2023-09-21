@@ -1,16 +1,16 @@
 " Plugins
 " ==================================================================================
 call plug#begin()
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'preservim/nerdtree'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'sheerun/vim-polyglot'
-    Plug 'luckydev/150colors'
-    Plug 'vim-pandoc/vim-pandoc'
-    Plug 'vim-pandoc/vim-pandoc-syntax'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'preservim/nerdtree'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'sheerun/vim-polyglot'
+  Plug 'luckydev/150colors'
+  Plug 'vim-pandoc/vim-pandoc'
+  Plug 'vim-pandoc/vim-pandoc-syntax'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 " ==================================================================================
 
