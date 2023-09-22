@@ -128,13 +128,23 @@
                 "colorScheme": "gruvbox-material",
                 "commandline": "C:\\Program Files\\WindowsApps\\KaliLinux.54290C8133FEE_1.2023.3.0_x64__ey8k8hqnwqnmg\\kali.exe",
                 "cursorShape": "vintage",
-                "experimental.retroTerminalEffect": false,
                 "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
                 "hidden": false,
                 "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
                 "name": "Kali Linux",
                 "startingDirectory": null,
                 "tabTitle": "Kali Linux"
+            },
+            {
+                "guid": "{55ca431a-3a87-5fb3-83cd-11ecedd031d2}",
+                "hidden": false,
+                "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
+                "name": "Kali Linux Desktop",
+                "commandline": "wsl -d kali-linux kex --esm --wtstart -s",
+                "startingDirectory" : "//wsl$/kali-linux/home/miketvo",
+                "colorScheme": "gruvbox-material",
+                "cursorShape": "vintage",
+                "tabTitle": "Kali Linux Desktop"
             },
             {
                 "colorScheme": "Tango Dark",
