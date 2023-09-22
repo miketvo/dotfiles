@@ -262,9 +262,11 @@ let g:airline_powerline_fonts = 1
 
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
-hi GitSignsAdd guifg=#98C379 ctermfg=green guibg=NONE ctermbg=NONE
-hi GitSignsChange guifg=#E5C07B ctermfg=yellow guibg=NONE ctermbg=NONE
-hi GitSignsDelete guifg=#E06C75 ctermfg=red guibg=NONE ctermbg=NONE
+hi GitSignsAdd guifg=#98C379 ctermfg=Green guibg=NONE ctermbg=NONE
+hi GitSignsChange guifg=#E5C07B ctermfg=Yellow guibg=NONE ctermbg=NONE
+hi GitSignsDelete guifg=#E06C75 ctermfg=Red guibg=NONE ctermbg=NONE
+hi NormalFloat guibg=#313640 ctermbg=238
+hi FloatBorder guifg=#5D677A ctermfg=Gray guibg=#313640 ctermbg=238
 hi VertSplit guibg=NONE ctermbg=NONE
 set fillchars+=vert:│
 " ==================================================================================
