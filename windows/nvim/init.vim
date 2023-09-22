@@ -229,10 +229,11 @@ let g:webdevicons_enable_airline_statusline = 1
 
 " Behavior customizations
 " ==================================================================================
-set shell=powershell
-set shellcmdflag=-command
-set shellquote=\"
-set shellxquote=
+let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
+let &shellcmdflag = '-NoProfile -NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';'
+let &shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+let &shellpipe  = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
+set shellquote= shellxquote=
 let g:python3_host_prog='~/scoop/shims/python3'
 
 " Remove all trailing whitespace in the current buffer with F5
