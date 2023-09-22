@@ -3,7 +3,12 @@
 call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-fugitive'
+  Plug 'rbong/vim-flog'
+  Plug 'lewis6991/gitsigns.nvim'
   Plug 'preservim/nerdtree'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sheerun/vim-polyglot'
   Plug 'luckydev/150colors'
@@ -35,6 +40,12 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#fnamemod = ':p:.'
+" ==================================================================================
+
+
+" GitSigns.Nvim configurations
+" ==================================================================================
+so ~/.config/nvim/lua/gitsigns.nvim/gitsigns.nvim.lua
 " ==================================================================================
 
 
@@ -234,6 +245,15 @@ let g:clipboard = {
   \ }
 let g:python3_host_prog='/home/linuxbrew/.linuxbrew/bin/python3'
 
+" Remove all trailing whitespace in the current buffer with F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Telescope shortcuts
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 set encoding=UTF-8
 set nospell
 set noshowmode
@@ -259,6 +279,11 @@ let g:airline_powerline_fonts = 1
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
+hi GitSignsAdd guifg=#B5D680 ctermfg=Green guibg=NONE ctermbg=NONE
+hi GitSignsChange guifg=#FFFD76 ctermfg=Yellow guibg=NONE ctermbg=NONE
+hi GitSignsDelete guifg=#AC79BB ctermfg=Magenta guibg=NONE ctermbg=NONE
+hi NormalFloat guibg=#202020 ctermbg=234
+hi FloatBorder guifg=#32322f ctermfg=Gray guibg=#202020 ctermbg=234
 hi VertSplit guibg=NONE ctermbg=NONE
 set fillchars+=vert:│
 " ==================================================================================
