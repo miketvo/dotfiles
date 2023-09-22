@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -18,7 +18,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -40,23 +40,23 @@
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "initialRows": 30,
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
-            "bellStyle":
+            "bellStyle": 
             [
                 "audible",
                 "taskbar"
             ],
             "experimental.retroTerminalEffect": false,
-            "font":
+            "font": 
             {
                 "face": "JetBrainsMono Nerd Font Mono",
                 "size": 10.5
@@ -67,10 +67,10 @@
             "useAcrylic": true,
             "useAtlasEngine": true
         },
-        "list":
+        "list": 
         [
             {
-                "bellStyle":
+                "bellStyle": 
                 [
                     "audible",
                     "taskbar"
@@ -131,7 +131,7 @@
                 "experimental.retroTerminalEffect": false,
                 "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
                 "hidden": false,
-                "icon": "C:\\Users\\vomin\\Pictures\\icons\\Kali-dragon-icon.svg.png",
+                "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
                 "name": "Kali Linux",
                 "startingDirectory": null,
                 "tabTitle": "Kali Linux"
@@ -146,7 +146,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#212121",
@@ -1096,17 +1096,17 @@
     "showTerminalTitleInTitlebar": true,
     "startOnUserLogin": false,
     "tabWidthMode": "equal",
-    "themes":
+    "themes": 
     [
         {
             "name": "legacyDark",
-            "tab":
+            "tab": 
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window":
+            "window": 
             {
                 "applicationTheme": "dark",
                 "useMica": false
@@ -1114,13 +1114,13 @@
         },
         {
             "name": "legacyLight",
-            "tab":
+            "tab": 
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window":
+            "window": 
             {
                 "applicationTheme": "light",
                 "useMica": false
@@ -1128,13 +1128,13 @@
         },
         {
             "name": "legacySystem",
-            "tab":
+            "tab": 
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window":
+            "window": 
             {
                 "applicationTheme": "system",
                 "useMica": false
