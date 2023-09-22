@@ -7,6 +7,8 @@ call plug#begin()
   Plug 'rbong/vim-flog'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'preservim/nerdtree'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sheerun/vim-polyglot'
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -238,6 +240,12 @@ let g:python3_host_prog='~/scoop/shims/python3'
 
 " Remove all trailing whitespace in the current buffer with F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Telescope shortcuts
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 set encoding=UTF-8
 set nospell
