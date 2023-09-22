@@ -5,6 +5,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
   Plug 'rbong/vim-flog'
+  Plug 'lewis6991/gitsigns.nvim'
   Plug 'preservim/nerdtree'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sheerun/vim-polyglot'
@@ -37,6 +38,12 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#fnamemod = ':p:.'
+" ==================================================================================
+
+
+" GitSigns.Nvim configurations
+" ==================================================================================
+so $LOCALAPPDATA/nvim/lua/gitsigns.nvim/gitsigns.nvim.lua
 " ==================================================================================
 
 
@@ -222,7 +229,14 @@ let g:webdevicons_enable_airline_statusline = 1
 
 " Behavior customizations
 " ==================================================================================
+set shell=powershell
+set shellcmdflag=-command
+set shellquote=\"
+set shellxquote=
 let g:python3_host_prog='~/scoop/shims/python3'
+
+" Remove all trailing whitespace in the current buffer with F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 set encoding=UTF-8
 set nospell
@@ -248,6 +262,9 @@ let g:airline_powerline_fonts = 1
 
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
+hi GitSignsAdd guifg=#98C379 ctermfg=green guibg=NONE ctermbg=NONE
+hi GitSignsChange guifg=#E5C07B ctermfg=yellow guibg=NONE ctermbg=NONE
+hi GitSignsDelete guifg=#E06C75 ctermfg=red guibg=NONE ctermbg=NONE
 hi VertSplit guibg=NONE ctermbg=NONE
 set fillchars+=vert:│
 " ==================================================================================
