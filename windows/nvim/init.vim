@@ -8,7 +8,7 @@ call plug#begin()
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'preservim/nerdtree'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'sheerun/vim-polyglot'
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
