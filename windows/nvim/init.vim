@@ -23,8 +23,8 @@ call plug#end()
 
 " NERDTree configurations
 " ==================================================================================
-let g:NERDTreeWinSize=40
-let NERDTreeShowHidden=1
+let g:NERDTreeWinSize = 40
+let NERDTreeShowHidden = 1
 " ==================================================================================
 
 
@@ -43,6 +43,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#fnamemod = ':p:.'
+let g:airline#extensions#hunks#enabled = 0
 " ==================================================================================
 
 
