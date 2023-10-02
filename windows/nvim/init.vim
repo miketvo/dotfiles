@@ -7,6 +7,7 @@ call plug#begin()
   Plug 'rbong/vim-flog'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'preservim/nerdtree'
+  Plug 'mbbill/undotree'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -22,12 +23,14 @@ call plug#end()
 
 " NERDTree configurations
 " ==================================================================================
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 let g:NERDTreeWinSize=40
 let NERDTreeShowHidden=1
+" ==================================================================================
+
+
+" undotree configurations
+" ==================================================================================
+let g:undotree_WindowLayout = 4
 " ==================================================================================
 
 
@@ -239,7 +242,16 @@ set shellquote= shellxquote=
 let g:python3_host_prog='~/scoop/shims/python3'
 
 " Remove all trailing whitespace in the current buffer with F5
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <leader>` :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" NERDTree shortcuts
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" undotree shortcuts
+nnoremap <F5> :UndotreeToggle<CR>
 
 " Telescope shortcuts
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
