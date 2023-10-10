@@ -10,7 +10,7 @@ call plug#begin()
   Plug 'mbbill/undotree'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'sheerun/vim-polyglot'
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'vim-pandoc/vim-pandoc'
