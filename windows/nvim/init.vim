@@ -53,6 +53,12 @@ so $LOCALAPPDATA/nvim/lua/gitsigns.nvim/gitsigns.nvim.lua
 " ==================================================================================
 
 
+" Aerial.Nvim configurations
+" ==================================================================================
+so $LOCALAPPDATA/nvim/lua/aerial.nvim/aerial.nvim.lua
+" ==================================================================================
+
+
 " COC.Nvim configurations
 " ==================================================================================
 " Some servers have issues with backup files, see #649.
