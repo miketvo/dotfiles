@@ -1,75 +1,132 @@
-local wezterm = require 'wezterm'
+local wezterm = require "wezterm"
 local config = {}
-
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
 
---[[ Configurations ]]--
+----------------------------
+-- WezTerm Configurations --
+----------------------------
 
 -- Default shell
-config.default_prog = { 'powershell' }
+config.default_prog = { "powershell" }
 
 -- Behavior
-config.window_close_confirmation = 'NeverPrompt'
+config.window_close_confirmation = "NeverPrompt"
+
+wezterm.on("format-tab-title", function(tab)
+  local pane = tab.active_pane
+  if pane.domain_name then
+    if pane.domain_name == "local" then title = " Powershell "
+    elseif pane.domain_name == "WSL:Ubuntu-22.04" then title = " Ubuntu "
+    elseif pane.domain_name == "WSL:kali-linux" then title = " Kali Linux "
+    end
+  end
+  return title
+end)
+
+config.skip_close_confirmation_for_processes_named = {
+  "bash",
+  "sh",
+  "zsh",
+  "fish",
+  "tmux",
+  "nu",
+  "cmd.exe",
+  "pwsh.exe",
+  "powershell.exe",
+  "wsl.exe",
+  "wslhost.exe"
+}
 
 -- Eye candy
-config.window_decorations = 'INTEGRATED_BUTTONS | RESIZE'
-config.integrated_title_button_alignment = 'Right'
-config.integrated_title_button_style = 'Windows'
+config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
+config.integrated_title_button_alignment = "Right"
+config.integrated_title_button_style = "Windows"
 config.show_tab_index_in_tab_bar = false
--- config.window_background_opacity = 0.8
--- config.win32_system_backdrop = 'Acrylic'
-config.color_scheme = 'OneHalfDark'
-config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight = 'Medium' })
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
 config.font_size = 10.0
 config.window_padding = {
-  left = '12px',
-  right = '12px',
-  top = '12px',
-  bottom = '12px',
+  left = "12px",
+  right = "12px",
+  top = "12px",
+  bottom = "12px",
 }
+
+config.window_background_opacity = 0.8
+config.win32_system_backdrop = "Acrylic"
+
 config.window_frame = {
-  font = wezterm.font { family = 'JetBrainsMono Nerd Font Mono', weight = 'Bold' },
+  font = wezterm.font { family = "JetBrainsMono Nerd Font Mono", weight = "Bold" },
   font_size = 10.0,
-  active_titlebar_bg = '#2e2e2e',
-  inactive_titlebar_bg = '#2e2e2e',
+  active_titlebar_bg = "#2e2e2e",
+  inactive_titlebar_bg = "#2e2e2e",
 }
+
 config.colors = {
   tab_bar = {
     active_tab = {
-      bg_color = '#282c34',
-      fg_color = '#dcdfe4',
-      intensity = 'Normal',
-      underline = 'None',
+      bg_color = "#282c34",
+      fg_color = "#dcdfe4",
+      intensity = "Normal",
+      underline = "None",
       italic = false,
       strikethrough = false,
     },
 
     inactive_tab = {
-      bg_color = '#2e2e2e',
-      fg_color = '#808080',
+      bg_color = "#2e2e2e",
+      fg_color = "#808080",
     },
 
     inactive_tab_hover = {
-      bg_color = '#313640',
-      fg_color = '#909090',
+      bg_color = "#3b3b3b",
+      fg_color = "#909090",
       italic = true,
 
     },
 
     new_tab = {
-      bg_color = '#2e2e2e',
-      fg_color = '#808080',
+      bg_color = "#2e2e2e",
+      fg_color = "#808080",
     },
 
     new_tab_hover = {
-      bg_color = '#3b3b3b',
-      fg_color = '#909090',
+      bg_color = "#3b3b3b",
+      fg_color = "#909090",
       italic = true,
     },
   },
+
+  ansi = {
+    "#282c34",
+    "#e06c75",
+    "#98c379",
+    "#e5c07b",
+    "#61afef",
+    "#c678dd",
+    "#56b6c2",
+    "#dcdfe4"
+  },
+  background = "#282c34",
+  brights = {
+    "#5d677a",
+    "#e06c75",
+    "#98c379",
+    "#e5c07b",
+    "#61afef",
+    "#c678dd",
+    "#56b6c2",
+    "#dcdfe4"
+  },
+  cursor_bg = "#a3b3cc",
+  cursor_border = "#a3b3cc",
+  cursor_fg = "#dcdfe4",
+  foreground = "#dcdfe4",
+  indexed = {},
+  selection_bg = "#474e5d",
+  selection_fg = "#dcdfe4"
 }
 
 config.inactive_pane_hsb = {
@@ -77,7 +134,6 @@ config.inactive_pane_hsb = {
   brightness = 0.8,
 }
 
---[[ =============================]] --
-
+--[[ End of WezTerm Configurations ]]--
 
 return config

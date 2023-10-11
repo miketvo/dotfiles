@@ -6,7 +6,7 @@
       "newline": true,
       "segments": [
         {
-          "background": "#5A6374",
+          "background": "#5D677A",
           "foreground": "transparent",
           "style": "diamond",
           "leading_diamond": "\u250c\ue0b2",
@@ -17,7 +17,7 @@
           "type": "time"
         },
         {
-          "background": "#5A6374",
+          "background": "#5D677A",
           "foreground": "#FFFFFF",
           "properties": {
             "always_enabled": true
@@ -54,7 +54,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#5A6374",
+          "foreground": "#5D677A",
           "style": "plain",
           "template": "\u251c\u2500[",
           "type": "text"
@@ -70,14 +70,14 @@
           "type": "path"
         },
         {
-          "foreground": "#5A6374",
+          "foreground": "#5D677A",
           "style": "plain",
           "template": "] ",
           "type": "text"
         },
         {
           "style": "plain",
-          "foreground": "#5A6374",
+          "foreground": "#5D677A",
           "template": "on <#FFFFFF>git:</><#E5C07B>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#FFFFFF>\u2190</> <#E06C75>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#FFFFFF>\u2190</> <#98C379>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#C678DD>\uf51e {{ .StashCount }}</>{{ end }}",
           "properties": {
             "branch_max_length": 25,
@@ -95,7 +95,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#5A6374",
+          "foreground": "#5D677A",
           "style": "plain",
           "template": "\u2514\u2500\u25b6 ",
           "type": "text"
