@@ -6,7 +6,7 @@
         "newline": true,
         "segments": [
           {
-            "background": "#96525C",
+            "background": "#4F424C",
             "foreground": "transparent",
             "style": "diamond",
             "leading_diamond": "\u250c\ue0b2",
@@ -17,8 +17,8 @@
             "type": "time"
           },
           {
-            "background": "#96525C",
-            "foreground": "#FFFFFF",
+            "background": "#4F424C",
+            "foreground": "#E7E9DB",
             "properties": {
               "always_enabled": true
             },
@@ -27,9 +27,9 @@
             "type": "executiontime"
           },
           {
-            "background": "#D37C96",
+            "background": "#815BA4",
             "foreground": "transparent",
-            "invert_powe96525Crline": true,
+            "invert_powe4F424Crline": true,
             "style": "diamond",
             "template": " {{ .Name }} ",
             "trailing_diamond": "\ue0b0",
@@ -39,7 +39,7 @@
             "type": "shell"
           },
           {
-            "background": "#8ABEB7",
+            "background": "#48B685",
             "foreground": "transparent",
             "style": "powerline",
             "template": " # {{ .UserName }}@{{ .HostName }} ",
@@ -54,13 +54,13 @@
         "newline": true,
         "segments": [
           {
-            "foreground": "#96525C",
+            "foreground": "#4F424C",
             "style": "plain",
             "template": "\u251c\u2500[",
             "type": "text"
           },
           {
-            "foreground": "#D37C96",
+            "foreground": "#06B6EF",
             "properties": {
               "folder_separator_icon": "/",
               "style": "full"
@@ -70,15 +70,15 @@
             "type": "path"
           },
           {
-            "foreground": "#96525C",
+            "foreground": "#4F424C",
             "style": "plain",
             "template": "] ",
             "type": "text"
           },
           {
             "style": "plain",
-            "foreground": "#96525C",
-            "template": "on <#FFFFFF>git:</><#E0DE48>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#FFFFFF>\u2190</> <#AC79BB>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#FFFFFF>\u2190</> <#B5D680>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#8ABEB7>\uf51e {{ .StashCount }}</>{{ end }}",
+            "foreground": "#4F424C",
+            "template": "on <#E7E9DB>git:</><#FEC418>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#FFFFFF>\u2190</> <#AC79BB>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#FFFFFF>\u2190</> <#B5D680>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#5BC4BF>\uf51e {{ .StashCount }}</>{{ end }}",
             "properties": {
               "branch_max_length": 25,
               "fetch_status": true,
@@ -95,13 +95,13 @@
         "newline": true,
         "segments": [
           {
-            "foreground": "#96525C",
+            "foreground": "#4F424C",
             "style": "plain",
             "template": "\u2514\u2500\u25b6 ",
             "type": "text"
           },
           {
-            "foreground": "#FFFD76",
+            "foreground": "#FEC418",
             "style": "plain",
             "template": "\uf0e7 ",
             "type": "root"
@@ -113,7 +113,7 @@
             "type": "python"
           },
           {
-            "background": "#BD0940",
+            "background": "#EF6155",
             "foreground": "transparent",
             "style": "diamond",
             "leading_diamond": "\ue0b2",
@@ -122,7 +122,7 @@
             "type": "exit"
           },
           {
-            "foreground": "#BD0940",
+            "foreground": "#EF6155",
             "style": "plain",
             "template": "<b>$</b>",
             "type": "text"
