@@ -12,6 +12,8 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'sheerun/vim-polyglot'
+  Plug 'goerz/jupytext.vim'
+  Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -215,6 +217,19 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " ==================================================================================
 
 
+" Jupytext.Vim configurations
+" ==================================================================================
+let g:jupytext_fmt = 'auto'
+" ==================================================================================
+
+
+" Magma configurations
+" ==================================================================================
+let g:magma_automatically_open_output = v:false
+let g:magma_image_provider = "ueberzug"
+" ==================================================================================
+
+
 " vim-pandoc and vim-pandoc-syntax configuration
 " ==================================================================================
 let g:pandoc#syntax#conceal#use = 0
@@ -259,6 +274,17 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Magma shortcuts
+nnoremap <silent><expr> <LocalLeader>r  :MagmaEvaluateOperator<CR>
+nnoremap <silent>       <LocalLeader>rr :MagmaEvaluateLine<CR>
+xnoremap <silent>       <LocalLeader>r  :<C-u>MagmaEvaluateVisual<CR>
+nnoremap <silent>       <LocalLeader>rc :MagmaReevaluateCell<CR>
+nnoremap <silent>       <LocalLeader>rd :MagmaDelete<CR>
+nnoremap <silent>       <LocalLeader>ro :MagmaShowOutput<CR>
+
+let g:magma_automatically_open_output = v:false
+let g:magma_image_provider = "ueberzug"
 
 set encoding=UTF-8
 set nospell
