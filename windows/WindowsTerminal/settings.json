@@ -116,7 +116,7 @@
                 "useAcrylic": true
             },
             {
-                "colorScheme": "Raspberry",
+                "colorScheme": "Paraiso Dark",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
                 "guid": "{d7b20cea-47a9-518c-95a4-c8bd91e2e1c6}",
@@ -127,23 +127,23 @@
             {
                 "colorScheme": "gruvbox-material",
                 "commandline": "wsl -d kali-linux",
-                "startingDirectory" : "//wsl$/kali-linux/home/miketvo",
                 "cursorShape": "vintage",
                 "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
                 "hidden": false,
                 "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
                 "name": "Kali Linux",
+                "startingDirectory": "//wsl$/kali-linux/home/miketvo",
                 "tabTitle": "Kali Linux"
             },
             {
+                "colorScheme": "gruvbox-material",
+                "commandline": "wsl -d kali-linux kex --esm --wtstart -s",
+                "cursorShape": "vintage",
                 "guid": "{55ca431a-3a87-5fb3-83cd-11ecedd031d2}",
                 "hidden": false,
                 "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
                 "name": "Kali Linux Desktop",
-                "commandline": "wsl -d kali-linux kex --esm --wtstart -s",
-                "startingDirectory" : "//wsl$/kali-linux/home/miketvo",
-                "colorScheme": "gruvbox-material",
-                "cursorShape": "vintage",
+                "startingDirectory": "//wsl$/kali-linux/home/miketvo",
                 "tabTitle": "Kali Linux Desktop"
             },
             {
@@ -622,7 +622,7 @@
             "background": "#282C34",
             "black": "#282C34",
             "blue": "#61AFEF",
-            "brightBlack": "#778299",
+            "brightBlack": "#5D677A",
             "brightBlue": "#61AFEF",
             "brightCyan": "#56B6C2",
             "brightGreen": "#98C379",
