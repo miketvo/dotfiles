@@ -12,7 +12,7 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'sheerun/vim-polyglot'
-  Plug 'luckydev/150colors'
+  Plug 'chriskempson/base16-vim'
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
   Plug 'ryanoasis/vim-devicons'
@@ -286,8 +286,9 @@ if has('termguicolors')
   set termguicolors
   lua require('colorizer').setup()
 endif
-colorscheme wombat256
-let g:airline_theme='wombat'
+let base16colorspace=256
+colorscheme base16-paraiso
+let g:airline_theme='base16_paraiso'
 let g:airline_powerline_fonts = 1
 
 hi Normal guibg=NONE ctermbg=NONE
