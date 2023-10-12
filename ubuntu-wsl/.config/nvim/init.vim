@@ -216,7 +216,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " ==================================================================================
 
 
-" vim-pandoc and vim-pandoc-syntax configuration
+" vim-pandoc and vim-pandoc-syntax configurations
 " ==================================================================================
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#folding#mode = ['manual']
