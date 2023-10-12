@@ -13,12 +13,19 @@ end
 config.default_prog = { "powershell" }
 
 -- Behavior
+config.initial_cols = 120
+config.initial_rows = 30
 config.window_close_confirmation = "NeverPrompt"
 
 wezterm.on("format-tab-title", function(tab)
   local pane = tab.active_pane
+  local title = pane.title
   if pane.domain_name then
-    if pane.domain_name == "local" then title = " Powershell "
+    if pane.domain_name == "local" then
+      if (string.find(title, "powershell") ~= nil) or (string.find(title, "pwsh") ~= nil) then title = " Powershell "
+      elseif string.find(title, "cmd") ~= nil then title = " Command Prompt "
+      else title = " Powershell - " .. title .. " "
+      end
     elseif pane.domain_name == "WSL:Ubuntu-22.04" then title = " Ubuntu "
     elseif pane.domain_name == "WSL:kali-linux" then title = " Kali Linux "
     end
@@ -126,7 +133,8 @@ config.colors = {
   foreground = "#dcdfe4",
   indexed = {},
   selection_bg = "#474e5d",
-  selection_fg = "#dcdfe4"
+  selection_fg = "#dcdfe4",
+  split = '#5d677a'
 }
 
 config.inactive_pane_hsb = {

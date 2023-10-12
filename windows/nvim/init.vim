@@ -12,7 +12,6 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'sheerun/vim-polyglot'
-  Plug 'goerz/jupytext.vim'
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -216,13 +215,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " ==================================================================================
 
 
-" Jupytext.Vim configurations
-" ==================================================================================
-let g:jupytext_fmt = 'py'
-" ==================================================================================
-
-
-" vim-pandoc and vim-pandoc-syntax configuration
+" vim-pandoc and vim-pandoc-syntax configurations
 " ==================================================================================
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#folding#mode = ['manual']
