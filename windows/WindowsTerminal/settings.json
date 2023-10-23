@@ -75,7 +75,7 @@
                     "audible",
                     "taskbar"
                 ],
-                "colorScheme": "One Half Dark",
+                "colorScheme": "nord",
                 "cursorShape": "vintage",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
@@ -90,7 +90,7 @@
                 "useAcrylic": true
             },
             {
-                "colorScheme": "One Half Dark",
+                "colorScheme": "nord",
                 "guid": "{99331914-5611-54fa-9fc2-3bda2159660f}",
                 "hidden": false,
                 "name": "Developer PowerShell",
@@ -1106,50 +1106,6 @@
     "showTerminalTitleInTitlebar": true,
     "startOnUserLogin": false,
     "tabWidthMode": "equal",
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ],
+    "themes": [],
     "useAcrylicInTabRow": true
 }
