@@ -6,7 +6,7 @@
       "newline": true,
       "segments": [
         {
-          "background": "#5D677A",
+          "background": "#4c566a",
           "foreground": "transparent",
           "style": "diamond",
           "leading_diamond": "\u250c\ue0b2",
@@ -17,8 +17,8 @@
           "type": "time"
         },
         {
-          "background": "#5D677A",
-          "foreground": "#FFFFFF",
+          "background": "#4c566a",
+          "foreground": "#e5e9f0",
           "properties": {
             "always_enabled": true
           },
@@ -27,7 +27,7 @@
           "type": "executiontime"
         },
         {
-          "background": "#61AFEF",
+          "background": "#81a1c1",
           "foreground": "transparent",
           "invert_powerline": true,
           "style": "diamond",
@@ -39,7 +39,7 @@
           "type": "shell"
         },
         {
-          "background": "#56B6C2",
+          "background": "#8fbcbb",
           "foreground": "transparent",
           "style": "powerline",
           "template": " # {{ .UserName }}@{{ .HostName }} ",
@@ -54,13 +54,13 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#5D677A",
+          "foreground": "#4c566a",
           "style": "plain",
           "template": "\u251c\u2500[",
           "type": "text"
         },
         {
-          "foreground": "#61AFEF",
+          "foreground": "#81a1c1",
           "properties": {
             "folder_separator_icon": "\\",
             "style": "full"
@@ -70,15 +70,15 @@
           "type": "path"
         },
         {
-          "foreground": "#5D677A",
+          "foreground": "#4c566a",
           "style": "plain",
           "template": "] ",
           "type": "text"
         },
         {
           "style": "plain",
-          "foreground": "#5D677A",
-          "template": "on <#FFFFFF>git:</><#E5C07B>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#FFFFFF>\u2190</> <#E06C75>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#FFFFFF>\u2190</> <#98C379>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#C678DD>\uf51e {{ .StashCount }}</>{{ end }}",
+          "foreground": "#4c566a",
+          "template": "on <#e5e9f0>git:</><#ebcb8b>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <#e5e9f0>\u2190</> <#bf616a>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#e5e9f0>\u2190</> <#98C379>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#FFFFFF>\u2190</> <#b48ead>\uf51e {{ .StashCount }}</>{{ end }}",
           "properties": {
             "branch_max_length": 25,
             "fetch_status": true,
@@ -95,25 +95,25 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#5D677A",
+          "foreground": "#4c566a",
           "style": "plain",
           "template": "\u2514\u2500\u25b6 ",
           "type": "text"
         },
         {
-          "foreground": "#E5C07B",
+          "foreground": "#ebcb8b",
           "style": "plain",
           "template": "\uf0e7 ",
           "type": "root"
         },
         {
-          "foreground": "#C678DD",
+          "foreground": "#b48ead",
           "style": "plain",
           "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
           "type": "python"
         },
         {
-          "background": "#E06C75",
+          "background": "#bf616a",
           "foreground": "transparent",
           "style": "diamond",
           "leading_diamond": "\ue0b2",
@@ -122,7 +122,7 @@
           "type": "exit"
         },
         {
-          "foreground": "#E06C75",
+          "foreground": "#bf616a",
           "style": "plain",
           "template": "<b>$</b>",
           "type": "text"
