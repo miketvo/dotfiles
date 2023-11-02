@@ -115,36 +115,6 @@
                 "name": "Git Bash",
                 "tabTitle": "Git Bash",
                 "useAcrylic": true
-            },
-            {
-                "colorScheme": "gruvbox-material",
-                "commandline": "wsl -d kali-linux",
-                "cursorShape": "vintage",
-                "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
-                "hidden": false,
-                "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
-                "name": "Kali Linux",
-                "startingDirectory": "//wsl$/kali-linux/home/miketvo",
-                "tabTitle": "Kali Linux"
-            },
-            {
-                "colorScheme": "gruvbox-material",
-                "commandline": "wsl -d kali-linux kex --esm --wtstart -s",
-                "cursorShape": "vintage",
-                "guid": "{55ca431a-3a87-5fb3-83cd-11ecedd031d2}",
-                "hidden": false,
-                "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
-                "name": "Kali Linux Desktop",
-                "startingDirectory": "//wsl$/kali-linux/home/miketvo",
-                "tabTitle": "Kali Linux Desktop"
-            },
-            {
-                "colorScheme": "Tango Dark",
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure",
-                "useAcrylic": true
             }
         ]
     },
