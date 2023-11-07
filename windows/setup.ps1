@@ -1,14 +1,69 @@
-# Get Packages
+# Scoop Setup
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 scoop bucket add extras
-scoop bucket add anderlli0053_DEV-tools https://github.com/anderlli0053/DEV-tools.git
-scoop install main/git main/gh main/curl main/coreutils main/unxutils main/which main/touch main/bottom main/bat main/mdcat main/broot main/fd main/fzf main/winfetch extras/wezterm extras/windows-terminal main/oh-my-posh extras/onefetch extras/lazygit extras/cookiecutter anderlli0053_DEV-tools/exa
+scoop bucket add versions
+scoop bucket add java
+scoop bucket add anderlli0053_DEV-tools "https://github.com/anderlli0053/DEV-tools.git"
+
+# Essential Packages
+scoop install main/aria2
+scoop install main/git
+scoop install main/gh
+scoop install main/curl
+scoop install main/coreutils
+scoop install main/unxutils
+scoop install main/grep
+scoop install main/sed
+scoop install main/touch
+scoop install main/which
+scoop install main/bottom
+scoop install main/bat
+scoop install main/mdcat
+scoop install main/broot
+scoop install main/fd
+scoop install main/fzf
+scoop install main/winfetch
+scoop install main/sudo
+scoop install extras/wezterm
+scoop install extras/windows-terminal
+scoop install main/oh-my-posh
+scoop install extras/onefetch
+scoop install extras/lazygit
+scoop install anderlli0053_DEV-tools/du
+scoop install anderlli0053_DEV-tools/exa
+
+# Neovim
 scoop install main/neovim
 iwr -useb "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" |`
     ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
-scoop bucket add nerd-fonts
-scoop install nerd-fonts/JetBrains-Mono
+
+# NodeJS Ecosystem
+scoop install main/nvm
+nvm install lts
+nvm use lts
+
+# Python Ecosystem
+scoop install main/python
+python -m pip install pipx
+python -m pipx install pipenv
+python -m pipx install cookiecutter
+python -m pipx ensurepath
+
+# C/C++
+scoop install main/gcc
+scoop install main/gdb
+scoop install main/llvm
+
+# Java
+scoop install java/openjdk
+scoop install main/jdtls
+
+# Nerd Fonts
+git clone --filter=blob:none --sparse "https://github.com/ryanoasis/nerd-fonts.git"
+git -C nerd-fonts sparse-checkout add patched-fonts/JetBrainsMono
+nerd-fonts/install.ps1 JetBrainsMono -WhatIf
+rm -r -Force nerd-fonts
 
 # Install Configuration Files
 Copy-Item -Path "$PSScriptRoot/*" -Destination "$env:USERPROFILE" -Exclude "setup.ps1" -Recurse -Force -Container
