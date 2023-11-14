@@ -27,8 +27,6 @@ scoop install main/fd
 scoop install main/fzf
 scoop install main/winfetch
 scoop install main/sudo
-scoop install extras/wezterm
-scoop install extras/windows-terminal
 scoop install main/oh-my-posh
 scoop install extras/onefetch
 scoop install extras/lazygit
@@ -72,6 +70,11 @@ git clone --filter=blob:none --sparse "https://github.com/ryanoasis/nerd-fonts.g
 git -C nerd-fonts sparse-checkout add patched-fonts/JetBrainsMono
 nerd-fonts/install.ps1 JetBrainsMono -WhatIf
 rm -r -Force nerd-fonts
+
+# Terminal Emulators
+scoop install extras/wezterm
+scoop install extras/windows-terminal
+reg import "$env:USERPROFILE\scoop\apps\windows-terminal\current\install-context.reg"
 
 # Install Configuration Files
 Write-Output "Installing configurations..."
