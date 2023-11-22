@@ -52,6 +52,7 @@ Write-Output "Setting up Python ecosystem..."
 scoop install main/python
 python -m pip install pipx
 python -m pipx install pipenv
+python -m pipx install poetry
 python -m pipx install cookiecutter
 python -m pipx ensurepath
 
