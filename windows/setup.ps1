@@ -13,6 +13,7 @@ scoop install main/aria2
 scoop install main/git
 scoop install main/gh
 scoop install main/curl
+scoop install main/make
 scoop install main/coreutils
 scoop install main/unxutils
 scoop install main/grep
@@ -76,6 +77,10 @@ rm -r -Force nerd-fonts
 scoop install extras/wezterm
 scoop install extras/windows-terminal
 reg import "$env:USERPROFILE\scoop\apps\windows-terminal\current\install-context.reg"
+
+# Path clean-up
+scoop reset make
+scoop reset which
 
 # Install Configuration Files
 Write-Output "Installing configurations..."
