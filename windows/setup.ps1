@@ -21,6 +21,7 @@ scoop install main/sed
 scoop install main/touch
 scoop install main/which
 scoop install main/bottom
+scoop install main/eza
 scoop install main/bat
 scoop install main/mdcat
 scoop install main/broot
@@ -33,7 +34,6 @@ scoop install extras/onefetch
 scoop install extras/lazygit
 scoop install extras/calibre
 scoop install anderlli0053_DEV-tools/du
-scoop install anderlli0053_DEV-tools/exa
 
 # Neovim
 Write-Output "Installing NeoVim..."
