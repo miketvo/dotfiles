@@ -34,6 +34,7 @@ scoop install extras/onefetch
 scoop install extras/lazygit
 scoop install extras/calibre
 scoop install anderlli0053_DEV-tools/du
+scoop install anderlli0053_DEV-tools/sl
 
 # Neovim
 Write-Output "Installing NeoVim..."
