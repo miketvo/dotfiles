@@ -11,6 +11,14 @@
             }
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
             "command": "paste"
         },
         {
@@ -25,14 +33,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+v"
         }
     ],
     "centerOnLaunch": true,
@@ -1074,7 +1074,7 @@
             "background": "#2E3440",
             "black": "#3B4252",
             "blue": "#81A1C1",
-            "brightBlack": "#4C566A",
+            "brightBlack": "#6C7996",
             "brightBlue": "#81A1C1",
             "brightCyan": "#8FBCBB",
             "brightGreen": "#A3BE8C",
