@@ -1,0 +1,239 @@
+[gd_resource type="EditorSettings" format=3]
+
+[resource]
+interface/editor/display_scale = 7
+interface/editor/custom_display_scale = 0.85
+interface/editor/main_font_size = 16
+interface/editor/code_font_size = 17
+interface/editor/font_antialiasing = 2
+interface/editor/font_hinting = 3
+interface/editor/font_subpixel_positioning = 3
+interface/editor/code_font = "C:/Users/vomin/AppData/Local/Microsoft/Windows/Fonts/JetBrainsMono-Regular.ttf"
+interface/theme/preset = "Custom"
+interface/theme/base_color = Color(0.145098, 0.145098, 0.14902, 1)
+interface/theme/accent_color = Color(0.8, 0.470588, 0.196078, 1)
+interface/theme/contrast = 0.3
+interface/theme/icon_saturation = 0.75
+interface/theme/relationship_line_opacity = 0.2
+filesystem/directories/default_project_path = "C:/Users/vomin/Projects"
+text_editor/theme/color_theme = "darcula-dark"
+text_editor/theme/highlighting/symbol_color = Color(0.8, 0.8, 0.8, 1)
+text_editor/theme/highlighting/keyword_color = Color(0.811765, 0.462745, 0.192157, 1)
+text_editor/theme/highlighting/control_flow_keyword_color = Color(0.796078, 0.65098, 0.968627, 1)
+text_editor/theme/highlighting/base_type_color = Color(0.647059, 0.760784, 0.380392, 1)
+text_editor/theme/highlighting/engine_type_color = Color(1, 0.776471, 0.427451, 1)
+text_editor/theme/highlighting/user_type_color = Color(0.45098, 0.815686, 1, 1)
+text_editor/theme/highlighting/comment_color = Color(0.439216, 0.439216, 0.439216, 1)
+text_editor/theme/highlighting/doc_comment_color = Color(0.501961, 0.6, 0.701961, 1)
+text_editor/theme/highlighting/string_color = Color(0.415686, 0.529412, 0.34902, 1)
+text_editor/theme/highlighting/background_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+text_editor/theme/highlighting/completion_background_color = Color(0.105882, 0.105882, 0.105882, 1)
+text_editor/theme/highlighting/completion_selected_color = Color(0.203922, 0.203922, 0.203922, 1)
+text_editor/theme/highlighting/completion_existing_color = Color(0.87451, 0.87451, 0.87451, 0.129412)
+text_editor/theme/highlighting/completion_scroll_color = Color(0.392157, 0.392157, 0.392157, 1)
+text_editor/theme/highlighting/completion_scroll_hovered_color = Color(0.270588, 0.278431, 0.352941, 1)
+text_editor/theme/highlighting/completion_font_color = Color(0.666667, 0.666667, 0.666667, 1)
+text_editor/theme/highlighting/text_color = Color(0.8, 0.8, 0.8, 1)
+text_editor/theme/highlighting/line_number_color = Color(0.4, 0.4, 0.4, 1)
+text_editor/theme/highlighting/safe_line_number_color = Color(0.2, 0.4, 0.301961, 1)
+text_editor/theme/highlighting/caret_color = Color(0.666667, 0.666667, 0.666667, 1)
+text_editor/theme/highlighting/caret_background_color = Color(0.172549, 0.172549, 0.172549, 1)
+text_editor/theme/highlighting/text_selected_color = Color(0.8, 0.8, 0.8, 1)
+text_editor/theme/highlighting/selection_color = Color(0, 0.764706, 1, 0.188235)
+text_editor/theme/highlighting/current_line_color = Color(1, 1, 1, 0.0431373)
+text_editor/theme/highlighting/line_length_guideline_color = Color(0.2, 0.2, 0.2, 1)
+text_editor/theme/highlighting/word_highlighted_color = Color(0, 0.760784, 1, 0.0784314)
+text_editor/theme/highlighting/number_color = Color(0.478431, 0.619608, 0.760784, 1)
+text_editor/theme/highlighting/function_color = Color(1, 0.776471, 0.427451, 1)
+text_editor/theme/highlighting/member_variable_color = Color(0.619608, 0.482353, 0.690196, 1)
+text_editor/theme/highlighting/mark_color = Color(1, 0.196078, 0.196078, 0.219608)
+text_editor/theme/highlighting/bookmark_color = Color(0.45098, 0.815686, 1, 1)
+text_editor/theme/highlighting/breakpoint_color = Color(0.8, 0.8, 0.4, 0.2)
+text_editor/theme/highlighting/executing_line_color = Color(0.2, 0.8, 0.2, 0.4)
+text_editor/theme/highlighting/code_folding_color = Color(0.501961, 0.501961, 0.501961, 1)
+text_editor/theme/highlighting/folded_code_region_color = Color(0.678431, 0.458824, 0.768627, 0.2)
+text_editor/theme/highlighting/search_result_color = Color(0.396078, 0.211765, 0.0941176, 1)
+text_editor/theme/highlighting/search_result_border_color = Color(0, 0, 0, 0)
+text_editor/appearance/whitespace/line_spacing = 0
+text_editor/behavior/indent/type = 1
+text_editor/completion/add_type_hints = true
+asset_library/available_urls = {
+"godotengine.org (Official)": "https://godotengine.org/asset-library/api"
+}
+asset_library/use_threads = true
+export/android/android_sdk_path = ""
+export/android/debug_keystore = ""
+export/android/debug_keystore_user = "androiddebugkey"
+export/android/debug_keystore_pass = "android"
+export/android/force_system_user = false
+export/android/shutdown_adb_on_exit = true
+export/android/one_click_deploy_clear_previous_install = false
+export/macos/rcodesign = ""
+export/uwp/signtool = ""
+export/uwp/debug_certificate = ""
+export/uwp/debug_password = ""
+export/uwp/debug_algorithm = 2
+export/web/http_host = "localhost"
+export/web/http_port = 8060
+export/web/use_tls = false
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/rcedit = "C:/Users/vomin/scoop/shims/rcedit.exe"
+export/windows/signtool = "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/signtool.exe"
+interface/editor/save_on_focus_loss = false
+interface/editor/show_update_spinner = false
+interface/editor/update_continuously = false
+interface/editor/localize_settings = true
+interface/scene_tabs/restore_scenes_on_load = true
+interface/inspector/default_property_name_style = 1
+interface/inspector/default_float_step = 0.001
+interface/inspector/disable_folding = false
+interface/inspector/auto_unfold_foreign_scenes = true
+interface/inspector/horizontal_vector2_editing = false
+interface/inspector/horizontal_vector_types_editing = true
+interface/inspector/open_resources_in_current_inspector = true
+interface/inspector/resources_to_open_in_new_inspector = PackedStringArray("Script", "MeshLibrary")
+interface/inspector/default_color_picker_mode = 0
+interface/inspector/default_color_picker_shape = 3
+_default_feature_profile = ""
+version_control/username = ""
+version_control/ssh_public_key_path = ""
+version_control/ssh_private_key_path = ""
+interface/editors/show_scene_tree_root_selection = true
+interface/editors/derive_script_globals_by_name = true
+_use_favorites_root_selection = false
+filesystem/file_server/port = 6010
+filesystem/file_server/password = ""
+editors/3d/manipulator_gizmo_size = 80
+editors/3d/manipulator_gizmo_opacity = 0.9
+editors/3d/navigation/show_viewport_rotation_gizmo = true
+editors/3d/navigation/show_viewport_navigation_gizmo = false
+text_editor/behavior/files/auto_reload_and_parse_scripts_on_save = true
+text_editor/behavior/files/open_dominant_script_on_scene_change = true
+text_editor/external/use_external_editor = true
+text_editor/external/exec_path = "C:/Users/vomin/AppData/Local/Programs/Microsoft VS Code/bin/code.cmd"
+text_editor/script_list/script_temperature_enabled = false
+text_editor/script_list/script_temperature_history_size = 15
+text_editor/script_list/group_help_pages = true
+text_editor/script_list/sort_scripts_by = 0
+text_editor/script_list/list_script_names_as = 2
+text_editor/external/exec_flags = "{project} --goto {file}:{line}:{col}"
+editors/bone_mapper/handle_colors/unset = Color(0.3, 0.3, 0.3, 1)
+editors/bone_mapper/handle_colors/set = Color(0.1, 0.6, 0.25, 1)
+editors/bone_mapper/handle_colors/missing = Color(0.8, 0.2, 0.8, 1)
+editors/bone_mapper/handle_colors/error = Color(0.8, 0.2, 0.2, 1)
+network/debug_adapter/remote_port = 6006
+network/debug_adapter/request_timeout = 1000
+network/debug_adapter/sync_breakpoints = false
+editors/3d_gizmos/gizmo_colors/path = Color(0.5, 0.5, 1, 0.8)
+editors/3d_gizmos/gizmo_colors/skeleton = Color(1, 0.8, 0.4, 1)
+editors/3d_gizmos/gizmo_colors/selected_bone = Color(0.8, 0.3, 0, 1)
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+editors/3d_gizmos/gizmo_settings/bone_shape = 1
+editors/3d_gizmos/gizmo_colors/csg = Color(0, 0.4, 1, 0.15)
+editors/grid_map/editor_side = 1
+editors/grid_map/palette_min_width = 230
+editors/grid_map/preview_size = 64
+export/ssh/ssh = ""
+export/ssh/scp = ""
+network/language_server/remote_host = "127.0.0.1"
+network/language_server/remote_port = 6005
+network/language_server/enable_smart_resolve = true
+network/language_server/show_native_symbols_in_editor = false
+network/language_server/use_thread = false
+editors/3d_gizmos/gizmo_colors/camera = Color(0.8, 0.4, 0.8, 1)
+editors/3d_gizmos/gizmo_colors/stream_player_3d = Color(0.4, 0.8, 1, 1)
+editors/3d_gizmos/gizmo_colors/occluder = Color(0.8, 0.5, 1, 1)
+editors/3d_gizmos/gizmo_colors/visibility_notifier = Color(0.8, 0.5, 0.7, 1)
+editors/3d_gizmos/gizmo_colors/particles = Color(0.8, 0.7, 0.4, 1)
+editors/3d_gizmos/gizmo_colors/particle_attractor = Color(1, 0.7, 0.5, 1)
+editors/3d_gizmos/gizmo_colors/particle_collision = Color(0.5, 0.7, 1, 1)
+editors/3d_gizmos/gizmo_colors/reflection_probe = Color(0.6, 1, 0.5, 1)
+editors/3d_gizmos/gizmo_colors/decal = Color(0.6, 0.5, 1, 1)
+editors/3d_gizmos/gizmo_colors/voxel_gi = Color(0.5, 1, 0.6, 1)
+editors/3d_gizmos/gizmo_colors/lightmap_lines = Color(0.5, 0.6, 1, 1)
+editors/3d_gizmos/gizmo_colors/lightprobe_lines = Color(0.5, 0.6, 1, 1)
+editors/3d_gizmos/gizmo_colors/joint_body_a = Color(0.6, 0.8, 1, 1)
+editors/3d_gizmos/gizmo_colors/joint_body_b = Color(0.6, 0.9, 1, 1)
+editors/3d_gizmos/gizmo_colors/fog_volume = Color(0.5, 0.7, 1, 1)
+text_editor/theme/highlighting/gdscript/function_definition_color = Color(1, 0.776471, 0.427451, 1)
+text_editor/theme/highlighting/gdscript/global_function_color = Color(0.952941, 0.545098, 0.658824, 1)
+text_editor/theme/highlighting/gdscript/node_path_color = Color(0.733333, 0.709804, 0.160784, 1)
+text_editor/theme/highlighting/gdscript/node_reference_color = Color(0.580392, 0.886275, 0.835294, 1)
+text_editor/theme/highlighting/gdscript/annotation_color = Color(0.980392, 0.701961, 0.529412, 1)
+text_editor/theme/highlighting/gdscript/string_name_color = Color(0.803922, 0.839216, 0.956863, 1)
+text_editor/help/sort_functions_alphabetically = true
+export/android/use_wifi_for_remote_debug = false
+export/android/wifi_remote_debug_host = "localhost"
+docks/scene_tree/ask_before_deleting_related_animation_tracks = true
+editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size = 0.8
+editors/3d_gizmos/gizmo_colors/path_tilt = Color(1, 1, 0.4, 0.9)
+text_editor/theme/highlighting/comment_markers/critical_color = Color(0.768627, 0.34902, 0.34902, 1)
+text_editor/theme/highlighting/comment_markers/warning_color = Color(0.721569, 0.611765, 0.478431, 1)
+text_editor/theme/highlighting/comment_markers/notice_color = Color(0.560784, 0.670588, 0.509804, 1)
+text_editor/theme/highlighting/comment_markers/critical_list = "ALERT,ATTENTION,CAUTION,CRITICAL,DANGER,SECURITY"
+text_editor/theme/highlighting/comment_markers/warning_list = "BUG,DEPRECATED,FIXME,HACK,TASK,TBD,TODO,WARNING"
+text_editor/theme/highlighting/comment_markers/notice_list = "INFO,NOTE,NOTICE,TEST,TESTING"
+aseprite/general/command_path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite\\Aseprite.exe"
+importality/temporary_files_directory_path = ""
+importality/aseprite_or_libre_sprite_command = ""
+importality/aseprite_or_libre_sprite_command_arguments = PackedStringArray()
+importality/krita_command = ""
+importality/krita_command_arguments = PackedStringArray()
+importality/pencil2d_command = ""
+importality/pencil2d_command_arguments = PackedStringArray()
+importality/command_building_rules_for_custom_image_loader = PackedStringArray()
+shortcuts = [{
+"name": "script_text_editor/convert_to_uppercase",
+"shortcuts": []
+}, {
+"name": "script_text_editor/convert_to_lowercase",
+"shortcuts": []
+}, {
+"name": "script_text_editor/capitalize",
+"shortcuts": []
+}]
+metadata/script_setup_templates_dictionary = {
+"": "0ObjectEmpty",
+"AnimatableBody2D": "0NodeDefault",
+"Button": "0NodeDefault",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
+"CheckButton": "0ObjectEmpty",
+"Control": "0NodeDefault",
+"G": "0ObjectEmpty",
+"Ga": "0ObjectEmpty",
+"Gam": "0ObjectEmpty",
+"Game": "0ObjectEmpty",
+"GameS": "0ObjectEmpty",
+"GameSc": "0ObjectEmpty",
+"GameSce": "0ObjectEmpty",
+"GameScen": "0ObjectEmpty",
+"GameScene": "0ObjectEmpty",
+"GameScene2": "0ObjectEmpty",
+"GameScene2D": "0ObjectEmpty",
+"Label": "0NodeDefault",
+"N": "0ObjectEmpty",
+"No": "0ObjectEmpty",
+"Nod": "0ObjectEmpty",
+"Node": "0ObjectEmpty",
+"Node2": "0ObjectEmpty",
+"Node2D": "0ObjectEmpty",
+"RigidBody2D": "0NodeDefault",
+"S": "0ObjectEmpty",
+"Sc": "0ObjectEmpty",
+"Sce": "0ObjectEmpty",
+"Scen": "0ObjectEmpty",
+"Scene": "0ObjectEmpty",
+"Se": "0ObjectEmpty",
+"Sprite2D": "0ObjectEmpty",
+"State": "0NodeDefault",
+"StateMachine": "0NodeDefault",
+"Sv": "0ObjectEmpty",
+"Sve": "0ObjectEmpty",
+"Sven": "0ObjectEmpty",
+"Svene": "0ObjectEmpty",
+"UI": "0NodeDefault",
+"VBoxContainer": "0NodeDefault"
+}
+metadata/script_setup_use_script_templates = true
+metadata/export_template_download_directory = "C:/Users/vomin/AppData/Local/Godot"
