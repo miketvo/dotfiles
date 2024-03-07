@@ -2,6 +2,11 @@
 Write-Output "Setting up Scoop package manager..."
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
+
+Write-Output "Setting up Git..."
+scoop install git
+
+Write-Output "Setting up Scoop Buckets..."
 scoop bucket add extras
 scoop bucket add versions
 scoop bucket add java
