@@ -37,6 +37,8 @@ scoop install main/sudo
 scoop install main/oh-my-posh
 scoop install extras/onefetch
 scoop install extras/lazygit
+scoop install main/perl
+scoop install main/miktex
 scoop install extras/calibre
 scoop install anderlli0053_DEV-tools/du
 scoop install anderlli0053_DEV-tools/sl
