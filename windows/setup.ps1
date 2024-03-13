@@ -1,7 +1,28 @@
+#
+# Syntax: setup.ps1 [Options]
+# Options:
+#   -b -Bare (Optional) Barebone installation. Skips frameworks and build toolchains.
+#   -h -Help (Optional) Display help and exit.
+#
+
+[CmdletBinding()] param(
+    [Alias("b")][switch]$Bare,
+    [Alias("h")][switch]$Help
+)
+
+if ($Help.IsPresent) {
+    Write-Output "Syntax: setup.ps1 [Options]"
+    Write-Output "Options:"
+    Write-Output "  -b -Bare (Optional) Barebone installation. Skips frameworks and build toolchains."
+    Write-Output "  -h -Help (Optional) Display help and exit."
+    exit 0
+}
+
+
 # Scoop Setup
 Write-Output "Setting up Scoop package manager..."
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
+# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+# irm get.scoop.sh | iex
 
 Write-Output "Setting up Git..."
 scoop install git
@@ -38,6 +59,7 @@ scoop install main/sudo
 scoop install main/oh-my-posh
 scoop install extras/onefetch
 scoop install extras/lazygit
+scoop install main/python
 scoop install main/perl
 scoop install main/miktex
 scoop install extras/calibre
@@ -54,32 +76,33 @@ iwr -useb "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" 
 Write-Output "Installing Visual Studio Code..."
 scoop install extras/vscode
 
-# NodeJS Ecosystem
-Write-Output "Setting up NodeJS ecosystem..."
-scoop install main/nvm
-nvm install lts
-nvm use lts
+if (-Not ($Bare.IsPresent)) {
+    # NodeJS Ecosystem
+    Write-Output "Setting up NodeJS ecosystem..."
+    scoop install main/nvm
+    nvm install lts
+    nvm use lts
 
-# Python Ecosystem
-Write-Output "Setting up Python ecosystem..."
-scoop install main/python
-python -m pip install pipx
-python -m pipx install pipenv
-python -m pipx install poetry
-python -m pipx install tox
-python -m pipx install cookiecutter
-python -m pipx ensurepath
+    # Python Ecosystem
+    Write-Output "Setting up Python ecosystem..."
+    python -m pip install pipx
+    python -m pipx install pipenv
+    python -m pipx install poetry
+    python -m pipx install tox
+    python -m pipx install cookiecutter
+    python -m pipx ensurepath
 
-# C/C++
-Write-Output "Setting up C/C++ ecosystem..."
-scoop install main/gcc
-scoop install main/gdb
-scoop install main/llvm
+    # C/C++
+    Write-Output "Setting up C/C++ ecosystem..."
+    scoop install main/gcc
+    scoop install main/gdb
+    scoop install main/llvm
 
-# Java
-Write-Output "Setting up Java ecosystem..."
-scoop install java/openjdk
-scoop install main/jdtls
+    # Java
+    Write-Output "Setting up Java ecosystem..."
+    scoop install java/openjdk
+    scoop install main/jdtls
+}
 
 # Nerd Fonts
 Write-Output "Installing Nerd Fonts..."
