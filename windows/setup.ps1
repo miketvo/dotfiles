@@ -50,6 +50,7 @@ iwr -useb "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" 
     ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
 
 # Visual Studio Code
+Write-Output "Installing Visual Studio Code..."
 scoop install extras/vscode
 
 # NodeJS Ecosystem
@@ -87,11 +88,13 @@ nerd-fonts/install.ps1 JetBrainsMono -WhatIf
 rm -r -Force nerd-fonts
 
 # Terminal Emulators
+Write-Output "Installing Terminal Emulators..."
 scoop install extras/wezterm
 scoop install extras/windows-terminal
 reg import "$env:USERPROFILE\scoop\apps\windows-terminal\current\install-context.reg"
 
 # Path clean-up
+Write-Output "Post-Install Cleaning..."
 scoop reset make
 scoop reset which
 
