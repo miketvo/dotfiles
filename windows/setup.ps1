@@ -21,6 +21,7 @@ scoop install main/curl
 scoop install main/make
 scoop install main/coreutils
 scoop install main/unxutils
+scoop install main/openssl
 scoop install main/grep
 scoop install main/sed
 scoop install main/touch
