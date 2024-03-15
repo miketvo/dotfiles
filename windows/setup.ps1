@@ -21,11 +21,12 @@ if ($Help.IsPresent) {
 
 # Scoop Setup
 Write-Output "Setting up Scoop package manager..."
-# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-# irm get.scoop.sh | iex
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
 
 Write-Output "Setting up Git..."
 scoop install git
+git config --global credential.helper manager
 
 Write-Output "Setting up Scoop Buckets..."
 scoop bucket add extras
