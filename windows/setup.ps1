@@ -77,8 +77,8 @@ Write-Output "Installing Visual Studio Code..."
 scoop install extras/vscode
 
 if (-Not ($Bare.IsPresent)) {
-    # MSYS2
-    scoop install main/msys2
+    # Cygwin
+    scoop install main/cygwin
 
     # NodeJS Ecosystem
     Write-Output "Setting up NodeJS ecosystem..."
