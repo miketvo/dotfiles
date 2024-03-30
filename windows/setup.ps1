@@ -57,7 +57,6 @@ scoop install main/fd
 scoop install main/fzf
 scoop install main/winfetch
 scoop install main/sudo
-scoop install main/oh-my-posh
 scoop install extras/onefetch
 scoop install extras/lazygit
 scoop install main/python
@@ -78,6 +77,9 @@ Write-Output "Installing Visual Studio Code..."
 scoop install extras/vscode
 
 if (-Not ($Bare.IsPresent)) {
+    # MSYS2
+    scoop install main/msys2
+
     # NodeJS Ecosystem
     Write-Output "Setting up NodeJS ecosystem..."
     scoop install main/nvm
@@ -111,6 +113,12 @@ git clone --filter=blob:none --sparse "https://github.com/ryanoasis/nerd-fonts.g
 git -C nerd-fonts sparse-checkout add patched-fonts/JetBrainsMono
 nerd-fonts/install.ps1 JetBrainsMono -WhatIf
 rm -r -Force nerd-fonts
+
+# Eye Candy
+Write-Output "Setting up Eye Candy"
+scoop install main/oh-my-posh
+scoop install extras/terminal-icons
+Import-Module -Name Terminal-Icons
 
 # Terminal Emulators
 Write-Output "Installing Terminal Emulators..."
