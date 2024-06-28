@@ -67,7 +67,9 @@ opt.listchars = {              -- Custom whitespace markers.
   trail = '·',
   nbsp = '␣',
 }
-opt.termguicolors = true       -- True color support.
+if vim.fn.has('termguicolors') then
+  opt.termguicolors = true       -- True color support.
+end
 
 -- Window splitting options.
 opt.splitright = true
