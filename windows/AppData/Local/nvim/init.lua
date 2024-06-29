@@ -24,13 +24,13 @@ require('config.autocmds')  -- See stdpath('config') .. '/config/autocmds.lua'.
 -- [[ PLUGIN MANAGER (LAZY.NVIM) ]]
 -- See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info.
 --
--- Install and configure plugins by adding or modifying specfiles in stdpath('config') .. '/plugins'. See
+-- NOTE: Install and configure plugins by adding or modifying specfiles in stdpath('config') .. '/plugins'. See
 -- `:help stdpath()`.
 --
 -- To check the current status of your plugins, run
---   :Lazy
+--   :Lazy (shortcut: <leader>l)
 --
---   You can press `?` in this menu for help. Use `:q` to close the window
+--   You can press `?` in this menu for help. Use `:q` (shortcut: q) to close the window.
 --
 -- To update plugins you can run
 --   :Lazy update

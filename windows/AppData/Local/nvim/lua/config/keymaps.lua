@@ -21,6 +21,8 @@ map.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [
 -- terminal mode.
 map.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Plugin manager shortcut.
+map.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'P[L]ugin Manager' })
 
 ----------------------------------
 -- [[ WINDOW COMMAND MAPPING ]] --
