@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup lazy.nvim.
+-- Setup lazy.nvim. See `:help lazy-nvim.txt` or https://lazy.folke.io.
 require('lazy').setup({
   spec = {
     -- Import your plugins.
@@ -20,8 +20,12 @@ require('lazy').setup({
     version = false, -- always use the latest git commit
     -- version = '*', -- try installing the latest stable version for plugins that support semver
   },
-  -- Configure any other settings here. See the documentation (https://lazy.folke.io) for more details.
-  checker = { enabled = true },  -- automatically check for plugin updates
+
+  -- NOTE: Configure any other settings for lazy.nvim here. See the documentation (`:help lazy.nvim-⚙️-configuration` or
+  -- https://lazy.folke.io/configuration) for more details.
+  -- [[ ]] --
+
+  checker = { enabled = true }, -- Automatically check for plugin updates
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = ' ',

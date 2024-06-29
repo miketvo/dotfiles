@@ -1,6 +1,6 @@
 return {
 
-  {
+  { -- See `:help neo-tree.txt`I.
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
     keys = {
@@ -17,13 +17,13 @@ return {
       vim.cmd('Neotree close')
     end,
     init = function()
-      -- FIX: using `autocmd` for lazy-loading Neo-tree instead of directly requiring it, because `cwd` is not set up
-      -- properly. This properly disables netrw for Neo-tree to take over.
+      -- HACK: Workaround using `autocmd` for lazy-loading Neo-tree instead of directly requiring it, because `cwd` is
+      -- not set up properly. This properly disables netrw for Neo-tree to take over.
       vim.api.nvim_create_autocmd('BufEnter', {
         group = vim.api.nvim_create_augroup('Neotree_start_directory', { clear = true }),
         desc = 'Start Neo-tree with directory',
         once = true,
-        callback = function()
+       callback = function()
           if package.loaded['neo-tree'] then
             return
           else
@@ -34,19 +34,27 @@ return {
           end
         end,
       })
+
+      -- Eye candy stuff.
+      vim.cmd.highlight('NeoTreeDimText guifg=#434C5E')                  -- nord1.
+      vim.cmd.highlight('NeoTreeDotfile guifg=#4C566A')                  -- nord3.
+      vim.cmd.highlight('NeoTreeFileStatsHeader guifg=#4C566A')          -- nord3.
+      vim.cmd.highlight('NeoTreeFileStats guifg=#4C566A')                -- nord3.
+      vim.cmd.highlight('NeoTreeMessage guifg=#4C566A')                  -- nord3.
+      vim.cmd.highlight('NeoTreeFloatBorder ctermfg=Gray guifg=#434C5E') -- no border.
+      vim.cmd.highlight('NeoTreeFloatTitle gui=bold guibg=#434C5E')               -- blended.
+      vim.cmd.highlight('NeoTreeTitleBar gui=bold guibg=#434C5E')                 -- blended.
     end,
-    opts = {
+    opts = {  -- NOTE: For more options, see `:help neo-tree-configuration`.
       filesystem = {
         hijack_netrw_behavior = 'open_current',
         bind_to_cwd = true,
         follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
-      }
+      },
+      popup_border_style = 'NC',
     },
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
       -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },

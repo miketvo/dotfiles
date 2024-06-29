@@ -39,3 +39,11 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.spell = true
   end,
 })
+
+-- Turn off line numbers for terminal buffers.
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = augroup('nonumber-term'),
+  callback = function()
+    vim.cmd('setlocal nonumber norelativenumber')
+  end,
+})
