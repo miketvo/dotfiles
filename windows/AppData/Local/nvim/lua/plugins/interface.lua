@@ -56,6 +56,9 @@ return {
             filetype_names = {
               TelescopePrompt = 'Telescope',
               fzf = 'Fuzzy Find',
+              ['neo-tree'] = 'File System',
+              ['neo-tree-preview'] = 'File Preview',
+              ['neo-tree-popup'] = 'Popup',
               NVimTree = 'File System',
               packer = 'Plugins',
               lazy = 'Plugins',
