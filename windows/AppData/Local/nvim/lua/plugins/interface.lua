@@ -1,6 +1,6 @@
 return {
 
-  { -- See `:help lualine.txt`.
+  { -- See `:help lualine`.
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
     init = function()
@@ -8,6 +8,10 @@ return {
         vim.o.statusline = ' ' -- set an empty statusline till lualine loads
       end
     end,
+    keys = {
+      { '<leader>bP', '<cmd>LualineBuffersJump 1<cr>', desc = 'Switch to first buffer', mode = { 'n', 'v' } },
+      { '<leader>bN', '<cmd>LualineBuffersJump $<cr>', desc = 'Switch to last buffer', mode = { 'n', 'v' } },
+    },
     opts = { -- NOTE: For more options, see `:help lualine-Available-options`.
       options = {
         icon_enabled = vim.g.have_nerd_font,
@@ -36,7 +40,10 @@ return {
           },
         },
         lualine_c = {
-          { 'filename', path = 1 },
+          {
+            'filename',
+            path = 1, -- Show relative path.
+          },
         },
         lualine_x = {
           { 'filetype', colored = false },
@@ -50,8 +57,10 @@ return {
         lualine_a = {
           {
             'buffers',
-            mode = 4, -- Shows buffer number and buffer name.
+            always_divide_middle = false, -- More space for buffers.
+            mode = 4, -- Show buffer number and buffer name.
             use_mode_colors = true, -- Sync color with current mode.
+            show_filename_only = false, -- Show shortened relative path.
             show_modified_status = false,
             filetype_names = {
               TelescopePrompt = 'Telescope',
@@ -89,36 +98,47 @@ return {
       },
       extensions = { 'neo-tree', 'lazy' },
     },
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
 
   { -- Visual indent guides. See `:help indent-blankline`.
     'lukas-reineke/indent-blankline.nvim',
-    opts = {
-      indent = { char = '▏' },
-      scope = { show_start = true, show_end = false },
-      exclude = {
-        filetypes = {
-          'help',
-          'alpha',
-          'dashboard',
-          'neo-tree',
-          'Trouble',
-          'trouble',
-          'lazy',
-          'mason',
-          'notify',
-          'toggleterm',
+    config = function()
+      local hooks = require('ibl.hooks')
+      hooks.register(
+        hooks.type.HIGHLIGHT_SETUP,
+        function()
+          vim.api.nvim_set_hl(0, 'IblScope', { fg = '#5E81AC' })
+        end
+      )
+
+      require('ibl').setup({
+        indent = { char = '▏', tab_char = '▏', highlight = 'IblIndent' },
+        scope = { show_start = true, show_end = false, highlight = 'IblScope' },
+        exclude = {
+          filetypes = {
+            'help',
+            'alpha',
+            'dashboard',
+            'neo-tree',
+            'Trouble',
+            'trouble',
+            'lazy',
+            'mason',
+            'notify',
+            'toggleterm',
+          },
         },
-      },
-    },
+      })
+    end,
     main = 'ibl',
   },
 
-  { -- Useful plugin to show pending keybinds. See `:help which-key.nvim.txt`
+  { -- Useful plugin to show pending keybinds. See `:help which-key.nvim`
     'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function()
-      wk = require('which-key')
+      local wk = require('which-key')
       wk.setup({ plugins = { spelling = true } })
       wk.register({ -- NOTE: Document existing key chains here.
         ['g'] = { name = '+g-commands' },
@@ -126,8 +146,10 @@ return {
         ['z'] = { name = '+view' },
         [']'] = { name = '+next' },
         ['['] = { name = '+prev' },
-        ["<leader>b"] = { name = "+buffer", _ = "which_key_ignore" },
-        ["<leader>gh"] = { name = "+hunk", _ = "which_key_ignore" },
+        ['<leader>b'] = { name = '+buffer', _ = 'which_key_ignore' },
+        ['<leader>d'] = { name = '+diagnostics', _ = 'which_key_ignore' },
+        ['<leader>f'] = { name = '+find (search)', _ = 'which_key_ignore' },
+        ['<leader>gh'] = { name = '+hunk', _ = 'which_key_ignore' },
       }, { mode = { 'n', 'v' } })
     end,
   },

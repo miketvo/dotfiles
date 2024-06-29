@@ -9,10 +9,10 @@ vim.opt.hlsearch = true
 map.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps.
-map.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-map.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-map.set('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Show [D]iagnostic in [F]loat window' })
-map.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostic [Q]uickfix list' })
+map.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+map.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+map.set('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Show all diagnostics' })
+map.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier for people to discover. Otherwise,
 -- you normally need to press <C-\><C-n>, which is not what someone will guess without a bit more experience.
@@ -22,7 +22,7 @@ map.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]iagnosti
 map.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Plugin manager shortcut.
-map.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'P[L]ugin manager' })
+map.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Plugin manager' })
 
 
 ----------------------------------

@@ -2,6 +2,7 @@ return {
 
   { -- See `:help comment-nvim`
     'numToStr/Comment.nvim',
+    event = 'VimEnter',
     opts = {
       toggler = {
           line = 'gcc',  -- Line-comment toggle keymap.
@@ -25,12 +26,17 @@ return {
     },
   },
 
-  -- See `:help todo-comments.nvim.txt`.
-  { 'folke/todo-comments.nvim', event = 'VimEnter', opts = { signs = false } },
+  { -- See `:help todo-comments.nvim`.
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    opts = { signs = false },
+    dependencies = {'nvim-lua/plenary.nvim'},
+  },
 
   { -- See `:help `colorizer.lua`
     'norcalli/nvim-colorizer.lua',
     enabled = vim.opt.termguicolors,
+    event = 'VimEnter',
     opts = { '*', '!txt', '!md' },
   },
 

@@ -27,6 +27,13 @@ require('config.autocmds') -- See stdpath('config') .. '/config/autocmds.lua'.
 -- NOTE: Install and configure plugins by adding or modifying specfiles in stdpath('config') .. '/plugins'. See
 -- `:help stdpath()`.
 --
+-- Plugin groups:
+--   - Coding:      Code editing utilities.
+--   - Colorscheme: Theming.
+--   - Editor:      Editor capability extensions.
+--   - Interface:   NeoVim TUI enhancements.
+--   - Util:        Miscellaneous utilities and dependencies.
+--
 -- To check the current status of your plugins, run
 --   :Lazy (shortcut: <leader>l)
 --

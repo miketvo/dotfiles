@@ -2,6 +2,21 @@ local function augroup(name)
   return vim.api.nvim_create_augroup('user-autocmd-' .. name, { clear = true })
 end
 
+-- Plugin manager shortcut.
+vim.api.nvim_create_autocmd('FileType', {
+  group = augroup('lazy-quit'),
+  pattern = 'lazy',
+  callback = function()
+    vim.keymap.set(
+      'n',
+      '<esc>',
+      function() vim.api.nvim_win_close(0, false) end,
+      { buffer = true, nowait = true }
+    )
+  end,
+  desc = 'Quit lazy with <esc>',
+})
+
 -- Check if we need to reload the file when it changes outside of NeoVim.
 vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
   group = augroup('checktime'),

@@ -1,6 +1,114 @@
 return {
 
-  { -- See `:help neo-tree.txt`.
+  { -- See `:help telescope`.
+    'nvim-telescope/telescope.nvim',
+    event = 'VimEnter',
+    branch = '0.1.x',
+    config = function()
+      local telescope = require('telescope')
+      telescope.setup({ -- NOTE: See `:help.telescope.setup()` for mor options here.
+        extensions = {
+          fzf = {
+            fuzzy = true,                    -- false will only do exact matching.
+            override_generic_sorter = true,  -- override the generic sorter.
+            override_file_sorter = true,     -- override the file sorter.
+            case_mode = 'smart_case',        -- 'smart_case', 'ignore_case' or 'respect_case'.
+          },
+          ['ui-select'] = {
+            require('telescope.themes').get_dropdown(),
+          },
+        },
+      })
+
+      -- Enable Telescope extensions if they are installed.
+      pcall(require('telescope').load_extension, 'fzf')
+      pcall(require('telescope').load_extension, 'ui-select')
+
+      -- Keymap. See `:help telescope.builtin`.
+      local map = vim.keymap
+      local builtin = require 'telescope.builtin'
+      map.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search help' })
+      map.set('n', '<leader>fk', builtin.keymaps, { desc = 'Search keymaps' })
+      map.set('n', '<leader>ff', builtin.find_files, { desc = 'Search files' })
+      map.set('n', '<leader>fs', builtin.builtin, { desc = 'Search telescope.builtin' })
+      map.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current WORD' })
+      map.set('n', '<leader>fg', builtin.live_grep, { desc = 'Search by grep' })
+      map.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Search diagnostics' })
+      map.set('n', '<leader>fr', builtin.registers, { desc = 'Search registers' })
+      map.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Search recent files' })
+      map.set('n', '<leader><leader>', builtin.buffers, { desc = 'Find buffers' })
+      map.set('n', '<leader>/', function()
+        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
+          previewer = false,
+        }))
+      end, { desc = 'Fuzzy search current buffer' })
+      map.set('n', '<leader>f/', function()
+        builtin.live_grep {
+          grep_open_files = true,
+          prompt_title = 'Live grep in open files',
+        }
+      end, { desc = 'Search in open files' })
+
+      -- Eye candy stuff.
+      local TelescopePrompt = {
+        TelescopeNormal = {
+          bg = '#252931', -- nord-1.
+        },
+        TelescopeSelection = {
+          bg = '#2E3440', -- nord0.
+        },
+        TelescopeBorder = {
+          fg = '#252931', -- nord-1.
+          bg = '#252931', -- nord-1.
+        },
+        TelescopePromptNormal = {
+          bg = '#3B4252', -- nord1.
+        },
+        TelescopePromptCounter = {
+          fg = '#5E81AC', -- nord10.
+        },
+        TelescopePromptBorder = {
+          fg = '#3B4252', -- nord1.
+          bg = '#3B4252', -- nord1.
+        },
+        TelescopePromptTitle = {
+          fg = '#252931', --nord-1.
+          bg = '#88c0d0', -- nord4.
+          bold = true,
+        },
+        TelescopeResultsTitle = {
+          fg = '#252931', -- nord-1.
+          bg = '#B48EAD', -- nord15.
+          bold = true,
+        },
+        TelescopePreviewTitle = {
+          fg = '#252931', --nord-1.
+          bg = '#A3BE8C', --nord14.
+          bold = true,
+        },
+        TelescopePreviewLine = {
+          bg = '#2E3440', -- nord0.
+        },
+      }
+      for hl, col in pairs(TelescopePrompt) do
+        vim.api.nvim_set_hl(0, hl, col)
+      end
+    end,
+    dependencies = {
+      { -- If encountering errors, see telescope-fzf-native README for installation instructions.
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+      },
+      { 'nvim-telescope/telescope-ui-select.nvim' },
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+    },
+  },
+
+  { -- See `:help neo-tree`.
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
     keys = {
@@ -9,7 +117,7 @@ return {
         function()
           require('neo-tree.command').execute({ toggle = true })
         end,
-        desc = 'File [E]xplorer',
+        desc = 'File explorer',
       },
     },
     deactivate = function()
@@ -63,11 +171,14 @@ return {
       },
     },
     dependencies = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
       -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
 
-  { -- Display and manipulate git hunks. See `:help gitsigns.txt`.
+  { -- Display and manipulate git hunks. See `:help gitsigns`.
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {

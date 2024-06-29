@@ -27,6 +27,7 @@ require('lazy').setup({
 
   checker = { enabled = true }, -- Automatically check for plugin updates
   ui = {
+    backdrop = 0,
     icons = vim.g.have_nerd_font and {} or {
       cmd = ' ',
       config = '',
