@@ -9,7 +9,7 @@ return {
         function()
           require('neo-tree.command').execute({ toggle = true })
         end,
-        desc = '[F]ile [E]xplorer',
+        desc = 'File [E]xplorer',
       },
     },
     deactivate = function()
@@ -22,7 +22,7 @@ return {
         group = vim.api.nvim_create_augroup('neotree-start-directory', { clear = true }),
         desc = 'Start Neo-tree with directory',
         once = true,
-       callback = function()
+        callback = function()
           if package.loaded['neo-tree'] then
             return
           else
@@ -146,23 +146,6 @@ return {
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', 'Inner Hunk')
       end,
     },
-  },
-
-  { -- Useful plugin to show pending keybinds. See `:help which-key.nvim.txt`
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    config = function()
-      wk = require('which-key')
-      wk.setup({ plugins = { spelling = true } })
-      wk.register({ -- NOTE: Document existing key chains here.
-        ['g'] = { name = '+g-commands' },
-        ['gs'] = { name = '+surround' },
-        ['z'] = { name = '+view' },
-        [']'] = { name = '+next' },
-        ['['] = { name = '+prev' },
-        ["<leader>gh"] = { name = "+hunks", _ = "which_key_ignore" },
-      }, { mode = { 'n', 'v' } })
-    end,
   },
 
 }

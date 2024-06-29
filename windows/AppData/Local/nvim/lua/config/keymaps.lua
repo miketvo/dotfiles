@@ -22,7 +22,17 @@ map.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]iagnosti
 map.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Plugin manager shortcut.
-map.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'P[L]ugin Manager' })
+map.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'P[L]ugin manager' })
+
+
+----------------------------------
+-- [[ BUFFER COMMAND MAPPING ]] --
+----------------------------------
+map.set('n', '<leader>bn', '<cmd>bn<cr>', { desc = 'Switch to next buffer'})
+map.set('n', '<leader>bp', '<cmd>bp<cr>', { desc = 'Switch to previous buffer'})
+map.set('v', '<leader>bn', '<cmd>bn<cr>', { desc = 'Switch to next buffer'})
+map.set('v', '<leader>bp', '<cmd>bp<cr>', { desc = 'Switch to previous buffer'})
+
 
 ----------------------------------
 -- [[ WINDOW COMMAND MAPPING ]] --

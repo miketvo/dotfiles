@@ -91,4 +91,45 @@ return {
     },
   },
 
+  { -- Visual indent guides. See `:help indent-blankline`.
+    'lukas-reineke/indent-blankline.nvim',
+    opts = {
+      indent = { char = '▏' },
+      scope = { show_start = true, show_end = false },
+      exclude = {
+        filetypes = {
+          'help',
+          'alpha',
+          'dashboard',
+          'neo-tree',
+          'Trouble',
+          'trouble',
+          'lazy',
+          'mason',
+          'notify',
+          'toggleterm',
+        },
+      },
+    },
+    main = 'ibl',
+  },
+
+  { -- Useful plugin to show pending keybinds. See `:help which-key.nvim.txt`
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    config = function()
+      wk = require('which-key')
+      wk.setup({ plugins = { spelling = true } })
+      wk.register({ -- NOTE: Document existing key chains here.
+        ['g'] = { name = '+g-commands' },
+        ['gs'] = { name = '+surround' },
+        ['z'] = { name = '+view' },
+        [']'] = { name = '+next' },
+        ['['] = { name = '+prev' },
+        ["<leader>b"] = { name = "+buffer", _ = "which_key_ignore" },
+        ["<leader>gh"] = { name = "+hunk", _ = "which_key_ignore" },
+      }, { mode = { 'n', 'v' } })
+    end,
+  },
+
 }
