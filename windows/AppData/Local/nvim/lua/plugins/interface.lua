@@ -19,7 +19,22 @@ return {
       },
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff' },
+        lualine_b = {
+          'branch',
+          {
+            'diff',
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
+        },
         lualine_c = {
           { 'filename', path = 1 },
         },
@@ -41,7 +56,6 @@ return {
             filetype_names = {
               TelescopePrompt = 'Telescope',
               fzf = 'Fuzzy Find',
-              NeoTree = 'File System',
               NVimTree = 'File System',
               packer = 'Plugins',
               lazy = 'Plugins',

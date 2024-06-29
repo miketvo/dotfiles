@@ -16,9 +16,9 @@
 
 
 -- [[ CONFIGURATIONS ]]
-require('config.options')   -- See stdpath('config') .. '/config/options.lua'.
-require('config.keymaps')   -- See stdpath('config') .. '/config/keymaps.lua'.
-require('config.autocmds')  -- See stdpath('config') .. '/config/autocmds.lua'.
+require('config.options')  -- See stdpath('config') .. '/config/options.lua'.
+require('config.keymaps')  -- See stdpath('config') .. '/config/keymaps.lua'.
+require('config.autocmds') -- See stdpath('config') .. '/config/autocmds.lua'.
 
 
 -- [[ PLUGIN MANAGER (LAZY.NVIM) ]]
@@ -34,4 +34,4 @@ require('config.autocmds')  -- See stdpath('config') .. '/config/autocmds.lua'.
 --
 -- To update plugins you can run
 --   :Lazy update
-require('config.lazy')  -- See stdpath('config') .. '/config/lazy.lua'.
+require('config.lazy') -- See stdpath('config') .. '/config/lazy.lua'.
