@@ -55,6 +55,7 @@ scoop install main/mdcat
 scoop install main/broot
 scoop install main/fd
 scoop install main/fzf
+scoop install main/ripgrep
 scoop install main/winfetch
 scoop install main/sudo
 scoop install extras/onefetch
