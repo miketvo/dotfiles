@@ -1,6 +1,6 @@
 return {
 
-  { -- See `:help neo-tree.txt`I.
+  { -- See `:help neo-tree.txt`.
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
     keys = {
