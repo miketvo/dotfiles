@@ -149,7 +149,8 @@ return {
         ['<leader>d'] = { name = '+diagnostics', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '+find (search)', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = '+hunk', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '+surround' },
+        ['<leader>q'] = { name = '+session', _ = 'which_key_ignore' },
+        ['<leader>s'] = { name = '+surround', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '+toggle', _ = 'which_key_ignore' },
       }, { mode = { 'n', 'v' } })
     end,

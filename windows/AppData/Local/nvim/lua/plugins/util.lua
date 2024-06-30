@@ -11,4 +11,18 @@ return {
   -- See `:help nvim-web-devicons-usage`.
   { 'nvim-tree/nvim-web-devicons', lazy = true },
 
+  { -- Session management. This saves your session in the background, keeping track of open buffers, window
+    -- arrangement, and more.
+    -- See `:help persistence.nvim-persistence`.
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    -- stylua: ignore
+    keys = {
+      { '<leader>qr', function() require('persistence').load() end, desc = 'Restore Session' },
+      { '<leader>ql', function() require('persistence').load({ last = true }) end, desc = 'Restore Last Session' },
+      { '<leader>qd', function() require('persistence').stop() end, desc = "Don't Save Current Session" },
+    },
+    opts = { options = vim.opt.sessionoptions:get() },
+  }
+
 }
