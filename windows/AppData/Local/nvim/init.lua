@@ -30,8 +30,11 @@ require('config.autocmds') -- See stdpath('config') .. '/config/autocmds.lua'.
 -- Plugin groups:
 --   - Coding:      Code editing utilities.
 --   - Colorscheme: Theming.
+--   - DAP:         Debug adapter protocol.
 --   - Editor:      Editor capability extensions.
 --   - Interface:   NeoVim TUI enhancements.
+--   - LSP:         Language server protocol.
+--   - Treesitter:  Treesitter.
 --   - Util:        Miscellaneous utilities and dependencies.
 --
 -- To check the current status of your plugins, run

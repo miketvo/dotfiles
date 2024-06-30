@@ -1,18 +1,46 @@
 return {
 
-  { -- See `:help telescope`.
+  { -- Powerful fuzzy finder. See `:help telescope`.
+    --
+    -- Telescope is a fuzzy finder that comes with a lot of different things that it can fuzzy find! It's more than
+    -- just a "file finder", it can search many different aspects of Neovim, your workspace, LSP, and more!
+    --
+    -- The easiest way to use Telescope, is to start by doing something like:
+    --   `:Telescope help_tags` or `<leader>fh`.
+    --
+    -- After running this command, a window will open up and you're able to type in the prompt window. You'll see a
+    -- list of `help_tags` options and a corresponding preview of the help.
+    --
+    -- NOTE: Two important keymaps to use while in Telescope are:
+    --  - Insert mode: `<c-/>`.
+    --  - Normal mode: `?`.
+    --
+    -- This opens a window that shows you all of the keymaps for the current Telescope picker. This is really useful to
+    -- discover what Telescope can do as well as how to actually do it!
     'nvim-telescope/telescope.nvim',
-    event = 'VimEnter',
     branch = '0.1.x',
+    dependencies = {
+      { -- If encountering errors, see telescope-fzf-native README for installation instructions.
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+      },
+      { 'nvim-telescope/telescope-ui-select.nvim' },
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+    },
+    event = 'VimEnter',
     config = function()
       local telescope = require('telescope')
       telescope.setup({ -- NOTE: See `:help.telescope.setup()` for mor options here.
         extensions = {
           fzf = {
-            fuzzy = true,                    -- false will only do exact matching.
-            override_generic_sorter = true,  -- override the generic sorter.
-            override_file_sorter = true,     -- override the file sorter.
-            case_mode = 'smart_case',        -- 'smart_case', 'ignore_case' or 'respect_case'.
+            fuzzy = true,                   -- false will only do exact matching.
+            override_generic_sorter = true, -- override the generic sorter.
+            override_file_sorter = true,    -- override the file sorter.
+            case_mode = 'smart_case',       -- 'smart_case', 'ignore_case' or 'respect_case'.
           },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -94,31 +122,26 @@ return {
         vim.api.nvim_set_hl(0, hl, col)
       end
     end,
-    dependencies = {
-      { -- If encountering errors, see telescope-fzf-native README for installation instructions.
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
-      },
-      { 'nvim-telescope/telescope-ui-select.nvim' },
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-    },
   },
 
-  { -- See `:help neo-tree`.
+  { -- Filesystem explorer. See `:help neo-tree`.
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
     keys = {
-      {
-        '<leader>e',
+      { -- For completeness.
+        '<leader>te',
         function()
           require('neo-tree.command').execute({ toggle = true })
         end,
-        desc = 'File explorer',
+        desc = 'Toggle file explorer',
       },
+      { '<leader>e', '<leader>te', desc = 'File explorer', remap = true }, -- For convenience.
     },
     deactivate = function()
       vim.cmd('Neotree close')
@@ -152,6 +175,20 @@ return {
           use_libuv_file_watcher = true,
         },
         popup_border_style = 'NC',
+        default_component_configs = {
+          indent = {
+            with_expanders = true, -- if nil and file nesting is enabled, will enable expanders.
+            expander_collapsed = '',
+            expander_expanded = '',
+            expander_highlight = 'NeoTreeExpander',
+          },
+          git_status = {
+            symbols = {
+              unstaged = '󰄱',
+              staged = '󰱒',
+            },
+          },
+        },
       })
 
       -- Eye candy stuff.
@@ -164,21 +201,24 @@ return {
       vim.cmd.highlight('NeoTreeFloatTitle gui=bold guibg=#252931')      -- blended.
       vim.cmd.highlight('NeoTreeTitleBar gui=bold guibg=#252931')        -- blended.
     end,
-    git_status = {
-      symbols = {
-        unstaged = '󰄱',
-        staged = '󰱒',
-      },
-    },
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
   },
 
-  { -- Display and manipulate git hunks. See `:help gitsigns`.
+  { -- Search/replace panel across files. See `:help spectre.txt` for more details and caveats.
+    -- NOTE: Does not support undo. Always save your file first!
+    'nvim-pack/nvim-spectre',
+    build = false,
+    cmd = 'Spectre',
+    keys = {
+      {'<leader>fR', function() require('spectre').open() end, desc = 'Search/replace across files'},
+    },
+    opts = {
+      color_devicons = vim.g.have_nerd_font,
+      open_cmd = 'noswapfile vnew',
+      lnum_for_results = true, -- show line number for search/replace results
+    },
+  },
+
+  { -- Display and manipulate git hunks from the gutter. See `:help gitsigns`.
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -216,9 +256,6 @@ return {
         row = 0,
         col = 1,
       },
-      yadm = {
-        enable = false
-      },
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
 
@@ -244,16 +281,16 @@ return {
         end, 'Prev Hunk')
         map('n', ']H', function() gs.nav_hunk('last') end, 'Last Hunk')
         map('n', '[H', function() gs.nav_hunk('first') end, 'First Hunk')
-        map({ 'n', 'v' }, '<leader>ghs', ':Gitsigns stage_hunk<CR>', 'Stage Hunk')
-        map({ 'n', 'v' }, '<leader>ghr', ':Gitsigns reset_hunk<CR>', 'Reset Hunk')
-        map('n', '<leader>ghS', gs.stage_buffer, 'Stage Buffer')
-        map('n', '<leader>ghu', gs.undo_stage_hunk, 'Undo Stage Hunk')
-        map('n', '<leader>ghR', gs.reset_buffer, 'Reset Buffer')
-        map('n', '<leader>ghp', gs.preview_hunk_inline, 'Preview Hunk Inline')
-        map('n', '<leader>ghb', function() gs.blame_line({ full = true }) end, 'Blame Line')
-        map('n', '<leader>ghB', function() gs.blame() end, 'Blame Buffer')
-        map('n', '<leader>ghd', gs.diffthis, 'Diff This')
-        map('n', '<leader>ghD', function() gs.diffthis('~') end, 'Diff This ~')
+        map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>', 'Stage Hunk')
+        map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>', 'Reset Hunk')
+        map('n', '<leader>hS', gs.stage_buffer, 'Stage Buffer')
+        map('n', '<leader>hu', gs.undo_stage_hunk, 'Undo Stage Hunk')
+        map('n', '<leader>hR', gs.reset_buffer, 'Reset Buffer')
+        map('n', '<leader>hp', gs.preview_hunk_inline, 'Preview Hunk Inline')
+        map('n', '<leader>hb', function() gs.blame_line({ full = true }) end, 'Blame Line')
+        map('n', '<leader>hB', function() gs.blame() end, 'Blame Buffer')
+        map('n', '<leader>hd', gs.diffthis, 'Diff This')
+        map('n', '<leader>hD', function() gs.diffthis('~') end, 'Diff This ~')
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', 'Inner Hunk')
       end,
     },

@@ -2,6 +2,7 @@ return {
 
   { -- See `:help lualine`.
     'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = 'VeryLazy',
     init = function()
       if vim.fn.argc(-1) > 0 then
@@ -16,7 +17,8 @@ return {
       options = {
         icon_enabled = vim.g.have_nerd_font,
         theme = 'auto',
-        globalstatus = true,
+        globalstatus = true,          -- One statusline for all window splits.
+        always_divide_middle = false, -- More space for buffers and filename.
         disabled_filetypes = {
           statusline = { 'dashboard', 'alpha', 'starter' },
         },
@@ -57,7 +59,6 @@ return {
         lualine_a = {
           {
             'buffers',
-            always_divide_middle = false, -- More space for buffers.
             mode = 4, -- Show buffer number and buffer name.
             use_mode_colors = true, -- Sync color with current mode.
             show_filename_only = false, -- Show shortened relative path.
@@ -69,6 +70,7 @@ return {
               ['neo-tree-preview'] = 'File Preview',
               ['neo-tree-popup'] = 'Popup',
               NVimTree = 'File System',
+              ['spectre_panel'] = 'Search/Replace',
               packer = 'Plugins',
               lazy = 'Plugins',
               alpha = 'Dashboard',
@@ -98,7 +100,6 @@ return {
       },
       extensions = { 'neo-tree', 'lazy' },
     },
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
 
   { -- Visual indent guides. See `:help indent-blankline`.
@@ -141,15 +142,15 @@ return {
       local wk = require('which-key')
       wk.setup({ plugins = { spelling = true } })
       wk.register({ -- NOTE: Document existing key chains here.
-        ['g'] = { name = '+g-commands' },
-        ['gs'] = { name = '+surround' },
         ['z'] = { name = '+view' },
         [']'] = { name = '+next' },
         ['['] = { name = '+prev' },
         ['<leader>b'] = { name = '+buffer', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '+diagnostics', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '+find (search)', _ = 'which_key_ignore' },
-        ['<leader>gh'] = { name = '+hunk', _ = 'which_key_ignore' },
+        ['<leader>h'] = { name = '+hunk', _ = 'which_key_ignore' },
+        ['<leader>s'] = { name = '+surround' },
+        ['<leader>t'] = { name = '+toggle', _ = 'which_key_ignore' },
       }, { mode = { 'n', 'v' } })
     end,
   },
