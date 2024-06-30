@@ -170,7 +170,7 @@ return {
         sources = { 'filesystem', 'git_status' },
         filesystem = {
           hijack_netrw_behavior = 'open_current',
-          bind_to_cwd = true,
+          bind_to_cwd = false, -- This must be set to false for persistence.nvim to work. See the fix above.
           follow_current_file = { enabled = true },
           use_libuv_file_watcher = true,
           filtered_items = {
