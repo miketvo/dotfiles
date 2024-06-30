@@ -173,6 +173,11 @@ return {
           bind_to_cwd = true,
           follow_current_file = { enabled = true },
           use_libuv_file_watcher = true,
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+            hide_by_name = { '.git' },
+          },
         },
         popup_border_style = 'NC',
         default_component_configs = {
