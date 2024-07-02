@@ -216,7 +216,11 @@ return {
     keys = {
       { '<leader>dx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Workspace diagnostics' },
       { '<leader>dX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer diagnostics' },
-      { '<leader>o', '<cmd>Trouble symbols toggle focus=false<cr>', desc = 'Symbols outline' },
+      {
+        '<leader>o',
+        '<cmd>Trouble symbols toggle focus=false win.position=right<cr>',
+        desc = 'Symbols outline'
+      },
       {
         '<leader>O',
         '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
@@ -226,11 +230,7 @@ return {
       { '<leader>dQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Workspace quickfix list' },
     },
     config = function ()
-      require('trouble').setup({
-        focus = true,
-        pinned = false,
-      })
-
+      require('trouble').setup({})
       vim.cmd.highlight('TroubleNormal ctermbg=None guibg=None') -- Transparent background.
       vim.cmd.highlight('TroubleNormalNC ctermbg=None guibg=None') -- Transparent background.
     end,
