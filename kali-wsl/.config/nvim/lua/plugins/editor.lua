@@ -80,42 +80,42 @@ return {
       -- Eye candy stuff.
       local TelescopePrompt = {
         TelescopeNormal = {
-          bg = '#252931', -- nord-1.
+          bg = '#1B1B1B', -- gruvbox-material bg_dim.
         },
         TelescopeSelection = {
-          bg = '#2E3440', -- nord0.
+          bg = '#282828', -- gruvbox-material bg0.
         },
         TelescopeBorder = {
-          fg = '#252931', -- nord-1.
-          bg = '#252931', -- nord-1.
+          fg = '#1B1B1B', -- gruvbox-material bg_dim.
+          bg = '#1B1B1B', -- gruvbox-material bg_dim.
         },
         TelescopePromptNormal = {
-          bg = '#3B4252', -- nord1.
+          bg = '#45403D', -- gruvbox-material bg3.
         },
         TelescopePromptCounter = {
-          fg = '#5E81AC', -- nord10.
+          fg = '#7DAEA3', -- gruvbox-material blue.
         },
         TelescopePromptBorder = {
-          fg = '#3B4252', -- nord1.
-          bg = '#3B4252', -- nord1.
+          fg = '#45403D', -- gruvbox-material bg3.
+          bg = '#45403D', -- gruvbox-material bg3.
         },
         TelescopePromptTitle = {
-          fg = '#252931', -- nord-1.
-          bg = '#88C0D0', -- nord4.
+          fg = '#1B1B1B', -- gruvbox-material bg_dim.
+          bg = '#A9B665', -- gruvbox-material green.
           bold = true,
         },
         TelescopeResultsTitle = {
-          fg = '#252931', -- nord-1.
-          bg = '#B48EAD', -- nord15.
+          fg = '#1B1B1B', -- gruvbox-material bg_dim.
+          bg = '#D3869B', -- gruvbox-material purple.
           bold = true,
         },
         TelescopePreviewTitle = {
-          fg = '#252931', -- nord-1.
-          bg = '#A3BE8C', -- nord14.
+          fg = '#1B1B1B', -- gruvbox-material bg_dim.
+          bg = '#89B482', -- gruvbox-material aqua.
           bold = true,
         },
         TelescopePreviewLine = {
-          bg = '#2E3440', -- nord0.
+          bg = '#282828', -- gruvbox-material bg0.
         },
       }
       for hl, col in pairs(TelescopePrompt) do
@@ -199,11 +199,11 @@ return {
       })
 
       -- Eye candy stuff.
-      vim.cmd.highlight('NeoTreeDimText guifg=#434C5E')                  -- nord1.
-      vim.cmd.highlight('NeoTreeDotfile guifg=#4C566A')                  -- nord3.
-      vim.cmd.highlight('NeoTreeFileStatsHeader guifg=#4C566A')          -- nord3.
-      vim.cmd.highlight('NeoTreeFileStats guifg=#4C566A')                -- nord3.
-      vim.cmd.highlight('NeoTreeMessage guifg=#4C566A')                  -- nord3.
+      vim.cmd.highlight('NeoTreeDimText guifg=#434C5E')                  -- gruvbox-material 1.
+      vim.cmd.highlight('NeoTreeDotfile guifg=#4C566A')                  -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeFileStatsHeader guifg=#4C566A')          -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeFileStats guifg=#4C566A')                -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeMessage guifg=#4C566A')                  -- gruvbox-material 3.
       vim.cmd.highlight('NeoTreeFloatBorder ctermfg=Gray guifg=#252931') -- no border.
       vim.cmd.highlight('NeoTreeFloatTitle gui=bold guibg=#252931')      -- blended.
       vim.cmd.highlight('NeoTreeTitleBar gui=bold guibg=#252931')        -- blended.

@@ -17,6 +17,8 @@ return {
       options = {
         icon_enabled = vim.g.have_nerd_font,
         theme = 'auto',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         globalstatus = true,          -- One statusline for all window splits.
         always_divide_middle = false, -- More space for buffers and filename.
         disabled_filetypes = {
@@ -109,7 +111,7 @@ return {
       hooks.register(
         hooks.type.HIGHLIGHT_SETUP,
         function()
-          vim.api.nvim_set_hl(0, 'IblScope', { fg = '#5E81AC' }) -- nord10.
+          vim.api.nvim_set_hl(0, 'IblScope', { fg = '32302F' }) -- gruvbox-material bg1.
         end
       )
 
