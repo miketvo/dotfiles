@@ -25,7 +25,7 @@ return {
         'html', 'css', 'javascript', 'typescript', 'jsdoc',
         'json', 'hjson', 'jsonc',
         'php', 'phpdoc',
-        'gdscript', 'gdshader', 'gdresource',
+        'gdscript', 'gdshader', 'godot-resource',
         'git_config', 'git_rebase', 'gitignore', 'gitattributes',
         'sql', 'graphql',
         'java',

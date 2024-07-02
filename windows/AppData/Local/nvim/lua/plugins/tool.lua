@@ -13,6 +13,9 @@ return {
         'stylua',
         'prettier',
         'black',
+
+        -- CLI tools.
+        'tree-sitter-cli',
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}
