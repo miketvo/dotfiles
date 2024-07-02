@@ -111,7 +111,7 @@ return {
       hooks.register(
         hooks.type.HIGHLIGHT_SETUP,
         function()
-          vim.api.nvim_set_hl(0, 'IblScope', { fg = '32302F' }) -- gruvbox-material bg1.
+          vim.api.nvim_set_hl(0, 'IblScope', { fg = '#A89984' }) -- gruvbox-material grey2.
         end
       )
 
