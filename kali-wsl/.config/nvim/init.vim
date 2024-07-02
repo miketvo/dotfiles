@@ -1,27 +1,56 @@
 " Plugins
 " ==================================================================================
+set nocompatible
 call plug#begin()
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'preservim/nerdtree'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'sainnhe/gruvbox-material'
+  Plug 'tpope/vim-fugitive'
+  Plug 'rbong/vim-flog'
+  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'preservim/nerdtree'
+  Plug 'mbbill/undotree'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'sheerun/vim-polyglot'
+  Plug 'vim-pandoc/vim-pandoc'
+  Plug 'vim-pandoc/vim-pandoc-syntax'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 " ==================================================================================
 
 
 " NERDTree configurations
 " ==================================================================================
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 let g:NERDTreeWinSize=40
+let NERDTreeShowHidden=1
+" ==================================================================================
+
+
+" undotree configurations
+" ==================================================================================
+let g:undotree_WindowLayout = 4
 " ==================================================================================
 
 
 " Airline configurations
 " ==================================================================================
-let g:airline_theme='base16_eighties'
+let g:airline#extensions#nerdtree_statusline = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#fnamemod = ':p:.'
+let g:airline#extensions#hunks#non_zero_only = 1
+" ==================================================================================
+
+
+" GitSigns.Nvim configurations
+" ==================================================================================
+so ~/.config/nvim/lua/gitsigns.nvim/gitsigns.nvim.lua
 " ==================================================================================
 
 
@@ -153,6 +182,9 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
+" Add `:Prettier` command to format current buffer with coc-prettier.
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
@@ -184,22 +216,96 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " ==================================================================================
 
 
+" vim-pandoc and vim-pandoc-syntax configurations
+" ==================================================================================
+let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#folding#mode = ['manual']
+let g:pandoc#folding#fdc = 0
+" ==================================================================================
+
+
+" VimDevIcons configurations
+" ==================================================================================
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+" ==================================================================================
+
+
 " Behavior customizations
 " ==================================================================================
+let g:clipboard = {
+  \   'name': 'WslClipboard',
+  \   'copy': {
+  \      '+': 'clip.exe',
+  \      '*': 'clip.exe',
+  \    },
+  \   'paste': {
+  \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  \   },
+  \   'cache_enabled': 0,
+  \ }
+let g:python3_host_prog='/home/linuxbrew/.linuxbrew/bin/python3'
+
+" Remove all trailing whitespace in the current buffer with F5
+nnoremap <leader>` :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" NERDTree shortcuts
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" undotree shortcuts
+nnoremap <F5> :UndotreeToggle<CR>
+
+" Telescope shortcuts
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+set encoding=UTF-8
+set nospell
 set noshowmode
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
 set mouse=a
+set nowrap
 " ==================================================================================
 
 
 " Eye candy
 " ==================================================================================
-set fillchars+=vert:│
-hi VertSplit cterm=NONE
-hi VertSplit ctermfg=DarkGray
-hi LineNr ctermfg=DarkGray
-hi EndOfBuffer ctermfg=DarkGray ctermbg=NONE
+if has('termguicolors')
+  set termguicolors
+  lua require('colorizer').setup()
+endif
+set background=dark
+let g:gruvbox_material_background = 'medium'
+let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_transparent_background = 1
+colorscheme gruvbox-material
+let g:airline_theme='gruvbox_material'
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.colnr = ' ㏇'
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ' ㏑'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
 " ==================================================================================
