@@ -210,6 +210,32 @@ return {
     end,
   },
 
+  { -- Pretty diagnostics, references, telescope results, quickfix and location list. See `:help trouble.nvim`.
+    'folke/trouble.nvim',
+    cmd = { 'Trouble' },
+    keys = {
+      { '<leader>dx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Workspace diagnostics' },
+      { '<leader>dX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer diagnostics' },
+      { '<leader>o', '<cmd>Trouble symbols toggle focus=false<cr>', desc = 'Symbols outline' },
+      {
+        '<leader>O',
+        '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+        desc = 'LSP symbols outline',
+      },
+      { '<leader>dL', '<cmd>Trouble loclist toggle<cr>', desc = 'Diagnostic location list' },
+      { '<leader>dQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Workspace quickfix list' },
+    },
+    config = function ()
+      require('trouble').setup({
+        focus = true,
+        pinned = true,
+      })
+
+      vim.cmd.highlight('TroubleNormal ctermbg=None guibg=None') -- Transparent background.
+      vim.cmd.highlight('TroubleNormalNC ctermbg=None guibg=None') -- Transparent background.
+    end,
+  },
+
   { -- Search/replace panel across files. See `:help spectre.txt` for more details and caveats.
     -- NOTE: Does not support undo. Always save your file first!
     'nvim-pack/nvim-spectre',

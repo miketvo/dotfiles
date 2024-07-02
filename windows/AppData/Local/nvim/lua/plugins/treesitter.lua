@@ -25,41 +25,28 @@ return {
         enable = true,
         disable = { 'ruby' },
       },
-      ensure_installed = {
-        'bash',
-        'c',
-        'cpp',
-        'diff',
-        'html',
-        'java',
-        'javascript',
-        'jsdoc',
-        'json',
-        'jsonc',
-        'lua',
-        'luadoc',
-        'luap',
-        'markdown',
-        'markdown_inline',
-        'printf',
-        'python',
-        'query',
-        'regex',
-        'toml',
-        'tsx',
-        'typescript',
-        'vim',
-        'vimdoc',
-        'xml',
-        'yaml',
-      },
+      ensure_installed = 'all',
     },
   },
 
-  { -- Automatically add closing tags for HTML and JSX.
+  { -- Automatically add closing tags for HTML and JSX. See `:help nvim-ts-autotag-usage`.
     'windwp/nvim-ts-autotag',
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    opts = {},
+    opts = {
+      opts = {
+        enable_close = true, -- Auto close tags,
+        enable_rename = true, -- Auto rename pairs of tags.
+        enable_close_on_slash = false -- Auto close on trailing </.
+      },
+      -- Override individual filetype configs, these take priority.
+      per_filetype = {
+        -- ['html'] = {
+        --   enable_close = false
+        -- }
+      },
+    },
+    config = function(_, opts)
+      require('nvim-ts-autotag').setup(opts)
+    end,
   },
 
 }
