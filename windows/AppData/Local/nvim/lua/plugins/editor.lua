@@ -110,8 +110,8 @@ return {
           bold = true,
         },
         TelescopePreviewTitle = {
-          fg = '#252931', --nord-1.
-          bg = '#A3BE8C', --nord14.
+          fg = '#252931', -- nord-1.
+          bg = '#A3BE8C', -- nord14.
           bold = true,
         },
         TelescopePreviewLine = {
