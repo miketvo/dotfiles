@@ -100,7 +100,7 @@ return {
           bg = '#3B4252', -- nord1.
         },
         TelescopePromptTitle = {
-          fg = '#252931', --nord-1.
+          fg = '#252931', -- nord-1.
           bg = '#88c0d0', -- nord4.
           bold = true,
         },
