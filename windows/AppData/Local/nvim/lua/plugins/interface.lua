@@ -95,7 +95,7 @@ return {
             tabs_color = vim.g.termguicolors
                 and { inactive = 'StatusLineNC' }
                 or { inactive = 'StatusLineTermNC' },
-          }
+          },
         },
       },
       extensions = { 'neo-tree', 'lazy' },
@@ -109,7 +109,7 @@ return {
       hooks.register(
         hooks.type.HIGHLIGHT_SETUP,
         function()
-          vim.api.nvim_set_hl(0, 'IblScope', { fg = '#5E81AC' })
+          vim.api.nvim_set_hl(0, 'IblScope', { fg = '#5E81AC' }) -- nord10.
         end
       )
 
