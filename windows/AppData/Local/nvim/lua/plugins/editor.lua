@@ -138,6 +138,7 @@ return {
         '<leader>te',
         function()
           require('neo-tree.command').execute({ toggle = true })
+          vim.cmd('execute "normal \\<c-w>="') -- Automatically resize splits.
         end,
         desc = 'Toggle file explorer',
       },
@@ -150,13 +151,14 @@ return {
       -- HACK: Workaround using `autocmd` for lazy-loading Neo-tree instead of directly requiring it, because `cwd` is
       -- not set up properly. This properly disables netrw for Neo-tree to take over.
       vim.api.nvim_create_autocmd('BufEnter', {
-        group = vim.api.nvim_create_augroup('neotree-start-directory', { clear = true }),
+        group = vim.api.nvim_create_augroup('plugin-neotree-start-directory', { clear = true }),
         desc = 'Start Neo-tree with directory',
         once = true,
         callback = function()
           if package.loaded['neo-tree'] then
             return
           else
+            ---@diagnostic disable-next-line: param-type-mismatch
             local stats = vim.uv.fs_stat(vim.fn.argv(0))
             if stats and stats.type == 'directory' then
               require('neo-tree')

@@ -32,8 +32,10 @@ require('config.autocmds') -- See stdpath('config') .. '/config/autocmds.lua'.
 --   - Colorscheme: Theming.
 --   - DAP:         Debug adapter protocol.
 --   - Editor:      Editor capability extensions.
+--   - Formatting:  Code formatting.
 --   - Interface:   NeoVim TUI enhancements.
 --   - LSP:         Language server protocol.
+--   - Tool:        Tool manager (Mason).
 --   - Treesitter:  Treesitter.
 --   - Util:        Miscellaneous utilities and dependencies.
 --

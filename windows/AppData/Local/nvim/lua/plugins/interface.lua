@@ -6,7 +6,7 @@ return {
     event = 'VeryLazy',
     init = function()
       if vim.fn.argc(-1) > 0 then
-        vim.o.statusline = ' ' -- set an empty statusline till lualine loads
+        vim.o.statusline = ' ' -- set an empty statusline till lualine loads.
       end
     end,
     keys = {
@@ -145,12 +145,16 @@ return {
         ['z'] = { name = '+view' },
         [']'] = { name = '+next' },
         ['['] = { name = '+prev' },
+        ['<leader>c'] = { name = '+code', _ = 'which_key_ignore' },
         ['<leader>b'] = { name = '+buffer', _ = 'which_key_ignore' },
+        ['<leader>w'] = { name = '+workspace', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '+diagnostics', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '+find (search)', _ = 'which_key_ignore' },
+        ['<leader>g'] = { name = '+goto', _ = 'which_key_ignore' },
+        ['<leader>r'] = { name = '+rename', _ = 'which_key_ignore' },
+        ['<leader>s'] = { name = '+surround', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = '+hunk', _ = 'which_key_ignore' },
         ['<leader>q'] = { name = '+session', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '+surround', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '+toggle', _ = 'which_key_ignore' },
       }, { mode = { 'n', 'v' } })
     end,

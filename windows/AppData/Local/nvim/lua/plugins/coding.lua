@@ -1,5 +1,67 @@
 return {
 
+  { -- Autocompletion. See `:help cmp`.
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = { -- Snippet Engine & its associated nvim-cmp source.
+      'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+    },
+    config = function()
+      local cmp = require('cmp')
+      local luasnip = require('luasnip')
+      luasnip.config.setup {}
+
+      cmp.setup {
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        completion = { completeopt = 'menu,menuone,noinsert' },
+
+        mapping = cmp.mapping.preset.insert {
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ['<C-Space>'] = cmp.mapping.complete({}), -- Manually trigger a completion from nvim-cmp.
+
+          -- Scroll the documentation window back/forward
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+          -- <c-l> will move you to the right of each of the expansion locations.
+          -- <c-h> is similar, except moving you backwards.
+          ['<C-l>'] = cmp.mapping(function()
+            if luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
+            end
+          end, { 'i', 's' }),
+          ['<C-h>'] = cmp.mapping(function()
+            if luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            end
+          end, { 'i', 's' }),
+          -- Think of <c-l> as moving to the right of your snippet expansion.
+          --  So if you have a snippet that's like:
+          --  function $name($args)
+          --    $body
+          --  end
+
+          -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
+          --   https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        },
+        sources = {
+          { name = 'lazydev', group_index = 0 },
+          { name = 'luasnip' },
+          { name = 'nvim_lsp' },
+          { name = 'path' },
+        },
+      }
+    end,
+  },
+
   { -- See `:help comment-nvim`
     'numToStr/Comment.nvim',
     event = 'VimEnter',
@@ -35,25 +97,17 @@ return {
         '<leader>tp',
         function()
           vim.g.minipairs_disable = not vim.g.minipairs_disable
-          if vim.g.minipairs_disable then
-            vim.cmd('echo "Auto-pairs disabled"')
-          else
-            vim.cmd('echo "Auto-pairs enabled"')
-          end
+          vim.notify(vim.g.minipairs_disable and 'Auto-pairs disabled' or 'Auto-pairs enabled', vim.log.levels.INFO)
         end,
         desc = 'Toggle auto-pairs',
       },
     },
     opts = {
       modes = { insert = true, command = true, terminal = false },
-      -- Skip autopair when next character is one of these.
-      skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
-      -- Skip autopair when the cursor is inside these treesitter nodes,
-      skip_ts = { "string" },
-      -- Skip autopair when next character is closing pair and there are more closing pairs than opening pairs.
-      skip_unbalanced = true,
-      -- Better deal with markdown code blocks.
-      markdown = true,
+      skip_next = [=[[%w%%%'%[%"%.%`%$]]=], -- Skip autopair when next character is one of these.
+      skip_ts = { 'string' }, -- Skip autopair when the cursor is inside these treesitter nodes,
+      skip_unbalanced = true, -- Skip autopair when unbalanced.
+      markdown = true, -- Better deal with markdown code blocks.
     },
   },
 
