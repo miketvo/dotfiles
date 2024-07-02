@@ -101,7 +101,7 @@ return {
         },
         TelescopePromptTitle = {
           fg = '#252931', -- nord-1.
-          bg = '#88c0d0', -- nord4.
+          bg = '#88C0D0', -- nord4.
           bold = true,
         },
         TelescopeResultsTitle = {
