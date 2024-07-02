@@ -204,7 +204,7 @@ return {
       vim.cmd.highlight('NeoTreeFileStatsHeader guifg=#4C566A')          -- nord3.
       vim.cmd.highlight('NeoTreeFileStats guifg=#4C566A')                -- nord3.
       vim.cmd.highlight('NeoTreeMessage guifg=#4C566A')                  -- nord3.
-      vim.cmd.highlight('NeoTreeFloatBorder ctermfg=Gray guifg=#252931') -- no border.
+      vim.cmd.highlight('NeoTreeFloatBorder ctermfg=Black guifg=#252931') -- no border.
       vim.cmd.highlight('NeoTreeFloatTitle gui=bold guibg=#252931')      -- blended.
       vim.cmd.highlight('NeoTreeTitleBar gui=bold guibg=#252931')        -- blended.
     end,
