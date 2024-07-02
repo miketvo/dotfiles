@@ -53,7 +53,7 @@ return {
           { 'fileformat', padding = { left = 0, right = 1 } },
         },
         lualine_y = { '%p%%' },
-        lualine_z = { '㏑%l/%L : ㏇%c' }
+        lualine_z = { '%l/%L:%c' },
       },
       tabline = {
         lualine_a = {
