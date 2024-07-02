@@ -228,7 +228,7 @@ return {
     config = function ()
       require('trouble').setup({
         focus = true,
-        pinned = true,
+        pinned = false,
       })
 
       vim.cmd.highlight('TroubleNormal ctermbg=None guibg=None') -- Transparent background.

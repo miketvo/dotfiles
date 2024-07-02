@@ -17,16 +17,38 @@ return {
     end,
     cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
     opts = {
+      ensure_installed = 'all',
       highlight = {
         enable = true,
+        disable = function(lang, buf)
+          local max_filesize = 20480 * 1024 -- 20 MB - equal to that of VS Code.
+          local disabled_langs = { -- NOTE: These are the names of the parsers and not the filetype. Add more as needed.
+            -- 'vimdoc',
+          }
+          local enabled = false
+          for disabled_lang in disabled_langs do
+            if lang == disabled_lang then
+              enabled = true
+              break
+            end
+          end
+
+        ---@diagnostic disable-next-line: undefined-field
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if enabled and ok and stats and stats.size > max_filesize then
+              return true
+          end
+        end,
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = {
         enable = true,
         disable = { 'ruby' },
       },
-      ensure_installed = 'all',
     },
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+    end,
   },
 
   { -- Automatically add closing tags for HTML and JSX. See `:help nvim-ts-autotag-usage`.
