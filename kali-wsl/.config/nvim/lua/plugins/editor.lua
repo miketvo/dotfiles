@@ -199,14 +199,14 @@ return {
       })
 
       -- Eye candy stuff.
-      vim.cmd.highlight('NeoTreeDimText guifg=#434C5E')                  -- gruvbox-material 1.
-      vim.cmd.highlight('NeoTreeDotfile guifg=#4C566A')                  -- gruvbox-material 3.
-      vim.cmd.highlight('NeoTreeFileStatsHeader guifg=#4C566A')          -- gruvbox-material 3.
-      vim.cmd.highlight('NeoTreeFileStats guifg=#4C566A')                -- gruvbox-material 3.
-      vim.cmd.highlight('NeoTreeMessage guifg=#4C566A')                  -- gruvbox-material 3.
-      vim.cmd.highlight('NeoTreeFloatBorder ctermfg=Gray guifg=#252931') -- no border.
-      vim.cmd.highlight('NeoTreeFloatTitle gui=bold guibg=#252931')      -- blended.
-      vim.cmd.highlight('NeoTreeTitleBar gui=bold guibg=#252931')        -- blended.
+      vim.cmd.highlight('NeoTreeDimText guifg=#504945')                   -- gruvbox-material 1.
+      vim.cmd.highlight('NeoTreeDotfile guifg=#5A524C')                   -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeFileStatsHeader guifg=#5A524C')           -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeFileStats guifg=#5A524C')                 -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeMessage guifg=#5A524C')                   -- gruvbox-material 3.
+      vim.cmd.highlight('NeoTreeFloatBorder ctermfg=Black guifg=#1B1B1B') -- no border.
+      vim.cmd.highlight('NeoTreeFloatTitle gui=bold guibg=#1B1B1B')       -- blended.
+      vim.cmd.highlight('NeoTreeTitleBar gui=bold guibg=#1B1B1B')         -- blended.
     end,
   },
 

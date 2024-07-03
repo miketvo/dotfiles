@@ -27,7 +27,7 @@ return {
           settings = {
             python = {
               analysis = {
-                useLibraryCodeForTypes = false,
+                useLibraryCodeForTypes = true,
                 diagnosticMode = 'workspace',
               }
             },
