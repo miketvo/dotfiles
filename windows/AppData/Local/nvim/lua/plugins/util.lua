@@ -6,6 +6,9 @@ return {
   -- UI component library. See https://github.com/MunifTanjim/nui.nvim.
   { 'MunifTanjim/nui.nvim', lazy = true },
 
+  -- Asynchronous I/O library. See https://github.com/nvim-neotest/nvim-nio.
+  { 'nvim-neotest/nvim-nio' },
+
   -- Pretty icon dependency for file explorer, tabline, statusline, etc.
   -- See https://github.com/nvim-tree/nvim-web-devicons.
   -- See `:help nvim-web-devicons-usage`.
