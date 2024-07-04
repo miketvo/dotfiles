@@ -48,7 +48,7 @@ return {
     dependencies = { 'nvim-neotest/nvim-nio' },
     keys = {
       { '<leader>X', function() require('dapui').toggle({ }) end, desc = 'Debug panel' },
-      { '<leader>xe', function() require('dapui').eval() end, desc = 'Eval', mode = {'n', 'v'} },
+      { '<leader>ke', function() require('dapui').eval() end, desc = 'Eval', mode = {'n', 'v'} },
     },
     opts = {},
     config = function(_, opts)
