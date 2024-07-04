@@ -227,7 +227,7 @@ return {
         desc = 'LSP symbols outline',
       },
       { '<leader>dL', '<cmd>Trouble loclist toggle<cr>', desc = 'Diagnostic location list' },
-      { '<leader>dQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Workspace quickfix list' },
+      { '<leader>dq', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix list' },
     },
     config = function ()
       require('trouble').setup({})
