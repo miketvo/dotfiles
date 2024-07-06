@@ -19,6 +19,8 @@
 require('config.options')  -- See stdpath('config') .. '/config/options.lua'.
 require('config.keymaps')  -- See stdpath('config') .. '/config/keymaps.lua'.
 require('config.autocmds') -- See stdpath('config') .. '/config/autocmds.lua'.
+require('config.lsp')      -- See stdpath('config') .. '/config/lsp.lua'.
+require('config.dap')      -- See stdpath('config') .. '/config/dap.lua'.
 
 
 -- [[ PLUGIN MANAGER (LAZY.NVIM) ]]
