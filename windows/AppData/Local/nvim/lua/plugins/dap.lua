@@ -35,6 +35,8 @@ return {
       vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'DiagnosticError', linehl = '', numhl = '' })
       vim.fn.sign_define('LogPoint', { text = '', texthl = 'DiagnosticInfo', linehl = '', numhl = '' })
 
+      vim.g.dap_setup()
+
       local vscode = require('dap.ext.vscode')
       local json = require('plenary.json')
       vscode.json_decode = function(str)
