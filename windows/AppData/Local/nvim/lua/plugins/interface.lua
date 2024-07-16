@@ -141,22 +141,36 @@ return {
     config = function()
       local wk = require('which-key')
       wk.setup({ plugins = { spelling = true } })
-      wk.register({ -- NOTE: Document existing key chains here.
-        ['z'] = { name = '+view' },
-        [']'] = { name = '+next' },
-        ['['] = { name = '+prev' },
-        ['<leader>c'] = { name = '+code', _ = 'which_key_ignore' },
-        ['<leader>b'] = { name = '+buffer', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '+workspace', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '+diagnostics', _ = 'which_key_ignore' },
-        ['<leader>f'] = { name = '+find (search)', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '+goto', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '+rename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '+surround', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = '+hunk', _ = 'which_key_ignore' },
-        ['<leader>q'] = { name = '+session', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '+toggle', _ = 'which_key_ignore' },
-      }, { mode = { 'n', 'v' } })
+      wk.add({ -- NOTE: Document existing key chains here.
+        {
+          mode = { 'n', 'v' },
+          { '<leader>b', group = 'buffer' },
+          { '<leader>b_', hidden = true },
+          { '<leader>c', group = 'code' },
+          { '<leader>c_', hidden = true },
+          { '<leader>d', group = 'diagnostics' },
+          { '<leader>d_', hidden = true },
+          { '<leader>f', group = 'find (search)' },
+          { '<leader>f_', hidden = true },
+          { '<leader>g', group = 'goto' },
+          { '<leader>g_', hidden = true },
+          { '<leader>h', group = 'hunk' },
+          { '<leader>h_', hidden = true },
+          { '<leader>q', group = 'session' },
+          { '<leader>q_', hidden = true },
+          { '<leader>r', group = 'rename' },
+          { '<leader>r_', hidden = true },
+          { '<leader>s', group = 'surround' },
+          { '<leader>s_', hidden = true },
+          { '<leader>t', group = 'toggle' },
+          { '<leader>t_', hidden = true },
+          { '<leader>w', group = 'workspace' },
+          { '<leader>w_', hidden = true },
+          { '[', group = 'prev' },
+          { ']', group = 'next' },
+          { 'z', group = 'view' },
+        },
+      })
     end,
   },
 
