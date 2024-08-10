@@ -31,7 +31,7 @@
 		"delete": {"key": 46},
 		"duplicate": {"key": 68, "ctrl": true},
 		"select_all": {"key": 65, "ctrl": true},
-		"unselect_all": null,
+		"unselect_all": {"key": 81},
 		"invert_selection": {"key": 73, "ctrl": true},
 		"edit": {"key": 49},
 		"paint": {"key": 50},
