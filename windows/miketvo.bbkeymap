@@ -178,7 +178,7 @@
 		"solidify_mesh_selection": null,
 		"inset_mesh_selection": {"key": 73, "shift": true},
 		"loop_cut": {"key": 82, "shift": true},
-		"dissolve_edges": null,
+		"dissolve_edges": {"key": 68, "shift": true},
 		"merge_vertices": {"key": 77, "shift": true},
 		"merge_meshes": null,
 		"split_mesh": null,
