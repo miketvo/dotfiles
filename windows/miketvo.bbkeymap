@@ -90,7 +90,7 @@
 		"toggle_motion_trails": null,
 		"pixel_grid": {"key": 71},
 		"split_screen": null,
-		"focus_on_selection": null,
+		"focus_on_selection": {"key": 192},
 		"toggle_camera_projection": {"key": 101},
 		"camera_initial": {"key": 97},
 		"camera_top": {"key": 104},
