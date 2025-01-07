@@ -1,3 +1,6 @@
+# Terminal Icons
+Import-Module Terminal-Icons
+
 # Load oh-my-posh config
 oh-my-posh init pwsh --config ~\.oh-my-posh.omp.json | Invoke-Expression
 
