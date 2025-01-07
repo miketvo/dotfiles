@@ -187,7 +187,3 @@ imports: [
         file: windows.hjson
     }
 ]
-
-###############################################################
-# Syntax theme
-syntax_theme: GitHub
