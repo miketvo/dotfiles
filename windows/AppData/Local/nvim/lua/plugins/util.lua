@@ -27,6 +27,10 @@ return {
     opts = {
       options = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp' },
     },
-  }
+  },
+
+  -- Changes the working directory to the project root when you open a file or directory.
+  -- See https://github.com/notjedi/nvim-rooter.lua.
+  { 'notjedi/nvim-rooter.lua' },
 
 }
