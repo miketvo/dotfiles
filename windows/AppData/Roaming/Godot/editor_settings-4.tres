@@ -183,6 +183,8 @@ importality/krita_command_arguments = PackedStringArray()
 importality/pencil2d_command = ""
 importality/pencil2d_command_arguments = PackedStringArray()
 importality/command_building_rules_for_custom_image_loader = PackedStringArray()
+export/android/java_sdk_path = "C:\\Users\\vomin\\scoop\\apps\\openjdk21\\current"
+network/language_server/poll_limit_usec = 100000
 shortcuts = [{
 "name": "script_text_editor/convert_to_uppercase",
 "shortcuts": []
@@ -197,7 +199,9 @@ metadata/script_setup_templates_dictionary = {
 "": "0ObjectEmpty",
 "AnimatableBody2D": "0NodeDefault",
 "Button": "0NodeDefault",
+"CanvasLayer": "0NodeDefault",
 "CharacterBody2D": "0CharacterBody2DBasic Movement",
+"CheckBox": "0NodeDefault",
 "CheckButton": "0ObjectEmpty",
 "Control": "0NodeDefault",
 "G": "0ObjectEmpty",
@@ -210,7 +214,8 @@ metadata/script_setup_templates_dictionary = {
 "GameScen": "0ObjectEmpty",
 "GameScene": "0ObjectEmpty",
 "GameScene2": "0ObjectEmpty",
-"GameScene2D": "0ObjectEmpty",
+"GameScene2D": "0NodeDefault",
+"HBoxContainer": "0NodeDefault",
 "Label": "0NodeDefault",
 "N": "0ObjectEmpty",
 "No": "0ObjectEmpty",
@@ -218,6 +223,7 @@ metadata/script_setup_templates_dictionary = {
 "Node": "0ObjectEmpty",
 "Node2": "0ObjectEmpty",
 "Node2D": "0ObjectEmpty",
+"PanelContainer": "0NodeDefault",
 "RigidBody2D": "0NodeDefault",
 "S": "0ObjectEmpty",
 "Sc": "0ObjectEmpty",
