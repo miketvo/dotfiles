@@ -37,17 +37,15 @@ wezterm.on('format-tab-title', function(tab)
   if pane.domain_name then
     if pane.domain_name == 'local' then
       if (string.find(title, 'powershell') ~= nil) or (string.find(title, 'pwsh') ~= nil) then
-        title = ' Powershell '
+        title = '󰨊 Powershell'
       elseif string.find(title, 'cmd') ~= nil then
-        title = ' Command Prompt '
-      else
-        title = ' ' .. title .. ' '
+        title = ' Command Prompt'
       end
     elseif pane.domain_name == 'WSL:kali-linux' then
-      title = ' Kali Linux '
+      title = ' Kali Linux'
     end
   end
-  return title
+  return string.format(' %-24s ', title)
 end)
 
 -- Mode display
@@ -86,7 +84,7 @@ config.window_padding = {
 config.window_background_opacity = 0.75
 config.win32_system_backdrop = 'Acrylic'
 config.window_frame = {
-  font = wezterm.font('JetBrains Mono', { weight = 'Bold' }),
+  font = wezterm.font('JetBrainsMono Nerd Font Propo', { weight = 'Bold' }),
   font_size = 9.0,
   active_titlebar_bg = '#2e2e2e',
   inactive_titlebar_bg = '#2e2e2e',
