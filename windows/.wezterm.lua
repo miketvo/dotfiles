@@ -184,6 +184,8 @@ config.keys = {
   { key = 'x', mods = 'SHIFT|ALT', action = act.CloseCurrentPane { confirm = true } },
   { key = 'w', mods = 'CTRL|SHIFT', action = act.DisableDefaultAssignment },
   { key = 'x', mods = 'CTRL|SHIFT', action = act.CloseCurrentTab { confirm = true } },
+  { key = 'LeftArrow', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+  { key = 'RightArrow', mods = 'ALT', action = act.ActivateTabRelative(1) },
   {
     key = 'p',
     mods = 'CTRL|SHIFT',
