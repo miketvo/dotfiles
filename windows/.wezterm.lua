@@ -198,7 +198,7 @@ config.keys = {
     action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   {
-    key = '-',
+    key = '_',
     mods = 'SHIFT|ALT',
     action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
