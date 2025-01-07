@@ -53,6 +53,7 @@ scoop install main/eza
 scoop install main/bat
 scoop install main/mdcat
 scoop install main/broot
+broot --install
 scoop install main/fd
 scoop install main/fzf
 scoop install main/ripgrep

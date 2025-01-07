@@ -18,7 +18,7 @@ function dra { eza --icons --all $args }
 function drla { eza --icons --long --all $args }
 function drl { eza --icons --long $args }
 function drg { eza --icons --long --all --git --git-ignore $args }
-Set-Alias -Name 'br' -Value 'broot'
+function imgcat { wezterm imgcat $args }
 del alias:sl -Force
 
 winfetch -image ${HOME}/.fetch.png

@@ -179,6 +179,8 @@ end)
 config.leader = { key = 'Space', mods = 'CTRL|SHIFT' }
 config.keys = {
 
+  { key = 'Enter', mods = 'ALT', action = act.DisableDefaultAssignment },
+  { key = 'F11', action = act.ToggleFullScreen },
   { key = 'l', mods = 'CTRL|SHIFT', action = act.ShowLauncher },
   { key = 't', mods = 'CTRL|SHIFT', action = act.ShowTabNavigator },
   { key = 'x', mods = 'SHIFT|ALT', action = act.CloseCurrentPane { confirm = true } },
