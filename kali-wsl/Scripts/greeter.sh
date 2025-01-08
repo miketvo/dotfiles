@@ -1,3 +1,3 @@
 #!/bin/bash
 
-neofetch --bold on
+fastfetch
