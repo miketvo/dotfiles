@@ -21,4 +21,5 @@ function drg { eza --icons --long --all --git --git-ignore $args }
 function imgcat { wezterm imgcat $args }
 del alias:sl -Force
 
-winfetch -image ${HOME}/.fetch.png
+Clear-Host
+winfetch

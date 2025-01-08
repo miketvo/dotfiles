@@ -1,6 +1,6 @@
 # ===== WINFETCH CONFIGURATION =====
 
-# $image = "~/winfetch.png"
+$image = "~/.fetch.png"
 # $noimage = $true
 
 # Display image using ASCII characters
@@ -49,11 +49,12 @@
 # Configure which disks are shown
 # $ShowDisks = @("C:", "D:")
 # Show all available disks
-# $ShowDisks = @("*")
+$ShowDisks = @("*")
 
 # Configure which package managers are shown
 # disabling unused ones will improve speed
 # $ShowPkgs = @("winget", "scoop", "choco")
+$ShowPkgs = @("winget", "scoop")
 
 # Use the following option to specify custom package managers.
 # Create a function with that name as suffix, and which returns
