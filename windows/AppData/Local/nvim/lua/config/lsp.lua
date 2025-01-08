@@ -29,7 +29,7 @@ vim.g.lsp_server_configs = {
     },
   },
   jdtls = {},
-  tsserver = {},
+  ts_ls = {},
   lua_ls = {
     -- mason = false, -- Set to false if you don't want this server to be installed with mason.
     -- ---@type LazyKeysSpec[]
