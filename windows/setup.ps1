@@ -32,7 +32,7 @@ Write-Output "Setting up Scoop Buckets..."
 scoop bucket add extras
 scoop bucket add versions
 scoop bucket add java
-scoop bucket add anderlli0053_DEV-tools "https://github.com/anderlli0053/DEV-tools.git"
+scoop bucket add sysinternals
 
 # Essential Packages
 Write-Output "Installing essential packages..."
@@ -50,7 +50,6 @@ scoop install main/touch
 scoop install main/which
 scoop install main/bottom
 scoop install main/eza
-scoop install main/bat
 scoop install main/mdcat
 scoop install main/broot
 broot --install
@@ -65,8 +64,12 @@ scoop install main/python
 scoop install main/perl
 scoop install main/miktex
 scoop install extras/calibre
-scoop install anderlli0053_DEV-tools/du
-scoop install anderlli0053_DEV-tools/sl
+scoop install sysinternals/du
+scoop install main/dua
+scoop install main/btop-lhm
+scoop install main/btop
+scoop install main/less
+scoop install main/bat
 
 # Neovim
 Write-Output "Installing NeoVim..."
