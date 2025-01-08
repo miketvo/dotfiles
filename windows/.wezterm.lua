@@ -13,6 +13,10 @@ end
 config.default_prog = { 'powershell' }
 
 -- Behavior
+config.default_cursor_style = 'BlinkingUnderline'
+config.animation_fps = 32
+config.cursor_blink_ease_in = 'Constant'
+config.cursor_blink_ease_out = 'Constant'
 config.initial_cols = 120
 config.initial_rows = 30
 config.window_close_confirmation = 'NeverPrompt'
