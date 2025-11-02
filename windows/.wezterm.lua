@@ -46,8 +46,12 @@ wezterm.on('format-tab-title', function(tab)
       elseif string.find(title, 'cmd') ~= nil then
         title = ' Command Prompt'
       end
+    elseif pane.domain_name == 'WSL:archlinux' then
+      title = '󰣇 Arch Linux'
     elseif pane.domain_name == 'WSL:kali-linux' then
       title = ' Kali Linux'
+    elseif pane.domain_name == 'WSL:Debian' then
+      title = '󰣚 Debian'
     end
   end
   return string.format(' %-24s ', title)
@@ -159,6 +163,54 @@ wezterm.on('update-status', function(window, pane)
           },
         },
       }
+    elseif domain_name == 'WSL:archlinux' then  -- Kanagawa Dragon: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm/kanagawa-dragon.lua
+      overrides.force_reverse_video_cursor = true
+      overrides.colors = {
+        foreground = "#c5c9c5",
+		background = "#181616",
+
+		cursor_bg = "#c8c093",
+		cursor_fg = "#c8c093",
+		cursor_border = "#c8c093",
+
+		selection_fg = "#c8c093",
+		selection_bg = "#2d4f67",
+
+		scrollbar_thumb = "#16161d",
+		split = "#16161d",
+
+		ansi = {
+			"#0d0c0c",
+			"#c4746e",
+			"#8a9a7b",
+			"#c4b28a",
+			"#8ba4b0",
+			"#a292a3",
+			"#8ea4a2",
+			"#c8c093",
+		},
+		brights = {
+			"#a6a69c",
+			"#e46876",
+			"#87a987",
+			"#e6c384",
+			"#7fb4ca",
+			"#938aa9",
+			"#7aa89f",
+			"#c5c9c5",
+		},
+
+        tab_bar = {
+          active_tab = {
+            bg_color = '#181616',
+            fg_color = '#c5c9c5',
+            intensity = 'Normal',
+            underline = 'None',
+            italic = false,
+            strikethrough = false,
+          },
+        },
+      }
     elseif domain_name == 'WSL:kali-linux' then
       overrides.color_scheme = 'Gruvbox Material (Gogh)'
       overrides.colors = {
@@ -166,6 +218,20 @@ wezterm.on('update-status', function(window, pane)
           active_tab = {
             bg_color = '#282828',
             fg_color = '#d8dee9',
+            intensity = 'Normal',
+            underline = 'None',
+            italic = false,
+            strikethrough = false,
+          },
+        },
+      }
+    elseif domain_name == 'WSL:Debian' then
+      overrides.color_scheme = 'Calamity'
+      overrides.colors = {
+        tab_bar = {
+          active_tab = {
+            bg_color = '#2b2330',
+            fg_color = '#d5ced9',
             intensity = 'Normal',
             underline = 'None',
             italic = false,
