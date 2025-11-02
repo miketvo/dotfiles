@@ -163,7 +163,7 @@ wezterm.on('update-status', function(window, pane)
           },
         },
       }
-    elseif domain_name == 'WSL:archlinux' then  -- Kanagawa Dragon: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm/kanagawa.lua
+    elseif domain_name == 'WSL:archlinux' then  -- Kanagawa Wave: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm/kanagawa.lua
       overrides.force_reverse_video_cursor = true
       overrides.colors = {
 		foreground = "#dcd7ba",
