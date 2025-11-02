@@ -16,10 +16,12 @@
             {
                 "action": "copy",
                 "singleLine": false
-            }
+            },
+            "id": "User.copy.644BA8F2"
         },
         {
-            "command": "paste"
+            "command": "paste",
+            "id": "User.paste"
         },
         {
             "command": "find",
@@ -118,6 +120,14 @@
                 "useAcrylic": true
             },
             {
+                "colorScheme": "KanagawaDragon",
+                "guid": "{943d38bb-7e93-51b9-9f15-a0882a8679c2}",
+                "hidden": false,
+                "name": "Arch Linux",
+                "source": "Microsoft.WSL",
+                "tabTitle": "Arch Linux"
+            },
+            {
                 "colorScheme": "gruvbox-material",
                 "commandline": "wsl -d kali-linux",
                 "cursorShape": "vintage",
@@ -138,6 +148,16 @@
                 "name": "Kali Linux Desktop",
                 "startingDirectory": "//wsl$/kali-linux/home/miketvo",
                 "tabTitle": "Kali Linux Desktop"
+            },
+            {
+                "colorScheme": "Calamity",
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Openlogo-debianV2.svg/800px-Openlogo-debianV2.svg.png",
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl"
             },
             {
                 "colorScheme": "Tango Dark",
@@ -518,6 +538,75 @@
             "selectionBackground": "#665C54",
             "white": "#A89984",
             "yellow": "#D79921"
+        },
+        {
+            "background": "#181616",
+            "black": "#0D0C0C",
+            "blue": "#8BA4B0",
+            "brightBlack": "#A6A69C",
+            "brightBlue": "#7FB4CA",
+            "brightCyan": "#7AA89F",
+            "brightGreen": "#87A987",
+            "brightPurple": "#8992A7",
+            "brightRed": "#E46876",
+            "brightWhite": "#C5C9C5",
+            "brightYellow": "#E6C384",
+            "cursorColor": "#C5C9C5",
+            "cyan": "#8EA4A2",
+            "foreground": "#C8C093",
+            "green": "#8A9A7B",
+            "name": "KanagawaDragon",
+            "purple": "#A292A3",
+            "red": "#C4746E",
+            "selectionBackground": "#223249",
+            "white": "#C8C093",
+            "yellow": "#C4B28A"
+        },
+        {
+            "background": "#F2ECBC",
+            "black": "#1F1F28",
+            "blue": "#4D699B",
+            "brightBlack": "#8A8980",
+            "brightBlue": "#6693BF",
+            "brightCyan": "#5E857A",
+            "brightGreen": "#6E915F",
+            "brightPurple": "#624C83",
+            "brightRed": "#D7474B",
+            "brightWhite": "#43436C",
+            "brightYellow": "#836F4A",
+            "cursorColor": "#C9CBD1",
+            "cyan": "#597B75",
+            "foreground": "#545464",
+            "green": "#6F894E",
+            "name": "KanagawaLotus",
+            "purple": "#B35B79",
+            "red": "#C84053",
+            "selectionBackground": "#B5CBD2",
+            "white": "#545464",
+            "yellow": "#77713F"
+        },
+        {
+            "background": "#1F1F28",
+            "black": "#090618",
+            "blue": "#7E9CD8",
+            "brightBlack": "#727169",
+            "brightBlue": "#7FB4CA",
+            "brightCyan": "#7AA89F",
+            "brightGreen": "#98BB6C",
+            "brightPurple": "#938AA9",
+            "brightRed": "#E82424",
+            "brightWhite": "#DCD7BA",
+            "brightYellow": "#E6C384",
+            "cursorColor": "#C8C093",
+            "cyan": "#6A9589",
+            "foreground": "#DCD7BA",
+            "green": "#76946A",
+            "name": "KanagawaWave",
+            "purple": "#957FB8",
+            "red": "#C34043",
+            "selectionBackground": "#2D4F67",
+            "white": "#C8C093",
+            "yellow": "#C0A36E"
         },
         {
             "background": "#120B0D",
