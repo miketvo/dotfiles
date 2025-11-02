@@ -4,20 +4,20 @@
     "actions": 
     [
         {
-            "command": "unbound",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+v"
-        },
-        {
             "command": 
             {
                 "action": "copy",
                 "singleLine": false
             },
             "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
         },
         {
             "command": "paste",
@@ -87,7 +87,7 @@
                 "useAcrylic": true
             },
             {
-                "experimental.retroTerminalEffect": false,
+                "cursorShape": "vintage",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt",
@@ -95,6 +95,7 @@
             },
             {
                 "colorScheme": "nord",
+                "cursorShape": "vintage",
                 "guid": "{99331914-5611-54fa-9fc2-3bda2159660f}",
                 "hidden": false,
                 "name": "Developer PowerShell",
@@ -102,6 +103,7 @@
                 "useAcrylic": true
             },
             {
+                "cursorShape": "vintage",
                 "guid": "{1b67b52e-7c32-5f22-8825-c3e573e4be61}",
                 "hidden": false,
                 "name": "Developer Command Prompt",
@@ -120,11 +122,13 @@
                 "useAcrylic": true
             },
             {
-                "colorScheme": "KanagawaDragon",
+                "colorScheme": "KanagawaWave",
+                "commandline": "wsl -d archlinux",
                 "guid": "{943d38bb-7e93-51b9-9f15-a0882a8679c2}",
                 "hidden": false,
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Arch_Linux_\"Crystal\"_icon.svg/2048px-Arch_Linux_\"Crystal\"_icon.svg.png",
                 "name": "Arch Linux",
-                "source": "Microsoft.WSL",
+                "startingDirectory": "//wsl$/archlinux/home/miketvo",
                 "tabTitle": "Arch Linux"
             },
             {
@@ -133,7 +137,7 @@
                 "cursorShape": "vintage",
                 "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
                 "hidden": false,
-                "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png",
                 "name": "Kali Linux",
                 "startingDirectory": "//wsl$/kali-linux/home/miketvo",
                 "tabTitle": "Kali Linux"
@@ -144,7 +148,7 @@
                 "cursorShape": "vintage",
                 "guid": "{55ca431a-3a87-5fb3-83cd-11ecedd031d2}",
                 "hidden": false,
-                "icon": "C:\\Users\\vomin\\Pictures\\icons\\kali-menu.png",
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png",
                 "name": "Kali Linux Desktop",
                 "startingDirectory": "//wsl$/kali-linux/home/miketvo",
                 "tabTitle": "Kali Linux Desktop"
@@ -155,7 +159,7 @@
                 "experimental.retroTerminalEffect": false,
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
-                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Openlogo-debianV2.svg/800px-Openlogo-debianV2.svg.png",
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Openlogo-debianV2.svg/1654px-Openlogo-debianV2.svg.png",
                 "name": "Debian",
                 "source": "Windows.Terminal.Wsl"
             },

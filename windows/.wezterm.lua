@@ -163,11 +163,11 @@ wezterm.on('update-status', function(window, pane)
           },
         },
       }
-    elseif domain_name == 'WSL:archlinux' then  -- Kanagawa Dragon: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm/kanagawa-dragon.lua
+    elseif domain_name == 'WSL:archlinux' then  -- Kanagawa Dragon: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm/kanagawa.lua
       overrides.force_reverse_video_cursor = true
       overrides.colors = {
-        foreground = "#c5c9c5",
-		background = "#181616",
+		foreground = "#dcd7ba",
+		background = "#1f1f28",
 
 		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",
@@ -179,31 +179,14 @@ wezterm.on('update-status', function(window, pane)
 		scrollbar_thumb = "#16161d",
 		split = "#16161d",
 
-		ansi = {
-			"#0d0c0c",
-			"#c4746e",
-			"#8a9a7b",
-			"#c4b28a",
-			"#8ba4b0",
-			"#a292a3",
-			"#8ea4a2",
-			"#c8c093",
-		},
-		brights = {
-			"#a6a69c",
-			"#e46876",
-			"#87a987",
-			"#e6c384",
-			"#7fb4ca",
-			"#938aa9",
-			"#7aa89f",
-			"#c5c9c5",
-		},
+		ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
+		brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
+		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
 
         tab_bar = {
           active_tab = {
-            bg_color = '#181616',
-            fg_color = '#c5c9c5',
+            bg_color = '#1f1f28',
+            fg_color = '#dcd7ba',
             intensity = 'Normal',
             underline = 'None',
             italic = false,
