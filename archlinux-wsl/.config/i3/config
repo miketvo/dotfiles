@@ -56,9 +56,9 @@ set $ws9 "9"
 set $ws10 "10"
 
 # gaps and borders
-set $gap_width_inner 10
+set $gap_width_inner 12
 set $gap_width_outer 3
-set $border_width 2
+set $border_width 3
 
 # colors - special
 set_from_resource $color_fg i3wm.foreground #ffffff
