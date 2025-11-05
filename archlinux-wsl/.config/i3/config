@@ -30,10 +30,28 @@ exec --no-startup-id nm-applet
 # modifier key
 set $mod Mod4
 
+# workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
 # gaps and borders
-set $default_gaps_inner 8
-set $default_gaps_outer 8
-set $borders_width 3
+set $gap_width_inner 8
+set $gap_width_outer 8
+set $border_width 2
+
+# colors - special
+set_from_resource $color_fg i3wm.foreground #ffffff
+set_from_resource $color_bg i3wm.background #000000
+set_from_resource $color_cursor i3wm.cursorColor #ffffff
+set $color_window_hl #363635
 
 # colors - normal
 set_from_resource $color_black i3wm.color0 #000000
@@ -61,7 +79,7 @@ set_from_resource $color_bwhite i3wm.color15 #ffffff
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Jetbrains Mono Nerd Font Propo Black 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -81,70 +99,106 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+p exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# change focus
+# change focus between windows
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# move focused window/container
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
+# enter fullscreen mode for the focused window/container
 bindsym $mod+f fullscreen
+
+# toggle tiling/floating for the focused container
+bindsym $mod+Shift+space floating toggle
+
+# toggle focus between tiling and floating windows
+bindsym $mod+space focus mode_toggle
+
+# window splitting
+bindsym $mod+h split h
+bindsym $mod+v split v
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# focus parent/child of window/container
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# resize window/container (can also be done with the mouse)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode:
+    #
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+
+    # back to normal: Enter, Escape, or Mod+R
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# turn gaps on/off
+set $mode_gaps "Configure gaps: [e]nable, [d]isable"
+mode $mode_gaps {
+    bindsym e gaps inner all set $gap_width_innter; gaps outer all set $gap_width_outer
+    bindsym d gaps inner all set 0; gaps outer all set 0
+
+    # back to normal: Enter, Escape, or Mod+G
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+g mode "default"
+}
+bindsym $mod+g mode $mode_gaps
 
 # workspace switching
-# keybind      # workspace (order:name)
-bindsym $mod+1 workspace 1:1
-bindsym $mod+2 workspace 2:2
-bindsym $mod+3 workspace 3:3
-bindsym $mod+4 workspace 4:4
-bindsym $mod+5 workspace 5:5
-bindsym $mod+6 workspace 6:6
-bindsym $mod+7 workspace 7:7
-bindsym $mod+8 workspace 8:8
-bindsym $mod+9 workspace 9:9
-bindsym $mod+0 workspace 10:10
+# keybind           <order:name>
+bindsym $mod+1 workspace 1:$ws1
+bindsym $mod+2 workspace 2:$ws2
+bindsym $mod+3 workspace 3:$ws3
+bindsym $mod+4 workspace 4:$ws4
+bindsym $mod+5 workspace 5:$ws5
+bindsym $mod+6 workspace 6:$ws6
+bindsym $mod+7 workspace 7:$ws7
+bindsym $mod+8 workspace 8:$ws8
+bindsym $mod+9 workspace 9:$ws9
+bindsym $mod+0 workspace 10:$ws10
 
 # move focused container to workspace
-# keybind                              # workspace (order:name)
-bindsym $mod+Shift+1 move container to workspace 1:1
-bindsym $mod+Shift+2 move container to workspace 2:2
-bindsym $mod+Shift+3 move container to workspace 3:3
-bindsym $mod+Shift+4 move container to workspace 4:4
-bindsym $mod+Shift+5 move container to workspace 5:5
-bindsym $mod+Shift+6 move container to workspace 6:6
-bindsym $mod+Shift+7 move container to workspace 7:7
-bindsym $mod+Shift+8 move container to workspace 8:8
-bindsym $mod+Shift+9 move container to workspace 9:9
-bindsym $mod+Shift+0 move container to workspace 10:10
+# keybind                                   <order:name>
+bindsym $mod+Shift+1 move container to workspace 1:$ws1
+bindsym $mod+Shift+2 move container to workspace 2:$ws2
+bindsym $mod+Shift+3 move container to workspace 3:$ws3
+bindsym $mod+Shift+4 move container to workspace 4:$ws4
+bindsym $mod+Shift+5 move container to workspace 5:$ws5
+bindsym $mod+Shift+6 move container to workspace 6:$ws6
+bindsym $mod+Shift+7 move container to workspace 7:$ws7
+bindsym $mod+Shift+8 move container to workspace 8:$ws8
+bindsym $mod+Shift+9 move container to workspace 9:$ws9
+bindsym $mod+Shift+0 move container to workspace 10:$ws1
 
 # use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -153,23 +207,32 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# meta controls
+# reload the i3 configuration file
+bindsym $mod+Shift+c reload
+# restart i3 in-place (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
 
 #############
 # Eye candy #
 #############
 
+# window title alignment
+title_align center
+
 # window colors
-# window type            border           background       text             indicator
-client.focused           $color_bblack    $color_bblack    $color_bblue     $color_bblue
-client.focused_inactive  $color_black     $color_black     $color_blue      $color_blue
-client.unfocused         $color_black     $color_black     $color_blue      $color_blue
-client.urgent            $color_bred      $color_bred      $color_bwhite    $color_bred
+# window_class           border            background        text              indicator         child_border
+client.focused           $color_window_hl  $color_window_hl  $color_fg         $color_bgreen     $color_window_hl
+client.focused_inactive  $color_bg         $color_bg         $color_bblack     $color_window_hl  $color_black
+client.unfocused         $color_black      $color_black      $color_window_hl  $color_bg         $color_black
+client.urgent            $color_bred       $color_bred       $color_black      $color_red        $color_bg
+client.placeholder       $color_black      $color_bg         $color_fg         $color_bg         $color_black
+client.background $color_background
 
-# gaps
-for_window [class="^.*"] border pixel $borders_width
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
+# gaps and borders
+gaps inner $gap_width_inner
+gaps outer $gap_width_outer
 smart_gaps on
-
-# smart border
+for_window [class="^.*"] border pixel $border_width
 hide_edge_borders smart_no_gaps
