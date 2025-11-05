@@ -46,8 +46,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 # gaps and borders
-set $gap_width_inner 8
-set $gap_width_outer 8
+set $gap_width_inner 10
+set $gap_width_outer 3
 set $border_width 2
 
 # colors - special
