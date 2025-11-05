@@ -77,7 +77,7 @@ wezterm.on('update-status', function(window, pane)
     window:set_right_status(wezterm.format {
       { Attribute = { Underline = 'None' } },
       { Foreground = { Color = '#181616' } },
-      { Background = { Color = '#ffa066' } },
+      { Background = { Color = '#e6c384' } },
       { Text = ' ' .. mode_name .. ' ' }
     })
   else
