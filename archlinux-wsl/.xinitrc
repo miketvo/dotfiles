@@ -4,7 +4,6 @@ xrdb="xrdb"
 xinitdir="/etc/X11/xinit"
 xmodmap="xmodmap"
 wm="i3"
-wallpaper_setter="feh"
 
 userresources="$HOME/.Xresources"
 usermodmap="$HOME/.Xmodmap"
@@ -47,4 +46,3 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 fi
 
 exec "$wm"
-exec "$wallpaper_setter" --bg-fill ~/.fehbg.jpg --no-fehbg

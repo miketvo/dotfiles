@@ -7,6 +7,9 @@
 # Startup processes #
 #####################
 
+# set wallpaper
+exec --no-startup-id feh --no-fehbg --bg-fill '~/.fehbg.jpg' --no-fehbg
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
