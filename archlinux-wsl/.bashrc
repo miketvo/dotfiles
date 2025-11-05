@@ -83,4 +83,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 
+# Broot integration
 source /home/miketvo/.config/broot/launcher/bash/br

@@ -78,5 +78,12 @@ source /home/miketvo/.config/broot/launcher/bash/br
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.omp.json)"
 
 # fastfetch greeting
-fastfetch --logo arch2
+wm=$(wmctrl -m | grep "Name" | sed "s/Name: //g")
+if [ $wm = "i3" ]; then
+    fastfetch --logo-type iterm --logo-width 42 --logo-padding-right 2 --logo ~/.fetch.png
+else
+    fastfetch --logo arch2
+fi
+
+# Navigate to home directory
 cd $HOME
