@@ -230,7 +230,7 @@ title_align center
 # window colors
 # window_class           border            background        text              indicator         child_border
 client.focused           $color_window_hl  $color_window_hl  $color_fg         $color_bgreen     $color_window_hl
-client.focused_inactive  $color_bg         $color_bg         $color_bblack     $color_window_hl  $color_black
+client.focused_inactive  $color_black      $color_black      $color_bblack     $color_window_hl  $color_black
 client.unfocused         $color_black      $color_black      $color_window_hl  $color_bg         $color_black
 client.urgent            $color_bred       $color_bred       $color_black      $color_red        $color_bg
 client.placeholder       $color_black      $color_bg         $color_fg         $color_bg         $color_black
