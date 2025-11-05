@@ -86,7 +86,9 @@ wezterm.on('update-status', function(window, pane)
 end)
 
 -- Eye candy
-config.window_decorations = 'NONE'
+config.window_decorations = 'RESIZE'
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 config.show_tab_index_in_tab_bar = false
 config.font = wezterm.font('JetBrainsMono Nerd Font Propo', { weight = 'DemiBold' })
 config.font_size = 10.0
@@ -96,7 +98,7 @@ config.window_padding = {
   top = '12px',
   bottom = '12px',
 }
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.75
 config.window_frame = {
   font = wezterm.font('JetBrainsMono Nerd Font Propo', { weight = 'Bold' }),
   font_size = 9.0,
@@ -104,6 +106,10 @@ config.window_frame = {
   active_titlebar_fg = '#c5c9c5',
   inactive_titlebar_bg = '#181616',
   inactive_titlebar_fg = '#c5c9c5',
+  border_left_width = 0,
+  border_right_width = 0,
+  border_bottom_height = 0,
+  border_top_height = 0,
 }
 config.inactive_pane_hsb = {
   saturation = 0.9,
