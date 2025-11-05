@@ -14,8 +14,18 @@ exec --no-startup-id "feh --no-fehbg --bg-fill $HOME/.fehbg.jpg"
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Start Polybar.
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
+
+# use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -167,48 +177,41 @@ bindsym $mod+r mode "resize"
 # turn gaps on/off
 set $mode_gaps "Configure gaps: [e]nable, [d]isable"
 mode $mode_gaps {
-    bindsym e gaps inner all set $gap_width_innter; gaps outer all set $gap_width_outer
+    bindsym e gaps inner all set $gap_width_inner; gaps outer all set $gap_width_outer
     bindsym d gaps inner all set 0; gaps outer all set 0
 
-    # back to normal: Enter, Escape, or Mod+G
+    # back to normal: Enter, Escape, or Mod+Shift+G
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+g mode "default"
+    bindsym $mod+Shift+g mode "default"
 }
-bindsym $mod+g mode $mode_gaps
+bindsym $mod+Shift+g mode $mode_gaps
 
 # workspace switching
 # keybind           <order:name>
-bindsym $mod+1 workspace 1:$ws1
-bindsym $mod+2 workspace 2:$ws2
-bindsym $mod+3 workspace 3:$ws3
-bindsym $mod+4 workspace 4:$ws4
-bindsym $mod+5 workspace 5:$ws5
-bindsym $mod+6 workspace 6:$ws6
-bindsym $mod+7 workspace 7:$ws7
-bindsym $mod+8 workspace 8:$ws8
-bindsym $mod+9 workspace 9:$ws9
-bindsym $mod+0 workspace 10:$ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 # keybind                                   <order:name>
-bindsym $mod+Shift+1 move container to workspace 1:$ws1
-bindsym $mod+Shift+2 move container to workspace 2:$ws2
-bindsym $mod+Shift+3 move container to workspace 3:$ws3
-bindsym $mod+Shift+4 move container to workspace 4:$ws4
-bindsym $mod+Shift+5 move container to workspace 5:$ws5
-bindsym $mod+Shift+6 move container to workspace 6:$ws6
-bindsym $mod+Shift+7 move container to workspace 7:$ws7
-bindsym $mod+Shift+8 move container to workspace 8:$ws8
-bindsym $mod+Shift+9 move container to workspace 9:$ws9
-bindsym $mod+Shift+0 move container to workspace 10:$ws1
-
-# use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws1
 
 # meta controls
 # reload the i3 configuration file
