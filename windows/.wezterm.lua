@@ -90,7 +90,7 @@ config.window_padding = {
   top = '12px',
   bottom = '12px',
 }
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.9
 config.win32_system_backdrop = 'Acrylic'
 config.window_frame = {
   font = wezterm.font('JetBrainsMono Nerd Font Propo', { weight = 'Bold' }),
