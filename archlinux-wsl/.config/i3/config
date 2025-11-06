@@ -111,7 +111,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Tab exec rofi -show window -window-format "Workspace {w}  {c} {t}"
 bindsym $mod+Control+space exec rofi -show drun -window-format "Workspace {w}  {c} {t}"
 bindsym $mod+Mod1+space exec rofi -show run -window-format "Workspace {w}  {c} {t}"
-bindsym $mod+Shift+slash exec rofi -show keybinds -window-format "Workspace {w}  {c} {t}"
+bindsym $mod+F1 exec rofi -show keybinds -window-format "Workspace {w}  {c} {t}"
+bindsym $mod+Shift+slash exec rofi -show keybinds -windomousew-format "Workspace {w}  {c} {t}"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -201,8 +202,8 @@ bindsym $mod+7 workspace $ws7; exec twmnc -t " Workspace $ws7 " -d 1000
 bindsym $mod+8 workspace $ws8; exec twmnc -t " Workspace $ws8 " -d 1000
 bindsym $mod+9 workspace $ws9; exec twmnc -t " Workspace $ws9 " -d 1000
 bindsym $mod+0 workspace $ws10; exec twmnc -t " Workspace $ws10 " -d 1000
-bindsym $mod+bracketleft workspace prev; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
-bindsym $mod+bracketright workspace next; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+bracketleft workspace prev_on_output; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+bracketright workspace next_on_output; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
 bindsym $mod+backslash workspace back_and_forth; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
 
 # move focused container to workspace
@@ -216,6 +217,9 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws1
+bindsym $mod+Shift+bracketleft move container to workspace prev_on_output
+bindsym $mod+Shift+bracketright move container to workspace next_on_output
+bindsym $mod+Shift+backslash move container to workspace back_and_forth
 
 # meta controls
 # reload the i3 configuration file

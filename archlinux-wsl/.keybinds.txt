@@ -1,0 +1,61 @@
+ + F1 |  + ?        Show this help
+
+ + Return            Launch terminal
+ + Ctrl + Space      Launch GUI app
+ + Alt + Space       Launch program
+
+ + Shift + q         Close focused container
+ + Ctrl + Shift + q  Close all containers
+
+ + Tab               Switch windows
+ + 󰁍                 Focus left
+ + 󰁔                 Focus right
+ + 󰁝                 Focus up
+ + 󰁅                 Focus down
+ + a                 Focus parent container
+ + d                 Focus child container
+
+ + f                 Toggle fullscreen
+ + v                 Split a container vertically
+ + h                 Split a container horizontally
+
+ + r                 Toggle resize mode [R]
+[R] 󰁍                 [R] Shrink width
+[R] 󰁔                 [R] Grow width
+[R] 󰁝                 [R] Shrink height
+[R] 󰁅                 [R] Grow height
+[R] Escape            Exit resize mode
+[R] Return            Exit resize mode
+
+ + e                 Tiling layout
+ + w                 Tabbed layout
+ + s                 Stacking layout
+
+ + Shift + Space     Toggle tiling/floating mode
+ + Space             Toggle focus between tiled/floating containers
+ + Left 󰍽            Drag container (float mode)
+ + Right 󰍽           Resize container (float mode)
+
+ + [0-9]             Switch to another workspace
+ + [                 Switch to previous workspace
+ + ]                 Switch to previous workspace
+ + \                 Switch to last workspace
+
+ + Shift + 󰁍         Move container left
+ + Shift + 󰁔         Move container right
+ + Shift + 󰁝         Move container up
+ + Shift + 󰁅         Move container down
+
+ + Shift + [0-9]     Move container to another workspace
+ + Shift + [         Move conSwitch to previous workspace
+ + Shift + ]         Move conSwitch to previous workspace
+ + Shift + \         Move conSwitch to last workspace
+
+ + g                 Toggle gap config mode [G]
+[G] e                 Enable gaps
+[G] d                 Disable gaps
+[G] Escape            Exit gap config mode
+[G] Return            Exit gap config mode
+
+ + Shift + c         Reload configurations
+ + Shift + r         Restart window manager

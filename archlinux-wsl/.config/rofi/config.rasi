@@ -216,11 +216,11 @@ inputbar {
     padding: 8;
     children: [
         prompt,
-	textbox-prompt-colon,
-	entry,
-	num-filtered-rows,
-	textbox-sep,
-	num-rows
+        textbox-prompt-colon,
+        entry,
+        num-filtered-rows,
+        textbox-sep,
+        num-rows
     ];
 }
 prompt {
@@ -247,7 +247,7 @@ listview {
     dynamic: true;
     cycle: true;
     columns: 3;
-    fixed-columnd: true;
+    fixed-columns: false;
     spacing: 8;
 
     border: 0;
