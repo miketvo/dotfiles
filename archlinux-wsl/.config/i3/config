@@ -8,11 +8,11 @@
 #####################
 
 # Set wallpaper.
-exec --no-startup-id "feh --no-fehbg --bg-fill $HOME/.fehbg.jpg"
+exec_always --no-startup-id "feh --no-fehbg --bg-fill $HOME/.fehbg.jpg"
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+exec_always --no-startup-id dex --autostart --environment i3
 
 # Start Polybar.
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
@@ -32,11 +32,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id nm-applet
+# exec_always --no-startup-id nm-apple
 
 # Start Picom compositor.
 exec_always --no-startup-id picom --config "$HOME/.config/picom/picom.conf" -b
@@ -192,19 +192,19 @@ mode $mode_gaps {
 bindsym $mod+Shift+g mode $mode_gaps
 
 # workspace switching
-bindsym $mod+1 workspace $ws1; exec twmnc -t " Workspace $ws1 " -d 1000
-bindsym $mod+2 workspace $ws2; exec twmnc -t " Workspace $ws2 " -d 1000
-bindsym $mod+3 workspace $ws3; exec twmnc -t " Workspace $ws3 " -d 1000
-bindsym $mod+4 workspace $ws4; exec twmnc -t " Workspace $ws4 " -d 1000
-bindsym $mod+5 workspace $ws5; exec twmnc -t " Workspace $ws5 " -d 1000
-bindsym $mod+6 workspace $ws6; exec twmnc -t " Workspace $ws6 " -d 1000
-bindsym $mod+7 workspace $ws7; exec twmnc -t " Workspace $ws7 " -d 1000
-bindsym $mod+8 workspace $ws8; exec twmnc -t " Workspace $ws8 " -d 1000
-bindsym $mod+9 workspace $ws9; exec twmnc -t " Workspace $ws9 " -d 1000
-bindsym $mod+0 workspace $ws10; exec twmnc -t " Workspace $ws10 " -d 1000
-bindsym $mod+bracketleft workspace prev_on_output; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
-bindsym $mod+bracketright workspace next_on_output; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
-bindsym $mod+backslash workspace back_and_forth; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+1 workspace $ws1; exec --no-startup-id twmnc -t " Workspace $ws1 " -d 1000
+bindsym $mod+2 workspace $ws2; exec --no-startup-id twmnc -t " Workspace $ws2 " -d 1000
+bindsym $mod+3 workspace $ws3; exec --no-startup-id twmnc -t " Workspace $ws3 " -d 1000
+bindsym $mod+4 workspace $ws4; exec --no-startup-id twmnc -t " Workspace $ws4 " -d 1000
+bindsym $mod+5 workspace $ws5; exec --no-startup-id twmnc -t " Workspace $ws5 " -d 1000
+bindsym $mod+6 workspace $ws6; exec --no-startup-id twmnc -t " Workspace $ws6 " -d 1000
+bindsym $mod+7 workspace $ws7; exec --no-startup-id twmnc -t " Workspace $ws7 " -d 1000
+bindsym $mod+8 workspace $ws8; exec --no-startup-id twmnc -t " Workspace $ws8 " -d 1000
+bindsym $mod+9 workspace $ws9; exec --no-startup-id twmnc -t " Workspace $ws9 " -d 1000
+bindsym $mod+0 workspace $ws10; exec --no-startup-id twmnc -t " Workspace $ws10 " -d 1000
+bindsym $mod+bracketleft workspace prev_on_output; exec --no-startup-id twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+bracketright workspace next_on_output; exec --no-startup-id twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+backslash workspace back_and_forth; exec twmnc --no-startup-id -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
