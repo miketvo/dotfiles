@@ -48,9 +48,9 @@
 󰘳 + Shift + 󰁅                  Move container down
 
 󰘳 + Shift + [0-9]              Move container to another workspace
-󰘳 + Shift + [                  Move conSwitch to previous workspace
-󰘳 + Shift + ]                  Move conSwitch to previous workspace
-󰘳 + Shift + \                  Move conSwitch to last workspace
+󰘳 + Shift + [                  Move container to previous workspace
+󰘳 + Shift + ]                  Move container to previous workspace
+󰘳 + Shift + \                  Move container to last workspace
 
 󰘳 + g                          Toggle gap config mode
 [Gap config mode] e            Enable gaps

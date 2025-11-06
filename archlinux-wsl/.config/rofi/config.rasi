@@ -1,5 +1,5 @@
 configuration {
-    modes: "window,drun,run,keybinds:~/.config/rofi/scripts/keybinds.sh";
+    modes: "window,drun,run,desktop_keybinds:$HOME/.config/rofi/scripts/desktop_keybinds.sh";
     font: "JetBrains Mono Nerd Font Propo Bold 12";
 /*	location: 0;*/
 /*	yoffset: 0;*/

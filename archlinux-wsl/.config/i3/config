@@ -111,8 +111,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Tab exec $HOME/.config/rofi/launch-window.sh
 bindsym $mod+Control+space exec $HOME/.config/rofi/launch-drun.sh
 bindsym $mod+Mod1+space exec $HOME/.config/rofi/launch-run.sh
-bindsym $mod+F1 exec $HOME/.config/rofi/launch-keybinds.sh
-bindsym $mod+Shift+slash exec $HOME/.config/rofi/launch-keybinds.sh
+bindsym $mod+F1 exec $HOME/.config/rofi/launch-desktop_keybinds.sh
+bindsym $mod+Shift+slash exec $HOME/.config/rofi/launch-desktop_keybinds.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
