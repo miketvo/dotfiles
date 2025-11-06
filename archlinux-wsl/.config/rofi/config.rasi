@@ -21,7 +21,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-    icon-theme: "Papirus";
+    icon-theme: "Papirus-Dark";
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
 /*	drun-exclude-categories: ;*/
@@ -248,9 +248,10 @@ listview {
     cycle: true;
     columns: 3;
     fixed-columnd: true;
+    spacing: 8;
 
     border: 0;
-    spacing: 10;
+    padding: 6;
 }
 
 scrollbar {

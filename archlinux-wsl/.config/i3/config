@@ -108,8 +108,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Mod1+space exec rofi -show run -window-format "Workspace {w}  {c} {t}"
 bindsym $mod+Control+space exec rofi -show drun -window-format "Workspace {w}  {c} {t}"
 bindsym $mod+Tab exec rofi -show window -window-format "Workspace {w}  {c} {t}"
-bindsym $mod+n exec rofi -show ssh -window-format "Workspace {w}  {c} {t}"
 bindsym $mod+b exec rofi -show filebrowser -window-format "Workspace {w}  {c} {t}"
+bindsym $mod+n exec rofi -show ssh -window-format "Workspace {w}  {c} {t}"
 bindsym $mod+k exec rofi -show keys -window-format "Workspace {w}  {c} {t}"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
