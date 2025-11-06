@@ -116,6 +116,9 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# kill all windows in all workspaces
+bindsym $mod+Control+Shift+q [class=\".*\"] kill
+
 # change focus between windows
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
