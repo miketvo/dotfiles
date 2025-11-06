@@ -39,7 +39,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id nm-applet
 
 # Start Picom compositor.
-exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec_always --no-startup-id picom --config "$HOME/.config/picom/picom.conf" -b
 
 
 ################################
@@ -108,11 +108,11 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start rofi
-bindsym $mod+Tab exec rofi -show window -window-format "Workspace {w}  {c} {t}"
-bindsym $mod+Control+space exec rofi -show drun -window-format "Workspace {w}  {c} {t}"
-bindsym $mod+Mod1+space exec rofi -show run -window-format "Workspace {w}  {c} {t}"
-bindsym $mod+F1 exec rofi -show keybinds -window-format "Workspace {w}  {c} {t}"
-bindsym $mod+Shift+slash exec rofi -show keybinds -windomousew-format "Workspace {w}  {c} {t}"
+bindsym $mod+Tab exec $HOME/.config/rofi/launch-window.sh
+bindsym $mod+Control+space exec $HOME/.config/rofi/launch-drun.sh
+bindsym $mod+Mod1+space exec $HOME/.config/rofi/launch-run.sh
+bindsym $mod+F1 exec $HOME/.config/rofi/launch-keybinds.sh
+bindsym $mod+Shift+slash exec $HOME/.config/rofi/launch-keybinds.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

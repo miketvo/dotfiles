@@ -35,7 +35,7 @@ configuration {
 /*	case-sensitive: false;*/
 /*	case-smart: false;*/
     cycle: true;
-    sidebar-mode: true;
+    sidebar-mode: false;
 /*	hover-select: false;*/
 /*	eh: 1;*/
 /*	auto-select: false;*/
