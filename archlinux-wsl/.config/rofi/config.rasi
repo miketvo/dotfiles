@@ -246,7 +246,7 @@ textbox-sep, num-filtered-rows, num-rows {
 listview {
     dynamic: true;
     cycle: true;
-    columns: 2;
+    columns: 3;
     fixed-columnd: true;
 
     border: 0;
