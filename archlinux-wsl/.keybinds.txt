@@ -2,8 +2,8 @@
 󰘳 + ?                          Show this help
 
 󰘳 + Enter                      Launch terminal
-󰘳 + Ctrl + Space               Launch GUI app
-󰘳 + Alt + Space                Launch program
+󰘳 + Ctrl + Space               Launch application
+󰘳 + Alt + Space                Run command
 
 󰘳 + Shift + q                  Close focused container
 󰘳 + Ctrl + Shift + q           Close all containers
