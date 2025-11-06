@@ -53,7 +53,7 @@ wezterm.on('format-tab-title', function(tab)
     ['wsl.exe'] = 'Terminal',
     ['wslhost.exe'] = 'Terminal',
     ['wezterm'] = 'Terminal',
-    ['nvim'] = 'NeoVim',
+    ['nvim'] = 'Neovim',
   }
   for key, value in pairs(process_names_map) do
     if title == key then
