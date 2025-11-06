@@ -191,19 +191,19 @@ mode $mode_gaps {
 bindsym $mod+Shift+g mode $mode_gaps
 
 # workspace switching
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-bindsym $mod+bracketleft workspace prev
-bindsym $mod+bracketright workspace next
-bindsym $mod+backslash workspace back_and_forth
+bindsym $mod+1 workspace $ws1; exec twmnc -t " Workspace $ws1 " -d 1000
+bindsym $mod+2 workspace $ws2; exec twmnc -t " Workspace $ws2 " -d 1000
+bindsym $mod+3 workspace $ws3; exec twmnc -t " Workspace $ws3 " -d 1000
+bindsym $mod+4 workspace $ws4; exec twmnc -t " Workspace $ws4 " -d 1000
+bindsym $mod+5 workspace $ws5; exec twmnc -t " Workspace $ws5 " -d 1000
+bindsym $mod+6 workspace $ws6; exec twmnc -t " Workspace $ws6 " -d 1000
+bindsym $mod+7 workspace $ws7; exec twmnc -t " Workspace $ws7 " -d 1000
+bindsym $mod+8 workspace $ws8; exec twmnc -t " Workspace $ws8 " -d 1000
+bindsym $mod+9 workspace $ws9; exec twmnc -t " Workspace $ws9 " -d 1000
+bindsym $mod+0 workspace $ws10; exec twmnc -t " Workspace $ws10 " -d 1000
+bindsym $mod+bracketleft workspace prev; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+bracketright workspace next; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+backslash workspace back_and_forth; exec twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
