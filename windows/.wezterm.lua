@@ -48,8 +48,6 @@ wezterm.on('format-tab-title', function(tab)
       end
     elseif pane.domain_name == 'WSL:archlinux' then
       title = '󰣇 Arch Linux'
-    elseif pane.domain_name == 'WSL:kali-linux' then
-      title = ' Kali Linux'
     elseif pane.domain_name == 'WSL:Debian' then
       title = '󰣚 Debian'
     end
@@ -187,20 +185,6 @@ wezterm.on('update-status', function(window, pane)
           active_tab = {
             bg_color = '#1f1f28',
             fg_color = '#dcd7ba',
-            intensity = 'Normal',
-            underline = 'None',
-            italic = false,
-            strikethrough = false,
-          },
-        },
-      }
-    elseif domain_name == 'WSL:kali-linux' then
-      overrides.color_scheme = 'Gruvbox Material (Gogh)'
-      overrides.colors = {
-        tab_bar = {
-          active_tab = {
-            bg_color = '#282828',
-            fg_color = '#d8dee9',
             intensity = 'Normal',
             underline = 'None',
             italic = false,
