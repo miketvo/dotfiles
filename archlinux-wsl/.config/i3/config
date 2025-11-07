@@ -17,8 +17,8 @@ exec_always --no-startup-id dex --autostart --environment i3
 # Start Polybar.
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
-# Start twmn notification daemon.
-exec_always --no-startup-id "$HOME/.config/twmn/launch.sh"
+# Start Dunst notification daemon.
+exec_always --no-startup-id "$HOME/.config/dunst/launch.sh"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -192,19 +192,19 @@ mode $mode_gaps {
 bindsym $mod+Shift+g mode $mode_gaps
 
 # workspace switching
-bindsym $mod+1 workspace $ws1; exec --no-startup-id twmnc -t " Workspace $ws1 " -d 1000
-bindsym $mod+2 workspace $ws2; exec --no-startup-id twmnc -t " Workspace $ws2 " -d 1000
-bindsym $mod+3 workspace $ws3; exec --no-startup-id twmnc -t " Workspace $ws3 " -d 1000
-bindsym $mod+4 workspace $ws4; exec --no-startup-id twmnc -t " Workspace $ws4 " -d 1000
-bindsym $mod+5 workspace $ws5; exec --no-startup-id twmnc -t " Workspace $ws5 " -d 1000
-bindsym $mod+6 workspace $ws6; exec --no-startup-id twmnc -t " Workspace $ws6 " -d 1000
-bindsym $mod+7 workspace $ws7; exec --no-startup-id twmnc -t " Workspace $ws7 " -d 1000
-bindsym $mod+8 workspace $ws8; exec --no-startup-id twmnc -t " Workspace $ws8 " -d 1000
-bindsym $mod+9 workspace $ws9; exec --no-startup-id twmnc -t " Workspace $ws9 " -d 1000
-bindsym $mod+0 workspace $ws10; exec --no-startup-id twmnc -t " Workspace $ws10 " -d 1000
-bindsym $mod+bracketleft workspace prev_on_output; exec --no-startup-id twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
-bindsym $mod+bracketright workspace next_on_output; exec --no-startup-id twmnc -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
-bindsym $mod+backslash workspace back_and_forth; exec twmnc --no-startup-id -t " Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name') " -d 1000
+bindsym $mod+1 workspace $ws1; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws1"
+bindsym $mod+2 workspace $ws2; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws2"
+bindsym $mod+3 workspace $ws3; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws3"
+bindsym $mod+4 workspace $ws4; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws4"
+bindsym $mod+5 workspace $ws5; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws5"
+bindsym $mod+6 workspace $ws6; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws6"
+bindsym $mod+7 workspace $ws7; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws7"
+bindsym $mod+8 workspace $ws8; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws8"
+bindsym $mod+9 workspace $ws9; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws9"
+bindsym $mod+0 workspace $ws10; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $ws10"
+bindsym $mod+bracketleft workspace prev_on_output; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')"
+bindsym $mod+bracketright workspace next_on_output; exec --no-startup-id dunstify -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')"
+bindsym $mod+backslash workspace back_and_forth; exec dunstify --no-startup-id -u low -t 1000 -h string:x-dunst-stack-tag:workspace "Workspace $(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
