@@ -118,11 +118,20 @@ bindsym $mod+Shift+slash exec $HOME/.config/rofi/launch-desktop_keybinds.sh
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# kill focused window
+# kill focused container
 bindsym $mod+Shift+q kill
 
-# kill all windows in all workspaces
-bindsym $mod+Control+Shift+q [class=\".*\"] kill
+# kill all containers across all workspaces
+set $mode_killall_confirm "Close containers (all workspaces)? [y]es [N]o"
+mode $mode_killall_confirm {
+    bindsym y [class=\".*\"] kill; mode "default"; exec --no-startup-id twmnc -t " All containers closed " -d 2000
+
+    # cancel and return to default keybinds: n, Enter, or Escape
+    bindsym n mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Control+q mode $mode_killall_confirm
 
 # change focus between windows
 bindsym $mod+Left focus left
@@ -172,7 +181,7 @@ mode "resize" {
     bindsym Up resize shrink height 5 px or 5 ppt
     bindsym Right resize grow width 5 px or 5 ppt
 
-    # back to normal: Enter, Escape, or Mod+R
+    # back to default keybinds: Enter, Escape, or mod+r
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
@@ -185,7 +194,7 @@ mode $mode_gaps {
     bindsym e gaps inner all set $gap_width_inner; gaps outer all set $gap_width_outer
     bindsym d gaps inner all set 0; gaps outer all set 0
 
-    # back to normal: Enter, Escape, or Mod+Shift+G
+    # back to default keybinds: Enter, Escape, or mod+Shift+g
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+Shift+g mode "default"

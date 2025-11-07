@@ -6,7 +6,7 @@
 󰘳 + Alt + Space                Run command
 
 󰘳 + Shift + q                  Close focused container
-󰘳 + Ctrl + Shift + q           Close all containers
+󰘳 + Shift + Control + q        Close containers across all workspaces
 
 󰘳 + Tab                        Switch windows
 󰘳 + 󰁍                          Focus left
@@ -25,8 +25,6 @@
 [Resize mode] 󰁔                Grow container width
 [Resize mode] 󰁝                Shrink container height
 [Resize mode] 󰁅                Grow container height
-[Resize mode] Escape           Exit resize mode
-[Resize mode] Enter            Exit resize mode
 
 󰘳 + e                          Tiling layout
 󰘳 + w                          Tabbed layout
@@ -55,8 +53,9 @@
 󰘳 + g                          Toggle gap config mode
 [Gap config mode] e            Enable gaps
 [Gap config mode] d            Disable gaps
-[Gap config mode] Escape       Exit gap config mode
-[Gap config mode] Enter        Exit gap config mode
 
 󰘳 + Shift + c                  Reload configurations
 󰘳 + Shift + r                  Restart window manager
+
+Enter                          Confirm / Return to "default" keybind mode
+Escape                         Exit current keybind mode
