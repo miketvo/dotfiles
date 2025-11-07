@@ -4,6 +4,14 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
             "command": "unbound",
             "keys": "ctrl+c"
         },
@@ -12,14 +20,8 @@
             "keys": "ctrl+v"
         },
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            }
-        },
-        {
-            "command": "paste"
+            "command": "paste",
+            "id": "User.paste"
         },
         {
             "command": "find",
@@ -85,7 +87,7 @@
                 "useAcrylic": true
             },
             {
-                "experimental.retroTerminalEffect": false,
+                "cursorShape": "vintage",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt",
@@ -93,6 +95,7 @@
             },
             {
                 "colorScheme": "nord",
+                "cursorShape": "vintage",
                 "guid": "{99331914-5611-54fa-9fc2-3bda2159660f}",
                 "hidden": false,
                 "name": "Developer PowerShell",
@@ -100,6 +103,7 @@
                 "useAcrylic": true
             },
             {
+                "cursorShape": "vintage",
                 "guid": "{1b67b52e-7c32-5f22-8825-c3e573e4be61}",
                 "hidden": false,
                 "name": "Developer Command Prompt",
@@ -115,6 +119,34 @@
                 "icon": "https://git-scm.com/favicon.ico",
                 "name": "Git Bash",
                 "tabTitle": "Git Bash",
+                "useAcrylic": true
+            },
+            {
+                "colorScheme": "KanagawaWave",
+                "commandline": "wsl -d archlinux",
+                "guid": "{943d38bb-7e93-51b9-9f15-a0882a8679c2}",
+                "hidden": false,
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Arch_Linux_\"Crystal\"_icon.svg/2048px-Arch_Linux_\"Crystal\"_icon.svg.png",
+                "name": "Arch Linux",
+                "startingDirectory": "//wsl$/archlinux/home/miketvo",
+                "tabTitle": "Arch Linux"
+            },
+            {
+                "colorScheme": "Calamity",
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Openlogo-debianV2.svg/1654px-Openlogo-debianV2.svg.png",
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "colorScheme": "Tango Dark",
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure",
                 "useAcrylic": true
             }
         ]
@@ -488,6 +520,75 @@
             "selectionBackground": "#665C54",
             "white": "#A89984",
             "yellow": "#D79921"
+        },
+        {
+            "background": "#181616",
+            "black": "#0D0C0C",
+            "blue": "#8BA4B0",
+            "brightBlack": "#A6A69C",
+            "brightBlue": "#7FB4CA",
+            "brightCyan": "#7AA89F",
+            "brightGreen": "#87A987",
+            "brightPurple": "#8992A7",
+            "brightRed": "#E46876",
+            "brightWhite": "#C5C9C5",
+            "brightYellow": "#E6C384",
+            "cursorColor": "#C5C9C5",
+            "cyan": "#8EA4A2",
+            "foreground": "#C8C093",
+            "green": "#8A9A7B",
+            "name": "KanagawaDragon",
+            "purple": "#A292A3",
+            "red": "#C4746E",
+            "selectionBackground": "#223249",
+            "white": "#C8C093",
+            "yellow": "#C4B28A"
+        },
+        {
+            "background": "#F2ECBC",
+            "black": "#1F1F28",
+            "blue": "#4D699B",
+            "brightBlack": "#8A8980",
+            "brightBlue": "#6693BF",
+            "brightCyan": "#5E857A",
+            "brightGreen": "#6E915F",
+            "brightPurple": "#624C83",
+            "brightRed": "#D7474B",
+            "brightWhite": "#43436C",
+            "brightYellow": "#836F4A",
+            "cursorColor": "#C9CBD1",
+            "cyan": "#597B75",
+            "foreground": "#545464",
+            "green": "#6F894E",
+            "name": "KanagawaLotus",
+            "purple": "#B35B79",
+            "red": "#C84053",
+            "selectionBackground": "#B5CBD2",
+            "white": "#545464",
+            "yellow": "#77713F"
+        },
+        {
+            "background": "#1F1F28",
+            "black": "#090618",
+            "blue": "#7E9CD8",
+            "brightBlack": "#727169",
+            "brightBlue": "#7FB4CA",
+            "brightCyan": "#7AA89F",
+            "brightGreen": "#98BB6C",
+            "brightPurple": "#938AA9",
+            "brightRed": "#E82424",
+            "brightWhite": "#DCD7BA",
+            "brightYellow": "#E6C384",
+            "cursorColor": "#C8C093",
+            "cyan": "#6A9589",
+            "foreground": "#DCD7BA",
+            "green": "#76946A",
+            "name": "KanagawaWave",
+            "purple": "#957FB8",
+            "red": "#C34043",
+            "selectionBackground": "#2D4F67",
+            "white": "#C8C093",
+            "yellow": "#C0A36E"
         },
         {
             "background": "#120B0D",

@@ -1,0 +1,262 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference.
+
+
+#####################
+# Startup processes #
+#####################
+
+# Set wallpaper.
+exec_always --no-startup-id "feh --no-fehbg --bg-fill $HOME/.fehbg.jpg"
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec_always --no-startup-id dex --autostart --environment i3
+
+# Start Polybar.
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+
+# Start twmn notification daemon and its listeners.
+exec_always --no-startup-id "$HOME/.config/twmn/launch.sh"
+exec_always --no-startup-id "$HOME/.config/twmn/scripts/twmn_on_workspace_change.sh"
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec_always --no-startup-id nm-apple
+
+# Start Picom compositor.
+exec_always --no-startup-id picom --config "$HOME/.config/picom/picom.conf" -b
+
+
+################################
+# Default values and constants #
+################################
+
+# modifier key
+set $mod Mod4
+
+# workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# gaps and borders
+set $gap_width_inner 12
+set $gap_width_outer 3
+set $border_width 3
+
+# colors - special
+set_from_resource $color_fg i3wm.foreground #ffffff
+set_from_resource $color_bg i3wm.background #000000
+set_from_resource $color_cursor i3wm.cursorColor #ffffff
+set $color_window_hl #363635
+
+# colors - normal
+set_from_resource $color_black i3wm.color0 #000000
+set_from_resource $color_red i3wm.color1 #ff0000
+set_from_resource $color_green i3wm.color2 #00ff00
+set_from_resource $color_yellow i3wm.color3 #ffff00
+set_from_resource $color_blue i3wm.color4 #0000ff
+set_from_resource $color_magneta i3wm.color5 #ff00ff
+set_from_resource $color_cyan i3wm.color6 #00ffff
+set_from_resource $color_white i3wm.color7 #ffffff
+
+# colors - bright
+set_from_resource $color_bblack i3wm.color8 #000000
+set_from_resource $color_bred i3wm.color9 #ff0000
+set_from_resource $color_bgreen i3wm.color10 #00ff00
+set_from_resource $color_byellow i3wm.color11 #ffff00
+set_from_resource $color_bblue i3wm.color12 #0000ff
+set_from_resource $color_bmagneta i3wm.color13 #ff00ff
+set_from_resource $color_bcyan i3wm.color14 #00ffff
+set_from_resource $color_bwhite i3wm.color15 #ffffff
+
+###########################
+# Behavior configurations #
+###########################
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Jetbrains Mono Nerd Font Propo Black 9
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start rofi
+bindsym $mod+Tab exec $HOME/.config/rofi/launch-window.sh
+bindsym $mod+Control+space exec $HOME/.config/rofi/launch-drun.sh
+bindsym $mod+Mod1+space exec $HOME/.config/rofi/launch-run.sh
+bindsym $mod+F1 exec $HOME/.config/rofi/launch-desktop_keybinds.sh
+bindsym $mod+Shift+slash exec $HOME/.config/rofi/launch-desktop_keybinds.sh
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused container
+bindsym $mod+Shift+q kill
+
+# kill all containers across all workspaces
+set $mode_killall_confirm "Close containers (all workspaces)? [y]es [N]o"
+mode $mode_killall_confirm {
+    bindsym y [class=\".*\"] kill; mode "default"; exec --no-startup-id twmnc -t " All containers closed " -d 2000
+
+    # cancel and return to default keybinds: n, Enter, or Escape
+    bindsym n mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Control+q mode $mode_killall_confirm
+
+# change focus between windows
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window/container
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# enter fullscreen mode for the focused window/container
+bindsym $mod+f fullscreen
+
+# toggle tiling/floating for the focused container
+bindsym $mod+Shift+space floating toggle
+
+# toggle focus between tiling and floating windows
+bindsym $mod+space focus mode_toggle
+
+# window splitting
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# focus parent/child of window/container
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+
+# resize window/container (can also be done with the mouse)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode:
+    #
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+
+    # back to default keybinds: Enter, Escape, or mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# turn gaps on/off
+set $mode_gaps "Configure gaps: [e]nable, [d]isable"
+mode $mode_gaps {
+    bindsym e gaps inner all set $gap_width_inner; gaps outer all set $gap_width_outer
+    bindsym d gaps inner all set 0; gaps outer all set 0
+
+    # back to default keybinds: Enter, Escape, or mod+Shift+g
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Shift+g mode "default"
+}
+bindsym $mod+Shift+g mode $mode_gaps
+
+# workspace switching
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+bracketleft workspace prev_on_output
+bindsym $mod+bracketright workspace next_on_output
+bindsym $mod+backslash workspace back_and_forth
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws1
+bindsym $mod+Shift+bracketleft move container to workspace prev_on_output
+bindsym $mod+Shift+bracketright move container to workspace next_on_output
+bindsym $mod+Shift+backslash move container to workspace back_and_forth
+
+# meta controls
+# reload the i3 configuration file
+bindsym $mod+Shift+c reload
+# restart i3 in-place (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+
+#############
+# Eye candy #
+#############
+
+# window title alignment
+title_align center
+
+# window colors
+# window_class           border            background        text              indicator         child_border
+client.focused           $color_window_hl  $color_window_hl  $color_fg         $color_bgreen     $color_window_hl
+client.focused_inactive  $color_black      $color_black      $color_bblack     $color_window_hl  $color_black
+client.unfocused         $color_black      $color_black      $color_window_hl  $color_bg         $color_black
+client.urgent            $color_bred       $color_bred       $color_black      $color_red        $color_bg
+client.placeholder       $color_black      $color_bg         $color_fg         $color_bg         $color_black
+client.background $color_background
+
+# gaps and borders
+gaps inner $gap_width_inner
+gaps outer $gap_width_outer
+smart_gaps on
+for_window [class="^.*"] border pixel $border_width
+hide_edge_borders smart_no_gaps

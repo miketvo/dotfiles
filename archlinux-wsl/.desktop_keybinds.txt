@@ -1,0 +1,61 @@
+󰘳 + F1                         Show this help
+󰘳 + ?                          Show this help
+
+󰘳 + Enter                      Launch terminal
+󰘳 + Ctrl + Space               Launch application
+󰘳 + Alt + Space                Run command
+
+󰘳 + Shift + q                  Close focused container
+󰘳 + Shift + Control + q        Close containers across all workspaces
+
+󰘳 + Tab                        Switch windows
+󰘳 + 󰁍                          Focus left
+󰘳 + 󰁔                          Focus right
+󰘳 + 󰁝                          Focus up
+󰘳 + 󰁅                          Focus down
+󰘳 + a                          Focus parent container
+󰘳 + d                          Focus child container
+
+󰘳 + f                          Toggle fullscreen
+󰘳 + v                          Split a container vertically
+󰘳 + h                          Split a container horizontally
+
+󰘳 + r                          Toggle resize mode
+[Resize mode] 󰁍                Shrink container width
+[Resize mode] 󰁔                Grow container width
+[Resize mode] 󰁝                Shrink container height
+[Resize mode] 󰁅                Grow container height
+
+󰘳 + e                          Tiling layout
+󰘳 + w                          Tabbed layout
+󰘳 + s                          Stacking layout
+
+󰘳 + Shift + Space              Toggle tiling/floating mode
+󰘳 + Space                      Toggle focus between tiled/floating containers
+󰘳 + Left 󰍽                     Drag floating container
+󰘳 + Right 󰍽                    Resize floating container
+
+󰘳 + [0-9]                      Switch to another workspace
+󰘳 + [                          Switch to previous workspace
+󰘳 + ]                          Switch to previous workspace
+󰘳 + \                          Switch to last workspace
+
+󰘳 + Shift + 󰁍                  Move container left
+󰘳 + Shift + 󰁔                  Move container right
+󰘳 + Shift + 󰁝                  Move container up
+󰘳 + Shift + 󰁅                  Move container down
+
+󰘳 + Shift + [0-9]              Move container to another workspace
+󰘳 + Shift + [                  Move container to previous workspace
+󰘳 + Shift + ]                  Move container to previous workspace
+󰘳 + Shift + \                  Move container to last workspace
+
+󰘳 + g                          Toggle gap config mode
+[Gap config mode] e            Enable gaps
+[Gap config mode] d            Disable gaps
+
+󰘳 + Shift + c                  Reload configurations
+󰘳 + Shift + r                  Restart window manager
+
+Enter                          Confirm / Return to "default" keybind mode
+Escape                         Exit current keybind mode

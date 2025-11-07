@@ -10,7 +10,7 @@ end
 ----------------------------
 
 -- Default shell
-config.default_prog = { 'powershell' }
+config.default_prog = { 'zsh' }
 
 -- Behavior
 config.default_cursor_style = 'BlinkingUnderline'
@@ -37,22 +37,32 @@ config.skip_close_confirmation_for_processes_named = {
 
 -- Custom tab titles
 wezterm.on('format-tab-title', function(tab)
+  local tab_size = 24
   local pane = tab.active_pane
   local title = pane.title
-  if pane.domain_name then
-    if pane.domain_name == 'local' then
-      if (string.find(title, 'powershell') ~= nil) or (string.find(title, 'pwsh') ~= nil) then
-        title = '󰨊 Powershell'
-      elseif string.find(title, 'cmd') ~= nil then
-        title = ' Command Prompt'
-      end
-    elseif pane.domain_name == 'WSL:archlinux' then
-      title = '󰣇 Arch Linux'
-    elseif pane.domain_name == 'WSL:Debian' then
-      title = '󰣚 Debian'
+  local process_names_map = {
+    ['bash'] = 'Terminal',
+    ['sh'] = 'Terminal',
+    ['zsh'] = 'Terminal',
+    ['fish'] = 'Terminal',
+    ['tmux'] = 'Terminal',
+    ['nu'] = 'Terminal',
+    ['cmd.exe'] = 'Terminal',
+    ['pwsh.exe'] = 'Terminal',
+    ['powershell.exe'] = 'Terminal',
+    ['wsl.exe'] = 'Terminal',
+    ['wslhost.exe'] = 'Terminal',
+    ['wezterm'] = 'Terminal',
+    ['nvim'] = 'Neovim',
+  }
+  for key, value in pairs(process_names_map) do
+    if title == key then
+      title = value
+      break
     end
   end
-  return string.format(' %-24s ', title)
+  title = title:gsub('^%l', string.upper)
+  return string.format(' %-' .. tab_size .. 's ', title)
 end)
 
 -- Mode display
@@ -66,8 +76,8 @@ wezterm.on('update-status', function(window, pane)
     mode_name = KEY_TABLE_MODE_NAME[name]
     window:set_right_status(wezterm.format {
       { Attribute = { Underline = 'None' } },
-      { Foreground = { Color = '#2e2e2e' } },
-      { Background = { Color = '#ff8c00' } },
+      { Foreground = { Color = '#181616' } },
+      { Background = { Color = '#e6c384' } },
       { Text = ' ' .. mode_name .. ' ' }
     })
   else
@@ -76,9 +86,9 @@ wezterm.on('update-status', function(window, pane)
 end)
 
 -- Eye candy
-config.window_decorations = 'INTEGRATED_BUTTONS | RESIZE'
-config.integrated_title_button_alignment = 'Right'
-config.integrated_title_button_style = 'Windows'
+config.window_decorations = 'RESIZE'
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 config.show_tab_index_in_tab_bar = false
 config.font = wezterm.font('JetBrainsMono Nerd Font Propo', { weight = 'DemiBold' })
 config.font_size = 10.0
@@ -88,30 +98,54 @@ config.window_padding = {
   top = '12px',
   bottom = '12px',
 }
-config.window_background_opacity = 0.9
-config.win32_system_backdrop = 'Acrylic'
+config.window_background_opacity = 0.96
 config.window_frame = {
   font = wezterm.font('JetBrainsMono Nerd Font Propo', { weight = 'Bold' }),
   font_size = 9.0,
-  active_titlebar_bg = '#2e2e2e',
-  inactive_titlebar_bg = '#2e2e2e',
+  active_titlebar_bg = '#181616',
+  active_titlebar_fg = '#c5c9c5',
+  inactive_titlebar_bg = '#181616',
+  inactive_titlebar_fg = '#c5c9c5',
+  border_left_width = 0,
+  border_right_width = 0,
+  border_bottom_height = 0,
+  border_top_height = 0,
 }
 config.inactive_pane_hsb = {
   saturation = 0.9,
   brightness = 0.8,
 }
-config.command_palette_bg_color = '#2e2e2e'
-config.command_palette_fg_color = '#d3d3d3'
+config.command_palette_bg_color = '#181616'
+config.command_palette_fg_color = '#dcd7ba'
 config.command_palette_font_size = 10.0
 config.command_palette_rows = 14
 
--- Default color scheme
-config.color_scheme = 'nord'
+-- Color scheme: Kanagawa Dragon (UI) + Kanagawa Wave (Content)
+config.color_scheme = 'Kanagawa Dragon (Gogh)'
 config.colors = {
+  foreground = "#dcd7ba",
+  background = "#1f1f28",
+
+  cursor_bg = "#c8c093",
+  cursor_fg = "#c8c093",
+  cursor_border = "#c8c093",
+
+  selection_fg = "#c8c093",
+  selection_bg = "#2d4f67",
+
+  scrollbar_thumb = "#16161d",
+  split = "#16161d",
+
+  ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
+  brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
+  indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+
   tab_bar = {
+    background = '#181616',
+
     active_tab = {
-      bg_color = '#2e3440',
-      fg_color = '#d8dee9',
+      bg_color = '#1f1f28',
+      fg_color = '#dcd7ba',
       intensity = 'Normal',
       underline = 'None',
       italic = false,
@@ -119,97 +153,28 @@ config.colors = {
     },
 
     inactive_tab = {
-      bg_color = '#2e2e2e',
-      fg_color = '#808080',
+      bg_color = '#1f1c1c',
+      fg_color = '#605c5c',
     },
 
     inactive_tab_hover = {
-      bg_color = '#3b3b3b',
-      fg_color = '#909090',
+      bg_color = '#141313',
+      fg_color = '#dcd7ba',
       italic = true,
     },
 
     new_tab = {
-      bg_color = '#2e2e2e',
-      fg_color = '#808080',
+      bg_color = '#1f1c1c',
+      fg_color = '#605c5c',
     },
 
     new_tab_hover = {
-      bg_color = '#3b3b3b',
-      fg_color = '#909090',
+      bg_color = '#141313',
+      fg_color = '#dcd7ba',
       italic = true,
     },
   },
 }
-
--- Dynamic color scheme
-wezterm.on('update-status', function(window, pane)
-  local overrides = window:get_config_overrides() or {}
-  local domain_name = pane:get_domain_name()
-  if domain_name then
-    if domain_name == 'local' then
-      overrides.color_scheme = 'nord'
-      overrides.colors = {
-        tab_bar = {
-          active_tab = {
-            bg_color = '#2e3440',
-            fg_color = '#d8dee9',
-            intensity = 'Normal',
-            underline = 'None',
-            italic = false,
-            strikethrough = false,
-          },
-        },
-      }
-    elseif domain_name == 'WSL:archlinux' then  -- Kanagawa Wave: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/wezterm/kanagawa.lua
-      overrides.force_reverse_video_cursor = true
-      overrides.colors = {
-		foreground = "#dcd7ba",
-		background = "#1f1f28",
-
-		cursor_bg = "#c8c093",
-		cursor_fg = "#c8c093",
-		cursor_border = "#c8c093",
-
-		selection_fg = "#c8c093",
-		selection_bg = "#2d4f67",
-
-		scrollbar_thumb = "#16161d",
-		split = "#16161d",
-
-		ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
-		brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
-		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
-
-        tab_bar = {
-          active_tab = {
-            bg_color = '#1f1f28',
-            fg_color = '#dcd7ba',
-            intensity = 'Normal',
-            underline = 'None',
-            italic = false,
-            strikethrough = false,
-          },
-        },
-      }
-    elseif domain_name == 'WSL:Debian' then
-      overrides.color_scheme = 'Calamity'
-      overrides.colors = {
-        tab_bar = {
-          active_tab = {
-            bg_color = '#2b2330',
-            fg_color = '#d5ced9',
-            intensity = 'Normal',
-            underline = 'None',
-            italic = false,
-            strikethrough = false,
-          },
-        },
-      }
-    end
-  end
-  window:set_config_overrides(overrides)
-end)
 
 -- Keybindings
 config.leader = { key = 'Space', mods = 'CTRL|SHIFT' }
@@ -262,6 +227,13 @@ config.keys = {
     },
   },
 
+  -- Uncomment this to enable manual configuration hot-reloading using
+  -- CTRL+SHIFT+ALT+R.
+  -- {
+  --   key = 'r',
+  --   mods = 'CTRL|SHIFT|ALT',
+  --   action = act.ReloadConfiguration,
+  -- },
 }
 config.key_tables = {
   -- Resize-pane mode
