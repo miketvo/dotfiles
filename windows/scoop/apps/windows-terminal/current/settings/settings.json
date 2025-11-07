@@ -132,28 +132,6 @@
                 "tabTitle": "Arch Linux"
             },
             {
-                "colorScheme": "gruvbox-material",
-                "commandline": "wsl -d kali-linux",
-                "cursorShape": "vintage",
-                "guid": "{bdf7c0e5-847e-458c-8ccf-3c454f13d51b}",
-                "hidden": false,
-                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png",
-                "name": "Kali Linux",
-                "startingDirectory": "//wsl$/kali-linux/home/miketvo",
-                "tabTitle": "Kali Linux"
-            },
-            {
-                "colorScheme": "gruvbox-material",
-                "commandline": "wsl -d kali-linux kex --esm --wtstart -s",
-                "cursorShape": "vintage",
-                "guid": "{55ca431a-3a87-5fb3-83cd-11ecedd031d2}",
-                "hidden": false,
-                "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png",
-                "name": "Kali Linux Desktop",
-                "startingDirectory": "//wsl$/kali-linux/home/miketvo",
-                "tabTitle": "Kali Linux Desktop"
-            },
-            {
                 "colorScheme": "Calamity",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
