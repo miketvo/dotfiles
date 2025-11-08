@@ -191,8 +191,8 @@ bindsym $mod+r mode "resize"
 # turn gaps on/off
 set $mode_gaps "Configure gaps: [e]nable, [d]isable"
 mode $mode_gaps {
-    bindsym e gaps inner all set $gap_width_inner; gaps outer all set $gap_width_outer
-    bindsym d gaps inner all set 0; gaps outer all set 0
+    bindsym e gaps inner all set $gap_width_inner; gaps outer all set $gap_width_outer; exec --no-startup-id twmnc -t "Gaps ENABLED" -d 1000 --id 81
+    bindsym d gaps inner all set 0; gaps outer all set 0; exec --no-startup-id twmnc -t "Gaps DISABLED" -d 1000 --id 81
 
     # back to default keybinds: Enter, Escape, or mod+Shift+g
     bindsym Return mode "default"
