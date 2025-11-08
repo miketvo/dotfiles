@@ -1,3 +1,4 @@
+from sys import exit
 from i3ipc import Connection
 
 
@@ -18,3 +19,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    exit(0)
