@@ -121,17 +121,29 @@ floating_modifier $mod
 # kill focused container
 bindsym $mod+Shift+q kill
 
-# kill all containers across all workspaces
-set $mode_killall_confirm "Close containers (all workspaces)? [y]es [N]o"
-mode $mode_killall_confirm {
-    bindsym y [class=\".*\"] kill; mode "default"; exec --no-startup-id twmnc -t " All containers closed " -d 2000
+# kill all containers in focused workspace
+set $mode_killworkspace_confirm "Clear current workspace? [y]es [N]o"
+mode $mode_killworkspace_confirm {
+    bindsym y exec --no-startup-id python $HOME/.config/i3/i3ipc/kill_workspace.py; mode "default"; exec --no-startup-id twmnc -t " Workspace cleared " -d 2000
 
     # cancel and return to default keybinds: n, Enter, or Escape
     bindsym n mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+Control+q mode $mode_killall_confirm
+bindsym $mod+Shift+Control+q mode $mode_killworkspace_confirm
+
+# kill all containers across all workspaces
+set $mode_killall_confirm "Clear all workspaces? [y]es [N]o"
+mode $mode_killall_confirm {
+    bindsym y [class=\".*\"] kill; mode "default"; exec --no-startup-id twmnc -t " Cleared all workspaces " -d 2000
+
+    # cancel and return to default keybinds: n, Enter, or Escape
+    bindsym n mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+BackSpace mode $mode_killall_confirm
 
 # change focus between windows
 bindsym $mod+Left focus left

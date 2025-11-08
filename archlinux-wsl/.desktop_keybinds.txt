@@ -6,7 +6,8 @@
 󰘳 + Alt + Space                Run command
 
 󰘳 + Shift + q                  Close focused container
-󰘳 + Shift + Control + q        Close containers across all workspaces
+󰘳 + Shift + Control + q        Clear focused workspace
+󰘳 + Shift + Backspace          Clear all workspaces
 
 󰘳 + Tab                        Switch windows
 󰘳 + 󰁍                          Focus left
