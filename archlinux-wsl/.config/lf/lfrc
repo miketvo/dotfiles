@@ -108,11 +108,18 @@ cmd zip ${{
 }}
 
 # behavior configuration
-set hidden
-set drawbox
+set hidden true
+set ignorecase true
+set icons true
+set drawbox false
 cmd yank-file $printf '%s' "$f" | xclip -i -selection clipboard
 cmd yank-paths $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-dirname &printf '%s' "$PWD" | xclip -i -selection clipboard
 cmd yank-basename &basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
 cmd yank-basename-without-extension &basename -a -- $fx | sed -E 's/\.[^.]+$//' | head -c-1 | xclip -i -selection clipboard
 set previewer ~/.config/lf/previewer
+
+# movements
+map gc cd ~/.config
+map gd cd ~/Downloads
+map gp cd ~/Projects
