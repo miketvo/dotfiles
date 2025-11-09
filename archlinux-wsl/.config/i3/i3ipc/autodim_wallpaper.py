@@ -1,4 +1,5 @@
 from sys import exit
+from pathlib import Path
 from i3ipc import Connection
 import subprocess
 
@@ -9,12 +10,15 @@ def get_current_workspace(i3):
 
 
 def on_event(i3):
+    home_dir = str(Path.home())
     current_workspace = get_current_workspace(i3)
     container_count = len(current_workspace.leaves()) if current_workspace else 0
     if container_count == 0:
-        subprocess.run(["twmnc", "-t", " BRIGHT ", "-d", "1000", "--id", "81"])
+        subprocess.run(["feh", "--no-fehbg", "--bg-fill", f"{home_dir}/.fehbg-light.jpg"])
+        pass
     else:
-        subprocess.run(["twmnc", "-t", " DIM ", "-d", "1000", "--id", "81"])
+        subprocess.run(["feh", "--no-fehbg", "--bg-fill", f"{home_dir}/.fehbg-dark.jpg"])
+        pass
 
 
 def main():
