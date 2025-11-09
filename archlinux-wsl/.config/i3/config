@@ -17,9 +17,8 @@ exec_always --no-startup-id dex --autostart --environment i3
 # Start Polybar.
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
-# Start twmn notification daemon and its listeners.
+# Start twmn notification daemon.
 exec_always --no-startup-id "$HOME/.config/twmn/launch.sh"
-exec_always --no-startup-id "$HOME/.config/twmn/scripts/twmn_on_workspace_change.sh"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -41,6 +40,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Start Picom compositor.
 exec_always --no-startup-id picom --config "$HOME/.config/picom/picom.conf" -b
+
+# Start i3ipc automation.
+exec_always --no-startup-id python $HOME/.config/i3/i3ipc/notify_workspace_change.py
+exec_always --no-startup-id python $HOME/.config/i3/i3ipc/autodim_wallpaper.py
 
 
 ################################
