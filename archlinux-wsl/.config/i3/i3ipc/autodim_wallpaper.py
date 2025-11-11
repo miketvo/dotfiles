@@ -15,10 +15,8 @@ def on_event(i3):
     container_count = len(current_workspace.leaves()) if current_workspace else 0
     if container_count == 0:
         subprocess.run(["feh", "--no-fehbg", "--bg-fill", f"{home_dir}/.fehbg-light.jpg"])
-        pass
     else:
         subprocess.run(["feh", "--no-fehbg", "--bg-fill", f"{home_dir}/.fehbg-dark.jpg"])
-        pass
 
 
 def main():
