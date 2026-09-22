@@ -38,7 +38,7 @@
 
 󰘳 + [0-9]                      Switch to another workspace
 󰘳 + [                          Switch to previous workspace
-󰘳 + ]                          Switch to previous workspace
+󰘳 + ]                          Switch to next workspace
 󰘳 + \                          Switch to last workspace
 
 󰘳 + Shift + 󰁍                  Move container left
@@ -48,7 +48,7 @@
 
 󰘳 + Shift + [0-9]              Move container to another workspace
 󰘳 + Shift + [                  Move container to previous workspace
-󰘳 + Shift + ]                  Move container to previous workspace
+󰘳 + Shift + ]                  Move container to next workspace
 󰘳 + Shift + \                  Move container to last workspace
 
 󰘳 + g                          Toggle gap config mode
