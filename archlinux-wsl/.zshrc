@@ -60,6 +60,12 @@ alias chown='chown --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias sudo='sudo '
 
+# Enable zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+# fzf integration
+source <(fzf --zsh)
+
 # Load Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
