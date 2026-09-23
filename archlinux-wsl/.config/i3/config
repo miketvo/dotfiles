@@ -8,7 +8,7 @@
 #####################
 
 # Set wallpaper.
-exec_always --no-startup-id "feh --no-fehbg --bg-fill $HOME/.fehbg-light.jpg"
+exec_always --no-startup-id "feh --no-fehbg --bg-fill $HOME/.fehbg-light.png"
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
