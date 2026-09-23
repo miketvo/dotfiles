@@ -2,7 +2,6 @@
 ! See other options at
 ! https://github.com/rebelot/kanagawa.nvim/tree/master/extras/xresources
 
-
 ! special
 *.foreground:   #c5c9c5
 *.background:   #181616
@@ -39,3 +38,8 @@
 ! white
 *.color7:       #c8c093
 *.color15:      #c5c9c5
+
+
+! Cursors
+Xcursor.theme: Adwaita
+Xcursor.size: 16
