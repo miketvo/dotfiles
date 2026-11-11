@@ -1,0 +1,207 @@
+[gd_resource type="EditorSettings" format=3]
+
+[resource]
+interface/editor/dock_tab_style = 2
+interface/editor/bottom_dock_tab_style = 2
+interface/editor/display_scale = 7
+interface/editor/custom_display_scale = 0.85
+interface/editor/main_font_size = 16
+interface/editor/code_font_size = 16.4706
+interface/editor/code_font = "C:/Users/vomin/AppData/Local/Microsoft/Windows/Fonts/JetBrainsMono-Regular.ttf"
+interface/editor/separate_distraction_mode = true
+interface/theme/color_preset = "Custom"
+interface/theme/spacing_preset = "Custom"
+interface/theme/base_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+interface/theme/accent_color = Color(0.8, 0.47058824, 0.19607843, 1)
+interface/theme/contrast = 0.18
+interface/theme/icon_saturation = 1.2
+interface/theme/draw_relationship_lines = 2
+interface/theme/relationship_line_opacity = 0.16
+interface/theme/border_size = 2
+interface/theme/corner_radius = 2
+filesystem/directories/default_project_path = "C:/Users/vomin/Projects"
+filesystem/file_dialog/show_hidden_files = true
+filesystem/quick_open_dialog/instant_preview = true
+text_editor/theme/color_theme = "darcula-dark"
+text_editor/theme/highlighting/symbol_color = Color(0.8, 0.8, 0.8, 1)
+text_editor/theme/highlighting/keyword_color = Color(0.8117647, 0.4627451, 0.19215687, 1)
+text_editor/theme/highlighting/control_flow_keyword_color = Color(0.79607844, 0.6509804, 0.96862745, 1)
+text_editor/theme/highlighting/base_type_color = Color(0.64705884, 0.7607843, 0.38039216, 1)
+text_editor/theme/highlighting/engine_type_color = Color(1, 0.7764706, 0.42745098, 1)
+text_editor/theme/highlighting/user_type_color = Color(0.4509804, 0.8156863, 1, 1)
+text_editor/theme/highlighting/comment_color = Color(0.4392157, 0.4392157, 0.4392157, 1)
+text_editor/theme/highlighting/doc_comment_color = Color(0.5019608, 0.6, 0.7019608, 1)
+text_editor/theme/highlighting/string_color = Color(0.41568628, 0.5294118, 0.34901962, 1)
+text_editor/theme/highlighting/background_color = Color(0.07450981, 0.07450981, 0.07450981, 1)
+text_editor/theme/highlighting/completion_background_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+text_editor/theme/highlighting/completion_selected_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+text_editor/theme/highlighting/completion_existing_color = Color(0.8745098, 0.8745098, 0.8745098, 0.12941177)
+text_editor/theme/highlighting/completion_scroll_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+text_editor/theme/highlighting/completion_scroll_hovered_color = Color(0.27058825, 0.2784314, 0.3529412, 1)
+text_editor/theme/highlighting/completion_font_color = Color(0.6666667, 0.6666667, 0.6666667, 1)
+text_editor/theme/highlighting/text_color = Color(0.8, 0.8, 0.8, 1)
+text_editor/theme/highlighting/line_number_color = Color(0.4, 0.4, 0.4, 1)
+text_editor/theme/highlighting/safe_line_number_color = Color(0.2, 0.4, 0.3019608, 1)
+text_editor/theme/highlighting/caret_color = Color(0.6666667, 0.6666667, 0.6666667, 1)
+text_editor/theme/highlighting/caret_background_color = Color(0.17254902, 0.17254902, 0.17254902, 1)
+text_editor/theme/highlighting/text_selected_color = Color(0.8, 0.8, 0.8, 1)
+text_editor/theme/highlighting/selection_color = Color(0, 0.7647059, 1, 0.1882353)
+text_editor/theme/highlighting/current_line_color = Color(1, 1, 1, 0.043137256)
+text_editor/theme/highlighting/line_length_guideline_color = Color(0.2, 0.2, 0.2, 1)
+text_editor/theme/highlighting/word_highlighted_color = Color(0, 0.7607843, 1, 0.078431375)
+text_editor/theme/highlighting/number_color = Color(0.47843137, 0.61960787, 0.7607843, 1)
+text_editor/theme/highlighting/function_color = Color(1, 0.7764706, 0.42745098, 1)
+text_editor/theme/highlighting/member_variable_color = Color(0.61960787, 0.48235294, 0.6901961, 1)
+text_editor/theme/highlighting/mark_color = Color(1, 0.19607843, 0.19607843, 0.21960784)
+text_editor/theme/highlighting/warning_color = Color(0.83, 0.78, 0.62, 0.15)
+text_editor/theme/highlighting/bookmark_color = Color(0.4509804, 0.8156863, 1, 1)
+text_editor/theme/highlighting/breakpoint_color = Color(0.8, 0.8, 0.4, 0.2)
+text_editor/theme/highlighting/executing_line_color = Color(0.2, 0.8, 0.2, 0.4)
+text_editor/theme/highlighting/code_folding_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text_editor/theme/highlighting/folded_code_region_color = Color(0.6784314, 0.45882353, 0.76862746, 0.2)
+text_editor/theme/highlighting/search_result_color = Color(0.39607844, 0.21176471, 0.09411765, 1)
+text_editor/theme/highlighting/search_result_border_color = Color(0, 0, 0, 0)
+text_editor/theme/highlighting/gdscript/function_definition_color = Color(1, 0.7764706, 0.42745098, 1)
+text_editor/theme/highlighting/gdscript/global_function_color = Color(0.9529412, 0.54509807, 0.65882355, 1)
+text_editor/theme/highlighting/gdscript/node_path_color = Color(0.73333335, 0.70980394, 0.16078432, 1)
+text_editor/theme/highlighting/gdscript/node_reference_color = Color(0.5803922, 0.8862745, 0.8352941, 1)
+text_editor/theme/highlighting/gdscript/annotation_color = Color(0.98039216, 0.7019608, 0.5294118, 1)
+text_editor/theme/highlighting/gdscript/string_name_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+text_editor/theme/highlighting/comment_markers/critical_color = Color(0.76862746, 0.34901962, 0.34901962, 1)
+text_editor/theme/highlighting/comment_markers/warning_color = Color(0.72156864, 0.6117647, 0.47843137, 1)
+text_editor/theme/highlighting/comment_markers/notice_color = Color(0.56078434, 0.67058825, 0.50980395, 1)
+text_editor/appearance/whitespace/draw_spaces = true
+text_editor/appearance/whitespace/line_spacing = 0
+text_editor/behavior/files/auto_reload_scripts_on_external_change = false
+text_editor/behavior/files/open_dominant_script_on_scene_change = true
+text_editor/script_list/script_temperature_enabled = false
+text_editor/script_list/list_script_names_as = 2
+text_editor/external/exec_path = "C:/Users/vomin/AppData/Local/Programs/Microsoft VS Code/bin/code.cmd"
+text_editor/external/exec_flags = "{project} --goto {file}:{line}:{col}"
+text_editor/external/use_external_editor = true
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+editors/3d/navigation/navigation_scheme = 3
+editors/3d/navigation/emulate_numpad = false
+editors/tiles_editor/highlight_selected_layer = false
+editors/animation/default_animation_step = 0.033333335
+run/window_placement/game_embed_mode = 1
+network/connection/network_mode = 1
+version_control/username = "miketvo"
+interface/touchscreen/increase_scrollbar_touch_area = false
+editors/3d/navigation/orbit_modifier = 0
+editors/3d/navigation/pan_modifier = 1
+editors/3d/navigation/zoom_modifier = 4
+export/android/android_sdk_path = "C:\\Users\\vomin\\AppData\\Local\\Android\\Sdk"
+export/android/debug_keystore = "C:/Users/vomin/AppData/Roaming/Godot/keystores/debug.keystore"
+export/android/debug_keystore_pass = "android"
+export/macos/rcodesign = ""
+export/uwp/signtool = ""
+export/uwp/debug_certificate = ""
+export/uwp/debug_password = ""
+export/uwp/debug_algorithm = 2
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/rcedit = "C:/Users/vomin/scoop/shims/rcedit.exe"
+export/windows/signtool = "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/signtool.exe"
+_default_feature_profile = ""
+_use_favorites_root_selection = false
+network/debug_adapter/request_timeout = 1000
+network/debug_adapter/sync_breakpoints = true
+editors/3d_gizmos/gizmo_colors/path = Color(0.5, 0.5, 1, 0.8)
+editors/grid_map/editor_side = 1
+aseprite/general/command_path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite\\Aseprite.exe"
+importality/temporary_files_directory_path = ""
+importality/aseprite_or_libre_sprite_command = ""
+importality/aseprite_or_libre_sprite_command_arguments = PackedStringArray()
+importality/krita_command = ""
+importality/krita_command_arguments = PackedStringArray()
+importality/pencil2d_command = ""
+importality/pencil2d_command_arguments = PackedStringArray()
+importality/command_building_rules_for_custom_image_loader = PackedStringArray()
+export/android/java_sdk_path = "C:\\Users\\vomin\\scoop\\apps\\openjdk21\\current"
+_editor_settings_advanced_mode = true
+_project_settings_advanced_mode = true
+_export_template_download_directory = "C:/Users/vomin/AppData/Local/Godot"
+_script_setup_templates_dictionary = {
+"AppScene2D": "0NodeDefault",
+"Camera2D": "0NodeDefault",
+"Control": "0NodeDefault",
+"GameScene2D": "0NodeDefault",
+"GameUI": "0NodeDefault",
+"Node": "0NodeDefault",
+"Node2D": "0NodeDefault",
+"Sprite2D": "0NodeDefault",
+"TileMapLayer": "0NodeDefault",
+"res://addons/gut/test.gd": "0ObjectEmpty"
+}
+_script_setup_use_script_templates = true
+_export_preset_advanced_mode = true
+export/android/scrcpy/screen_size = "1920x1080/120"
+export/macos/actool = ""
+gut/output_font_name = "CourierPrime"
+gut/output_font_size = 12.0
+gut/hide_result_tree = false
+gut/hide_output_text = false
+gut/hide_settings = false
+gut/use_colors = true
+gut/run_externally = false
+gut/run_externally_options_dialog_size = Vector2i(1300, 816)
+gut/shortcuts_dialog_size = Vector2i(768, 691)
+gut/editor_window_size = Vector2i(-1, -1)
+gut/editor_window_on_top = false
+metadata/script_setup_templates_dictionary = {
+"": "0ObjectEmpty",
+"AStar2D": "0ObjectEmpty",
+"AnimatableBody2D": "0NodeDefault",
+"Area2D": "0ObjectEmpty",
+"Button": "0NodeDefault",
+"CanvasLayer": "0NodeDefault",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
+"CheckBox": "0NodeDefault",
+"CheckButton": "0ObjectEmpty",
+"CollectibleBody2D": "0ObjectEmpty",
+"Control": "0NodeDefault",
+"G": "0ObjectEmpty",
+"Ga": "0ObjectEmpty",
+"Gam": "0ObjectEmpty",
+"Game": "0ObjectEmpty",
+"GameS": "0ObjectEmpty",
+"GameSc": "0ObjectEmpty",
+"GameSce": "0ObjectEmpty",
+"GameScen": "0ObjectEmpty",
+"GameScene": "0ObjectEmpty",
+"GameScene2": "0ObjectEmpty",
+"GameScene2D": "0NodeDefault",
+"HBoxContainer": "0NodeDefault",
+"Label": "0NodeDefault",
+"N": "0ObjectEmpty",
+"No": "0ObjectEmpty",
+"Nod": "0ObjectEmpty",
+"Node": "0ObjectEmpty",
+"Node2": "0ObjectEmpty",
+"Node2D": "0ObjectEmpty",
+"Node3D": "0NodeDefault",
+"PanelContainer": "0NodeDefault",
+"PushableBody2D": "0NodeDefault",
+"RigidBody2D": "0NodeDefault",
+"S": "0ObjectEmpty",
+"Sc": "0ObjectEmpty",
+"Sce": "0ObjectEmpty",
+"Scen": "0ObjectEmpty",
+"Scene": "0ObjectEmpty",
+"Se": "0ObjectEmpty",
+"SnakeAgent": "0ObjectEmpty",
+"Sprite2D": "0NodeDefault",
+"State": "0ObjectEmpty",
+"StateMachine": "0NodeDefault",
+"StaticBody2D": "0ObjectEmpty",
+"Sv": "0ObjectEmpty",
+"Sve": "0ObjectEmpty",
+"Sven": "0ObjectEmpty",
+"Svene": "0ObjectEmpty",
+"UI": "0ObjectEmpty",
+"VBoxContainer": "0NodeDefault"
+}
+metadata/script_setup_use_script_templates = true
+metadata/export_template_download_directory = "C:/Users/vomin/AppData/Local/Godot"
