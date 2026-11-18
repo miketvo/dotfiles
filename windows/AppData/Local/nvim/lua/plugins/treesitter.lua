@@ -2,28 +2,24 @@ return {
 
   { -- Highlight, edit, and navigate code. See `:help nvim-treesitter`.
     'nvim-treesitter/nvim-treesitter',
+    branch = "main",
     version = false, -- Last release is way too old and doesn't work on Windows.
     build = ':TSUpdate',
     event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'VeryLazy' },
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline.
-    init = function(plugin)
-      -- PERF: Add nvim-treesitter queries to the rtp and it's custom query predicates early.
-      --
-      -- This is needed because a bunch of plugins no longer `require('nvim-treesitter')`, which no longer trigger the
-      -- **nvim-treesitter** module to be loaded in time. Luckily, the only things that those plugins need are the
-      -- custom queries, which we make available during startup.
-      require('lazy.core.loader').add_to_rtp(plugin)
-      require('nvim-treesitter.query_predicates')
-    end,
     cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
-    opts = {
-      ensure_installed = {
+
+    config = function ()
+      local ts = require('nvim-treesitter')
+      ts.setup()
+
+      ts.install({
         'c', 'cpp', 'c_sharp',
         'make', 'cmake',
         'bash',
         'bibtex', 'latex',
         'html', 'css', 'javascript', 'typescript', 'jsdoc',
-        'json', 'hjson', 'jsonc',
+        'json', 'hjson',
         'php', 'phpdoc',
         'gdscript', 'gdshader', 'godot_resource',
         'git_config', 'git_rebase', 'gitignore', 'gitattributes',
@@ -41,26 +37,38 @@ return {
         'ini',
         'typespec',
         'vim', 'vimdoc',
-      },
-      highlight = {
-        enable = true,
-        disable = { -- NOTE: These are the names of the parsers and not the filetype. Add more as needed.
-          'vimdoc',
-        },
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = {
-        enable = true,
-        disable = { 'ruby' },
-      },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
+      })
+
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('UserTreesitterConfig', { clear = true }),
+        callback = function(ev)
+          local lang = vim.treesitter.language.get_lang(ev.match)
+          if not lang then
+            return
+          end
+
+          -- vimdoc: Disable highlighting.
+          if lang ~= 'vimdoc' then
+            pcall(vim.treesitter.start, ev.buf, lang)
+          end
+
+          -- ruby: Additional vim Regex highlighting.
+          if lang == 'ruby' then
+            vim.bo[ev.buf].syntax = 'on'
+          end
+
+          -- ruby: Disable indentation.
+          if lang ~= 'ruby' then
+            vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
+      })
     end,
   },
 
   { -- Automatically add closing tags for HTML and JSX. See `:help nvim-ts-autotag-usage`.
     'windwp/nvim-ts-autotag',
+    event = { 'BufReadPost', 'BufNewFile' },
     opts = {
       opts = {
         enable_close = true, -- Auto close tags,
@@ -74,9 +82,5 @@ return {
         -- }
       },
     },
-    config = function(_, opts)
-      require('nvim-ts-autotag').setup(opts)
-    end,
   },
-
 }
