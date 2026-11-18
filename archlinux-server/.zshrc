@@ -1,3 +1,4 @@
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -5,6 +6,13 @@ SAVEHIST=1000
 setopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/admin/.zshrc'
+
+# Auto-completion
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # Set default editor
 export EDITOR=nvim
@@ -53,17 +61,38 @@ alias chown='chown --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias sudo='sudo '
 
+# Enable zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+# fzf integration
+source <(fzf --zsh)
+
 # Load Node Version Manager (nvm)
 source /usr/share/nvm/init-nvm.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Load pyenv and pyenv-virtualenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+eval "$(pyenv virtualenv-init -)"
+
+# Broot integration
+source /home/admin/.config/broot/launcher/bash/br
+
 # Enable Oh-My-Posh
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.omp.json)"
 
 # fastfetch greeting
-fastfetch --logo arch2
+wm=$(wmctrl -m | grep "Name" | sed "s/Name: //g")
+if [ $wm = "i3" ]; then
+    fastfetch --logo-type iterm --logo-width 42 --logo-padding-right 2 --logo ~/.fetch.png
+else
+    fastfetch --logo arch2
+fi
 
 # Navigate to home directory
+d $HOME
 cd $HOME
