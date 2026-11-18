@@ -28,6 +28,7 @@ pacman-contrib
 papirus-icon-theme
 picom
 polybar
+pyenv
 python-i3ipc
 reflector
 smartmontools
