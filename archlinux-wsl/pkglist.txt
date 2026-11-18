@@ -13,7 +13,6 @@ github-cli
 gthumb
 htop
 i3blocks
-i3-wm
 jq
 lazygit
 lf
@@ -25,8 +24,8 @@ pacman-contrib
 papirus-icon-theme
 picom
 polybar
+pyenv
 python-i3ipc
-rofi
 tree
 ttf-jetbrains-mono-nerd
 twmn-git
