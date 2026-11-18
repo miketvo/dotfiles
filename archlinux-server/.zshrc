@@ -1,4 +1,3 @@
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -94,5 +93,4 @@ else
 fi
 
 # Navigate to home directory
-d $HOME
 cd $HOME
