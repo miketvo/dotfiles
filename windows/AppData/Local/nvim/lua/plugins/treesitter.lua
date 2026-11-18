@@ -10,6 +10,8 @@ return {
     cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
 
     config = function ()
+      vim.env.CC = 'gcc'
+
       local ts = require('nvim-treesitter')
       ts.setup()
 
