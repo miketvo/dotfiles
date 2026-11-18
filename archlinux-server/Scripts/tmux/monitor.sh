@@ -8,14 +8,12 @@ SESSION_NAME="monitor"
 tmux has-session -t "$SESSION_NAME" 2>/dev/null
 
 if [ $? != 0 ]; then
-    tmux new-session -d -s "$SESSION_NAME" -n "Watch" \
+    tmux new-session -d -s "$SESSION_NAME" -n "SSHPortWatch" \
         'watch -n 2 "ss -o state established '\''( dport = :22 or sport = :22 )'\''"'
-    tmux split-window -t "$SESSION_NAME:Watch" -v \
+    tmux split-window -t "$SESSION_NAME:SSHPortWatch" -v \
         'watch -n 2 "who -u"'
-    tmux new-window -t "$SESSION_NAME" -n "Top" \
-        'top'
-    tmux new-window -t "$SESSION_NAME" -n "Sensors" \
-        'watch -n 2 "sensors"'
+    tmux new-window -t "$SESSION_NAME" -n "SystemMonitor" \
+        'btop --tty'
     tmux new-window -t "$SESSION_NAME" -n "Shell"
 fi
 
