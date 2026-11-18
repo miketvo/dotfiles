@@ -82,3 +82,5 @@ xorgxrdp
 xrdp
 yay
 yay-debug
+zsh
+zsh-autosuggestions
