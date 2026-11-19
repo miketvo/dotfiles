@@ -79,7 +79,7 @@ eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 
 # Broot integration
-source /home/admin/.config/broot/launcher/bash/br
+source ~/.config/broot/launcher/bash/br
 
 # Enable Oh-My-Posh
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.omp.json)"
