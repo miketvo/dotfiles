@@ -6,7 +6,7 @@ setopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/admin/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 # Auto-completion
 autoload -Uz compinit
