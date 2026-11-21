@@ -2,6 +2,8 @@
 " Basics & Display
 " ============================================================================
 set nocompatible               " Disable legacy Vi compatibility
+set novisualbell               " Disable visual bell
+set mouse=a                    " Enable mouse
 syntax on                      " Enable syntax highlighting
 set encoding=utf-8             " Set UTF-8 text encoding
 set number                     " Show current line number
@@ -9,6 +11,7 @@ set relativenumber             " Show relative line numbers for easier jumps
 set scrolloff=8                " Keep 8 lines visible above/below cursor
 set laststatus=2               " Always display the status line
 set wildmenu                   " Enhanced command-line completion menu
+set background=dark            " Force dark mode
 
 " ============================================================================
 " Indentation & Tabs
